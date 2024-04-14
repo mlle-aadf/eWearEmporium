@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font-lato: "Lato", sans-serif;
+  --base-font-size: clamp(16px, calc(1rem + ((1vw - 3.2px) * 0.25)), 20px);
+  --h1-font-size: clamp(24px, calc(1.5rem + ((1vw - 3.2px) * 0.625)), 34px);
+  --h2-font-size: clamp(22px, calc(1.375rem + ((1vw - 3.2px) * 0.5)), 30px);
+  --h3-font-size: clamp(20px, calc(1.25rem + ((1vw - 3.2px) * 0.5)), 28px);
+
+  --main-color: #a6a39e;
+  --second-color: #f1ece9;
+  --third-color: #b0cac9;
+  --accent-color: #d7e9e9;
+  --nav-bar-color: #e5e1d6;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-lato);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+p,
+button,
+nav {
+  font-size: var(--base-font-size);
+}
