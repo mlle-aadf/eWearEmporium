@@ -14,17 +14,23 @@
   --nav-bar-color: #e5e1d6;
   --white: #ffffff;
   --black: #000000;
+  --text-line-height: 130%;
+  --text-spacing: 0px;
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: var(--font-lato);
+  line-height: var(--text-line-height);
+  letter-spacing: var(--text-spacing);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--third-color);
 }
 
 h1 {
@@ -43,4 +49,39 @@ p,
 button,
 nav {
   font-size: var(--base-font-size);
+}
+
+main {
+  margin: 2px 5px;
+  padding: 5px;
+}
+
+footer {
+  background-color: var(--nav-bar-color);
+  margin: 0;
+  padding: 0;
+}
+
+.footer-pt1 {
+  text-align: center;
+  justify-content: space-between;
+}
+
+.colOne,
+.colTwo {
+  margin: 0 40px 0 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.brand-info {
+  text-align: center;
+  justify-content: space-around;
+}
+
+.brand-text1,
+.brand-text2 {
+  margin: 0 40px 0 40px;
+  display: inline-block;
+  vertical-align: middle;
 }
