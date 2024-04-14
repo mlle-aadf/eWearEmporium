@@ -1,7 +1,8 @@
 const Success = () => {
 
-
-    return (
+    return(
+    // [ ] diplays some success message
+    // [ ] OPTIONAL > "You May Also Like: " section, email/newsletter signup
     <main>
     <h1>Your Order Has Been Confirmed!</h1>
     <h2>Thank you for shopping at E-Wear Emporium! Your order confirmation number is "insert order ID".</h2>
@@ -13,6 +14,7 @@ const Success = () => {
     <h2>"Insert Footer component here"</h2>
     </main>
     )
-};
+
+}
 
 export default Success;
