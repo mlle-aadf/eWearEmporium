@@ -1,3 +1,5 @@
+import Footer from "../../components/Footer/Footer"
+
 const Home = () => {
 
     return(
@@ -11,7 +13,15 @@ const Home = () => {
 // [ ] cart 
 // [ ] email-signup/promo pop-up
     
-        <p>i am the home page</p>
+<>
+<main className="main-page">
+<h1>E-WEAR <br/> EMPORIUM</h1>
+<br/>
+<h2>"Insert Hero section here"</h2>
+<br/>
+<Footer />
+</main>
+</>
     )
 
 }
