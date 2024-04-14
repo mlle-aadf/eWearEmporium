@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import Home from './Home/Home';
+
 function App() {
   const [bacon, setBacon] = useState(null);
 
@@ -9,7 +11,11 @@ function App() {
       .then(data => setBacon(data));
   }, []);
 
-  return <div>{bacon ? bacon : `...where's my stuff?...`}</div>;
+  return (
+    <>
+    <Home />
+    </>
+  );
 }
 
 export default App;
