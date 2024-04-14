@@ -8,8 +8,10 @@ const Footer = () => {
 
     return (
     <>
+    <hr/>
     <footer>
-        <div>
+        <div className="footer-pt1">
+        <div className="colOne">
             <h2>Stay Connected</h2>
             <p>Subscribe to get all our latest updates, which include promotional offers and more!</p>
             <label>
@@ -17,7 +19,7 @@ const Footer = () => {
             </label>
             <button type="submit">Subscribe</button>
         </div>
-        <div className="footer-navigate">
+        <div className="colTwo">
             <h2>Navigate</h2>
             <ul>
                 <li>About Us</li>
@@ -27,15 +29,19 @@ const Footer = () => {
                 <li>Our Brands</li>
             </ul>
         </div>
+        <br/>
         <div>
-            <h2>"Insert 5 imgs of the most popular/intriguing brands from our data"</h2>
-            <h2>and more! "Link this text to the page with all of the brands"</h2>
+            <p>"Insert 5 imgs of the most popular/intriguing brands from our data"</p>
+            <p>and more! "Link this text to the page with all of the brands"</p>
         </div>
-        <hr style={{color: "white"}}/>
-        <div>
-        <h1>E-WEAR <br/> EMPORIUM</h1>
-        <h2>A local brand based in Montreal, QC</h2>
         </div>
+        <hr style={{color: "black"}}/>
+        <br/>
+        <div className="brand-info">
+                <h1 className="brand-text1">E-WEAR <br/> EMPORIUM</h1>
+                <h2 className="brand-text2">A local brand based in Montreal, QC</h2>
+        </div>
+        <br/>
     </footer>
     </>
     )

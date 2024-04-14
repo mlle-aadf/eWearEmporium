@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font-lato: "Lato", sans-serif;
+  --base-font-size: clamp(16px, calc(1rem + ((1vw - 3.2px) * 0.25)), 20px);
+  --h1-font-size: clamp(24px, calc(1.5rem + ((1vw - 3.2px) * 0.625)), 34px);
+  --h2-font-size: clamp(22px, calc(1.375rem + ((1vw - 3.2px) * 0.5)), 30px);
+  --h3-font-size: clamp(20px, calc(1.25rem + ((1vw - 3.2px) * 0.5)), 28px);
+
+  --main-color: #a6a39e;
+  --second-color: #f1ece9;
+  --third-color: #b0cac9;
+  --accent-color: #d7e9e9;
+  --nav-bar-color: #e5e1d6;
+  --white: #ffffff;
+  --black: #000000;
+  --text-line-height: 130%;
+  --text-spacing: 0px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-lato);
+  line-height: var(--text-line-height);
+  letter-spacing: var(--text-spacing);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--third-color);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+p,
+button,
+nav {
+  font-size: var(--base-font-size);
+}
+
+main {
+  margin: 2px 5px;
+  padding: 5px;
+}
+
+footer {
+  background-color: var(--nav-bar-color);
+  margin: 0;
+  padding: 0;
+}
+
+.footer-pt1 {
+  text-align: center;
+  justify-content: space-between;
+}
+
+.colOne,
+.colTwo {
+  margin: 0 40px 0 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.brand-info {
+  text-align: center;
+  justify-content: space-around;
+}
+
+.brand-text1,
+.brand-text2 {
+  margin: 0 40px 0 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
