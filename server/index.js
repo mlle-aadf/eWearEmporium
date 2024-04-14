@@ -26,4 +26,45 @@ express()
   // REST endpoints?
   .get('/bacon', (req, res) => res.status(200).json('🥓'))
 
-  .listen(PORT, () => console.info(`Listening on port ${PORT}`));
+
+// PRODUCT ENDPOINTS___________________________________________________
+
+//  getProductsHandler -> returns all items from db
+  .get("/products", getProductsHandler)
+//  getProductHandler -> returns specific item from db using _id
+  .get("/products/:_id", getProductHandler) 
+
+
+
+// USER ENDPOINTS___________________________________________________
+
+// newUserHandler -> posts a new user to db using id
+  .post("/login/:userId", newUserHandler)
+// logInHandler -> retrieves user from db logs user in
+  .get("/login/:userId", logInHandler)
+
+
+// ORDER ENDPOINTS___________________________________________________
+
+// createOrderHandler -> creates order from cart and adds to db
+.post("/checkout", createOrderHandler)
+// updateOrderHandler -> updates order in db
+.patch("/checkout/:orderId", updateOrderHandler)
+// STRETCH deleteOrderHandler -> deletes order in db
+.delete("/checkout/:orderId", deleteOrderHandler)
+
+
+
+// getBrands -> retrieves all brands from db
+.get("/brands", checkOutHandler)
+
+// 
+
+
+
+
+
+
+
+//_______________________________________________________________
+.listen(PORT, () => console.info(`Listening on port ${PORT}`));
