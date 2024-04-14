@@ -5,6 +5,9 @@ const morgan = require('morgan');
 
 const PORT = 4000;
 
+//require the handlers
+const {getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler} = require("./handlers");
+
 express()
   .use(function(req, res, next) {
     res.header(
@@ -30,7 +33,7 @@ express()
 // PRODUCT ENDPOINTS___________________________________________________
 
 //  getProductsHandler -> returns all items from db
-  .get("/products", getProductsHandler)
+  .get('/products', getProductsHandler)
 //  getProductHandler -> returns specific item from db using _id
   .get("/products/:_id", getProductHandler) 
 
@@ -39,24 +42,24 @@ express()
 // USER ENDPOINTS___________________________________________________
 
 // newUserHandler -> posts a new user to db using id
-  .post("/login/:userId", newUserHandler)
+ // .post("/login/:userId", newUserHandler)
 // logInHandler -> retrieves user from db logs user in
-  .get("/login/:userId", logInHandler)
+  .get("/login/:userId", getloginHandler)
 
 
 // ORDER ENDPOINTS___________________________________________________
 
 // createOrderHandler -> creates order from cart and adds to db
-.post("/checkout", createOrderHandler)
+//.post("/checkout", createOrderHandler)
 // updateOrderHandler -> updates order in db
-.patch("/checkout/:orderId", updateOrderHandler)
+//.patch("/checkout/:orderId", updateOrderHandler)
 // STRETCH deleteOrderHandler -> deletes order in db
-.delete("/checkout/:orderId", deleteOrderHandler)
+//.delete("/checkout/:orderId", deleteOrderHandler)
 
 
 
 // getBrands -> retrieves all brands from db
-.get("/brands", checkOutHandler)
+.get("/brands", getBrandsHandler)
 
 // 
 
