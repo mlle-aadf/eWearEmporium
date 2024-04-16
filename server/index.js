@@ -44,7 +44,7 @@ express()
 // newUserHandler -> posts a new user to db using id
  // .post("/login/:userId", newUserHandler)
 // logInHandler -> retrieves user from db logs user in
-  .get("/login/:userId", getloginHandler)
+ // .get("/login/:userId", getloginHandler)
 
 
 // ORDER ENDPOINTS___________________________________________________
