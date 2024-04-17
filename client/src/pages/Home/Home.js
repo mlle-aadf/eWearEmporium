@@ -1,6 +1,12 @@
+import { useEffect } from "react";
+
 import Footer from "../../components/Footer/Footer"
 
 const Home = () => {
+
+    useEffect(() => {
+        document.title = "E-Wear Emporium"
+    }, []);
 
     return(
 // BASIC LAYOUT :
@@ -14,13 +20,13 @@ const Home = () => {
 // [ ] email-signup/promo pop-up
     
 <>
-<main className="main-page">
 <h1>E-WEAR <br/> EMPORIUM</h1>
 <br/>
 <h2>"Insert Hero section here"</h2>
 <br/>
+<div className="footer-section">
 <Footer />
-</main>
+</div>
 </>
     )
 

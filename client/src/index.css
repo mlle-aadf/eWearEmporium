@@ -30,7 +30,7 @@ html {
 }
 
 body {
-  background-color: var(--third-color);
+  background-color: var(--second-color);
 }
 
 h1 {
@@ -51,27 +51,44 @@ nav {
   font-size: var(--base-font-size);
 }
 
-main {
-  margin: 2px 5px;
-  padding: 5px;
-}
-
 footer {
-  background-color: var(--nav-bar-color);
+  background-color: var(--main-color);
   margin: 0;
   padding: 0;
+  width: 100%;
+}
+
+.footer-section {
+  width: 100%;
+}
+
+footer ul {
+  list-style-type: none;
 }
 
 .footer-pt1 {
   text-align: center;
-  justify-content: space-between;
+}
+
+.sub-btn {
+  padding: 5px;
+}
+
+.sub-email {
+  padding: 5px;
+  margin: 10px;
 }
 
 .colOne,
 .colTwo {
-  margin: 0 40px 0 40px;
+  margin: 0 60px 0 60px;
   display: inline-block;
   vertical-align: middle;
+  text-align: center;
+}
+
+.colTwo li {
+  padding: 5px;
 }
 
 .brand-info {
@@ -84,4 +101,8 @@ footer {
   margin: 0 40px 0 40px;
   display: inline-block;
   vertical-align: middle;
+}
+
+.form {
+  text-align: center;
 }
