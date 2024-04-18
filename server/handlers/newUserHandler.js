@@ -34,7 +34,7 @@ const newUserHandler = async (req, res) => {
         if (password !== confirmPassword) {
             return res.status(400).json({
                 status: 400,
-                message: "Password do not match",
+                message: "Passwords do not match",
             });
         }
 
