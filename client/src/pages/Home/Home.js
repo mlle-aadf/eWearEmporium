@@ -2,11 +2,10 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import { useEffect } from "react";
 
-useEffect(() => {
-  document.title = "E-Wear Emporium";
-}, []);
-
 const Home = () => {
+  useEffect(() => {
+    document.title = "E-Wear Emporium";
+  }, []);
   // BASIC LAYOUT :
   // [ ] navbar
   // [ ] hero section, button redirects to PRODUCTS
