@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const PORT = 4000;
 
 //require the handlers
-const {getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler} = require("./handlers");
+const {getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler} = require("./handlers");
 
 express()
   .use(function(req, res, next) {
@@ -27,7 +27,7 @@ express()
   .use('/', express.static(__dirname + '/'))
 
   // REST endpoints?
-  .get('/bacon', (req, res) => res.status(200).json('🥓'))
+  // .get('/bacon', (req, res) => res.status(200).json('🥓'))
 
 
 // PRODUCT ENDPOINTS___________________________________________________
@@ -42,9 +42,9 @@ express()
 // USER ENDPOINTS___________________________________________________
 
 // newUserHandler -> posts a new user to db using id
- // .post("/login/:userId", newUserHandler)
+  .post("/signUp", newUserHandler)
 // logInHandler -> retrieves user from db logs user in
- // .get("/login/:userId", getloginHandler)
+  .post("/login", getLoginHandler)
 
 
 // ORDER ENDPOINTS___________________________________________________
