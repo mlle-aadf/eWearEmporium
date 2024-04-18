@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { useState, useEffect } from "react"
 import TopButton from "../../components/TopButton"
-// import Footer from "../../components/Footer/Footer"
+import Footer from "../../components/Footer/Footer"
 
 
 const Products = () => {
@@ -27,27 +27,22 @@ const Products = () => {
     return(
     <>
         <h1 style={NavBarStyle}>NAVBAR PLACEHOLDER</h1>
-        <hr/>
         
-        <ProductsContainer>
-            <h3>All Products (348)</h3>
-            {products.map((product)=> { return(
-                <ProductCard>
-                    <img src={product.imageSrc} alt={product.name}/>
-                    <p>{product.name}</p>
-                    <p>{product.price}</p>
-                </ProductCard>
-            )
-            })}
-        </ProductsContainer>
+        <All>All Products (348)</All>
+            <ProductsContainer >
+                {products.map((product)=> { return(
+                    <ProductCard>
+                        <ProductImg src={product.imageSrc} alt={product.name}/>
+                        <ProductName>{product.name}</ProductName>
+                        <Price>{product.price}</Price>
+                    </ProductCard>
+                )
+                })}
+            </ProductsContainer>
         <TopButton/>
-        <hr/>
-        <h1 style={FooterStyle}>FOOTER PLACEHOLDER</h1>
-        {/* <Footer/> */}
+        <Footer/>
     </>
-// [ ] main div displays item photos
-// [ ] sidebar(or filter menu) displays Brands/Categories/BodypPart options/filters
-// [ ] OPTIONAL search bar / sort by (price -+/+-, inStock, popularity?)
+
     
     )
 
@@ -55,32 +50,95 @@ const Products = () => {
 
 export default Products
 
+const All = styled.h3`
+    position: fixed;
+    top: 10vh;
+    left: 2vw;
+    margin: 2rem;
+    height: fit-content;
+    font-weight: 550;
+    font-family: var(--font-lato);
+    background-color:var(var(--third-color));
+    
+    @media (max-width: 500px) {
+        margin: 1rem;
+        left: 2vw;
+        width: 100vw;
+    }
+    `
+
 const ProductsContainer = styled.div`
-    border: solid 2px fuschia;
+    /* border: solid 2px fuchsia; */
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-gap: 5px 30px;
+    width: 100vw;
+    margin-top: 18vh;
+    margin-left: 20vw;
+    width: 75%;
+    height: fit-content;
+
+    
+    @media (max-width: 500px) {
+        margin: 17vh auto 0 auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 5px 5px;
+    }
+`
+
+const ProductCard = styled.div`
+    /* width: 25%; */
+    height: 40vh;
+    /* min-height: fit-content; */
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    align-items: center;
+    justify-content: space-evenly;
+    /* justify-content: space-between; */
+    background-color: white;
+    border-radius: 10px;
+    margin: 0.5rem;
+    padding: 0 1.5rem;
+
+    @media (max-width: 500px) {
+        /* width: 45%; */
+    }
 `
-const ProductCard = styled.div`
-    width: 40vw;
-    height: fit-content;
-    border: 2px solid fuschia;
-    display: inline-block;
+
+const ProductImg = styled.img`
+    margin-top: 1rem;
+    max-height: 35%;
+`
+
+const ProductName = styled.p`
+    margin-top: 1rem;
+    max-height: 35%;
+`
+
+const Price = styled.p`
+
 `
 
 
 const FooterStyle = {
-    height: "4vh",
-    position: "fixed",
-    bottom: "0%",
-    backgroundColor:"var(--nav-bar-color)"
+    height: "30vh",
+    margin: "0 -10px",
+    // position: "fixed",
+    // bottom: "0%",
+    backgroundColor:"var(--nav-bar-color)",
+    justifyContent: "center",
+    display: "flex",
+    alignItems: "center"
 }
 
 const NavBarStyle = {
-    height: "6vh",
+    height: "10vh",
     position: "fixed",
     top: "0%",
     width: "100%",
+    margin: "0 0 0 -10px",
     backgroundColor:"var(--nav-bar-color)",
     justifyContent: "center",
     display: "flex",
