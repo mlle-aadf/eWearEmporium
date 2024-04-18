@@ -27,7 +27,7 @@ express()
   .use('/', express.static(__dirname + '/'))
 
   // REST endpoints?
-  .get('/bacon', (req, res) => res.status(200).json('🥓'))
+  // .get('/bacon', (req, res) => res.status(200).json('🥓'))
 
 
 // PRODUCT ENDPOINTS___________________________________________________
