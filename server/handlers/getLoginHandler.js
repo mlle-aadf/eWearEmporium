@@ -15,7 +15,7 @@ const getLoginHandler = async (req, res) => {
     if (email === undefined || email === null || email === '') {
         return res.status(404).json({
             status: 404,
-            message: "Please inlude an email"
+            message: "Please include an email"
         });
     }
 
@@ -23,7 +23,7 @@ const getLoginHandler = async (req, res) => {
     if (password === undefined || password === null || password === '') {
         return res.status(404).json({
             status: 404,
-            message: "Please inlude a password"
+            message: "Please include a password"
         });
     }
 
@@ -38,7 +38,7 @@ const getLoginHandler = async (req, res) => {
         if (!foundUser) {
             await res.status(404).json({
                 status: 404,
-                message: `Unable to found an account with the email: ${email}`,
+                message: `Unable to find an account with the email: ${email}`,
             });
         }
 
@@ -58,7 +58,7 @@ const getLoginHandler = async (req, res) => {
 
         res.status(200).json({
             status: 200,
-            message: "Login successfull",
+            message: "Login successful",
             user: userData
         });
     } catch (error) {
