@@ -22,7 +22,6 @@ const Products = () => {
         getProducts()
     }, []) 
     
-    console.log(products)
 
     return(
     <>
