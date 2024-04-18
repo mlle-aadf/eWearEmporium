@@ -5,6 +5,13 @@ import { IoMdLogIn } from "react-icons/io";
 const NavBar = () => {
   const liStyle = {
     margin: "0 15px 0 0",
+    textDecoration: "underline",
+  };
+
+  const navBarButtons = {
+    width: "50px",
+    height: "50px",
+    margin: "0 15px 0 0",
   };
 
   return (
@@ -38,15 +45,15 @@ const NavBar = () => {
               flexDirection: "row",
             }}
           >
-            <li style={ liStyle }>shop all</li>
-            <li style={ liStyle }>categories</li>
-            <li style={ liStyle }>contact</li>
-            <li style={ liStyle }>faq</li>
+            <li style={liStyle}>shop all</li>
+            <li style={liStyle}>categories</li>
+            <li style={liStyle}>contact</li>
+            <li style={liStyle}>faq</li>
           </ul>
         </div>
         <div>
-          <FaCartArrowDown />
-          <IoMdLogIn />
+          <FaCartArrowDown style={navBarButtons} />
+          <IoMdLogIn style={navBarButtons} />
         </div>
       </nav>
     </>
