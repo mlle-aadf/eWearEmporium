@@ -6,10 +6,10 @@ const morgan = require('morgan');
 const PORT = 4000;
 
 //require the handlers
-const {getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler} = require("./handlers");
+const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler } = require("./handlers");
 
 express()
-  .use(function(req, res, next) {
+  .use(function (req, res, next) {
     res.header(
       'Access-Control-Allow-Methods',
       'OPTIONS, HEAD, GET, PUT, POST, DELETE'
@@ -30,44 +30,44 @@ express()
   // .get('/bacon', (req, res) => res.status(200).json('🥓'))
 
 
-// PRODUCT ENDPOINTS___________________________________________________
+  // PRODUCT ENDPOINTS___________________________________________________
 
-//  getProductsHandler -> returns all items from db
+  //  getProductsHandler -> returns all items from db
   .get('/products', getProductsHandler)
-//  getProductHandler -> returns specific item from db using _id
-  .get("/products/:_id", getProductHandler) 
+  //  getProductHandler -> returns specific item from db using _id
+  .get("/products/:_id", getProductHandler)
 
 
 
-// USER ENDPOINTS___________________________________________________
+  // USER ENDPOINTS___________________________________________________
 
-// newUserHandler -> posts a new user to db using id
+  // newUserHandler -> posts a new user to db using id
   .post("/signUp", newUserHandler)
-// logInHandler -> retrieves user from db logs user in
+  // logInHandler -> retrieves user from db logs user in
   .post("/login", getLoginHandler)
 
 
-// ORDER ENDPOINTS___________________________________________________
+  // ORDER ENDPOINTS___________________________________________________
 
-// createOrderHandler -> creates order from cart and adds to db
-//.post("/checkout", createOrderHandler)
-// updateOrderHandler -> updates order in db
-//.patch("/checkout/:orderId", updateOrderHandler)
-// STRETCH deleteOrderHandler -> deletes order in db
-//.delete("/checkout/:orderId", deleteOrderHandler)
-
-
-
-// getBrands -> retrieves all brands from db
-.get("/brands", getBrandsHandler)
-
-// 
+  // createOrderHandler -> creates order from cart and adds to db
+  .post("/checkout", createOrderHandler)
+  // updateOrderHandler -> updates order in db
+  //.patch("/checkout/:orderId", updateOrderHandler)
+  // STRETCH deleteOrderHandler -> deletes order in db
+  //.delete("/checkout/:orderId", deleteOrderHandler)
 
 
+
+  // getBrands -> retrieves all brands from db
+  .get("/brands", getBrandsHandler)
+
+  // 
 
 
 
 
 
-//_______________________________________________________________
-.listen(PORT, () => console.info(`Listening on port ${PORT}`));
+
+
+  //_______________________________________________________________
+  .listen(PORT, () => console.info(`Listening on port ${PORT}`));
