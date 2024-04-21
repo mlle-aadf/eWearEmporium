@@ -5,5 +5,6 @@ const getProductHandler = require("./handlers/getProductHandler");
 const getBrandsHandler = require("./handlers/getBrandsHandler");
 const getLoginHandler = require("./handlers/getLoginHandler");
 const newUserHandler = require("./handlers/newUserHandler");
+const createOrderHandler = require("./handlers/createOrderHandler");
 
-module.exports = {getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler};
+module.exports = {getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler};

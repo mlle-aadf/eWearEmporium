@@ -15,9 +15,9 @@ const getBrandsHandler = async(req, res) => {
         const brands = await db.collection("companies").find({}).toArray();
 
         if (brands.length === 0) {
-            res.status(404).send("No brands found");
+           return res.status(404).send("No brands found");
         } else {
-            res.status(200).json({
+            return res.status(200).json({
                 status: 200,
                 data: brands
             });

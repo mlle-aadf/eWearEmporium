@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 import Filter from "./Filter"
 
-import Navbar from "../../components/NavBar.js"
+import Navbar from "../../components/NavBar"
 import TopButton from "../../components/TopButton"
-import Footer from "../../components/Footer.js"
+import Footer from "../../components/Footer"
 
 
 const Products = () => {

@@ -135,3 +135,41 @@ footer ul {
 .form {
   text-align: center;
 }
+
+.question {
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+.answer {
+  text-align: center;
+}
+
+.about-text {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.faq-section {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.tos-section {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.sub-form {
+  text-align: center;
+}

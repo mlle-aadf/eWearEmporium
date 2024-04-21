@@ -1,9 +1,13 @@
-import logo from "../images/logo1.png"
-// import logo from "../../images/logo1.png";
+import { useState } from "react";
+import logo from "../images/logo1.png";
 import { FaCartArrowDown } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
+import Cart from "./Cart/Cart";
 
 const NavBar = () => {
+  // Use state function for Cart visibility
+  const [isCartVisible, setIsCartVisibile] = useState(false);
+
   // Styling for the list
   const liStyle = {
     margin: "0 15px 0 0",
@@ -15,22 +19,15 @@ const NavBar = () => {
     width: "50px",
     height: "50px",
     margin: "0 15px 0 0",
+    cursor: "pointer",
   };
+
+  // Function to toggle the visibility of the cart
+  const toggleCart = () => setIsCartVisibile(!isCartVisible);
 
   return (
     <>
-      <nav
-  // CONSOLIDATED STYLING TO nav in INDEX.CSS, DELETE THIS COMMENT IF OK      
-  
-        // Styling for the navbar, uses clamp to change the heigh based on the width of the device.
-        // style={{
-        //   display: "flex",
-        //   justifyContent: "space-between",
-        //   alignItems: "center",
-        //   position: "fixed",
-        //   height: "clamp(39px, calc(2.4375rem + ((1vw - 3.2px) * 2.25)), 75px)",
-        // }}
-      >
+      <nav>
         <div style={{ margin: "0px 0 0 0px" }}>
           <img
             src={logo}
@@ -53,16 +50,17 @@ const NavBar = () => {
             }}
           >
             <li style={liStyle}>shop all</li>
-            <li style={liStyle}>categories</li>
+            <li style={liStyle}>products</li>
             <li style={liStyle}>contact</li>
-            <li style={liStyle}>faq</li>
+            <li style={liStyle}>about</li>
           </ul>
         </div>
         <div>
-          <FaCartArrowDown style={navBarButtons} />
+          <FaCartArrowDown style={navBarButtons} onClick={toggleCart} />
           <IoMdLogIn style={navBarButtons} />
         </div>
       </nav>
+      <Cart isVisible={isCartVisible} />
     </>
   );
 };
