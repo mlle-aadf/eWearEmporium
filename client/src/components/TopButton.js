@@ -28,6 +28,10 @@ const ToTop = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+        cursor: pointer;
+    }
     
     @media (max-width: 500px) {
         height: 40px;

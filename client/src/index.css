@@ -128,8 +128,17 @@ footer ul {
   vertical-align: middle;
 }
 
-.form {
+.signup,
+.login {
   text-align: center;
+}
+
+.signup {
+  margin: 150px 0 0 0;
+}
+
+.login {
+  margin: 50px 0 0 0;
 }
 
 .question {
@@ -140,6 +149,10 @@ footer ul {
 
 .answer {
   text-align: center;
+}
+
+.about-section {
+  margin: 100px 0 0 0;
 }
 
 .about-text {

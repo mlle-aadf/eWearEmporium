@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import logo from "../images/logo1.png";
 import logoMobile from "../images/logo2.png";
 import { FaCartArrowDown } from "react-icons/fa";
@@ -13,7 +15,8 @@ const NavBar = () => {
   // Styling for the list
   const liStyle = {
     margin: "0 15px 0 0",
-    textDecoration: "underline",
+    textDecoration: "none",
+    fontWeight: "bold"
   };
 
   const Logo = styled.img`
@@ -46,14 +49,22 @@ const NavBar = () => {
             }}
           >
             <li style={liStyle}>shop all</li>
+            <Link to="/products">
             <li style={liStyle}>products</li>
+            </Link>
+            <Link to="/contact">
             <li style={liStyle}>contact</li>
+            </Link>
+            <Link to="/about">
             <li style={liStyle}>about</li>
+            </Link>
           </ul>
         </div>
         <div>
           <FaCartArrowDown className="navbar-buttons" onClick={toggleCart} />
+          <Link to="/login">
           <IoMdLogIn className="navbar-buttons" />
+          </Link>
         </div>
       </nav>
       <Cart isVisible={isCartVisible} />
