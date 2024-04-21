@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import NavBar from "../../components/NavBar/NavBar"
-import Footer from "../../components/Footer/Footer"
+import NavBar from "../../components/NavBar"
+import Footer from "../../components/Footer"
 import AddToCart from "../../components/AddToCart"
 
 const Product = () => {
