@@ -31,6 +31,7 @@ const Products = () => {
 // display LOADING ITEMS message
 
 
+
     return(
     <>
         <Navbar>NAVBAR PLACEHOLDER</Navbar>
@@ -109,6 +110,17 @@ const ProductsContainer = styled.div`
         grid-template-columns: 50% 50%;
         gap: 1px;
     }
+
+    @media (min-width: 500px) and (max-width: 800px) {
+        margin: 20vh auto 4vh auto;
+        width: 95%;
+        /* display: grid;*/
+        /* grid-template-columns: 1fr 1fr 1fr 1fr;  */
+        display: flex;
+        flex-wrap: wrap;
+        /* gap: 1px; */
+    }
+
     `
 
 const ProductCard = styled(Link)`
@@ -128,15 +140,20 @@ const ProductCard = styled(Link)`
     padding: 0 1.5rem;
     position: relative;
 
-    /* border: 2px solid fuchsia; */
-  
-    
-    
     @media (max-width: 500px) {
         width: 42vw;
         height: 34vh;
     }
-    `
+
+    @media (min-width: 500px) and (max-width: 800px) {
+        width: 30%;
+        margin: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+`
 
 const ProductImg = styled.img`
     position: absolute;

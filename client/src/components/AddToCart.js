@@ -19,8 +19,13 @@ const AddBTN = styled.button`
     padding: 0.5rem 1rem;
     width: 15rem;
     font-weight: 400;
+
+    position: absolute;
+    bottom: 20%;
+    left: 6%;
     
     @media (max-width: 500px) {
+        position: static;
         width: 10rem;
         margin: 1rem;
     }

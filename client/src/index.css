@@ -61,6 +61,7 @@ button {
 .addToCart:hover{
   background-color: var(--accent-color) ;
   cursor: pointer;
+  scale: 105%;
 }
 
 nav {

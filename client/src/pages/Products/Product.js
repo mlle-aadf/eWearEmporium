@@ -10,7 +10,9 @@ const Product = () => {
     const {productId} = useParams()
     const [productInfo, setProductInfo] = useState({})
 
-    const [brand, setBrand] = useState()
+
+
+// const [brand, setBrand] = useState()
 
     useEffect( ()=> {
         const getProduct = async () => {
@@ -30,7 +32,7 @@ const Product = () => {
 
     const {name, price, imageSrc, numInStock, companyId} = productInfo
     
-
+// IN STOCK -> numInStock > 0 ? "In Stock" : "Sold out"
 
 
 
@@ -38,6 +40,8 @@ const Product = () => {
         <>
             <NavBar/>
             <Card>
+{/* LOADING ITEM DISPLAY if !productInfo */}
+                
                 <Img src={imageSrc}/>
                 <Name>{name}</Name>
                 <Price>{price}</Price>
@@ -68,29 +72,46 @@ const Card = styled.div`
         height: 75vh;
         width: 75%;
     }
-`
+    `
 const Img = styled.img`
     height: 50%;
-
+    /* border: 2px solid fuchsia; */
+    
+    position: absolute;
+    right: 8%;
+    top: 8%;
+    
     @media (max-width: 500px) {
         /* width: 90%; */
         height: 40%;
+        position: static;
         /* position: absolute;
         top: 2%; */
         margin: 1rem auto;
     }
     `
 const Name = styled.p`
-    border: 2px solid fuchsia;
+    /* border: 2px solid fuchsia; */
+    width: 45%;
     height: fit-content;
-    font-size: 1.5rem;
-    margin: 0 auto;
-    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0 0.5rem;
+    text-align: left;
+    
+    
+    position: absolute;
+    left: 5%;
+    top: 10%;
+
     
     @media (max-width: 500px) {
+        font-size: 1.5rem;
         height: 30%;
         border-bottom: 2px solid var(--nav-bar-color);
         width: 90%;
+        position: static;
+        text-align: center;
         
     }
 `
@@ -98,12 +119,16 @@ const Name = styled.p`
 const Price = styled.p`
     /* border: 2px solid fuchsia; */
     /* height: 50%; */
-    font-size: 1.25rem;
+    font-size: 2rem;
     margin: 0 auto;
     width: fit-content;
+    position: absolute;
+    bottom: 30%;
+    left: 6%;
+
     @media (max-width: 500px) {
-        /* position: absolute;
-        bottom: 10%; */
+        position: static;
+        font-size: 1.25rem;
         
     }
 
