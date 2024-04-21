@@ -18,7 +18,7 @@ const NavBar = () => {
 
   const Logo = styled.img`
     width: auto;
-    height: clamp(39px, calc(2.4375rem + ((1vw - 7.68px) * 3.125)), 75px);
+    height: clamp(34px, calc(2.125rem + ((1vw - 3.9px) * 1.0458)), 50px);
 
     @media (max-width: 768px) {
       content: url(${(props) => props.mobileSrc});
