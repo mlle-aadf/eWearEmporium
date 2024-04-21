@@ -16,14 +16,6 @@ const NavBar = () => {
     textDecoration: "underline",
   };
 
-  // Styling for login and cart buttons
-  const navBarButtons = {
-    width: "50px",
-    height: "50px",
-    margin: "0 15px 0 0",
-    cursor: "pointer",
-  };
-
   const Logo = styled.img`
     width: auto;
     height: clamp(39px, calc(2.4375rem + ((1vw - 7.68px) * 3.125)), 75px);
@@ -60,8 +52,8 @@ const NavBar = () => {
           </ul>
         </div>
         <div>
-          <FaCartArrowDown style={navBarButtons} onClick={toggleCart} />
-          <IoMdLogIn style={navBarButtons} />
+          <FaCartArrowDown className="navbar-buttons" onClick={toggleCart} />
+          <IoMdLogIn className="navbar-buttons" />
         </div>
       </nav>
       <Cart isVisible={isCartVisible} />
