@@ -1,10 +1,10 @@
 import { useState } from "react";
-import logo from "../../images/logo1.png";
+import logo from "../images/logo1.png";
 import { FaCartArrowDown } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
-import Cart from "../cart";
+import Cart from "./Cart/Cart";
 
-const NavBar = ([cartItems]) => {
+const NavBar = () => {
   // Use state function for Cart visibility
   const [isCartVisible, setIsCartVisibile] = useState(false);
 
@@ -69,7 +69,7 @@ const NavBar = ([cartItems]) => {
           <IoMdLogIn style={navBarButtons} />
         </div>
       </nav>
-      <Cart items={cartItems} isVisible={isCartVisible} />
+      <Cart isVisible={isCartVisible} />
     </>
   );
 };
