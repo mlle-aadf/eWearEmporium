@@ -1,8 +1,13 @@
+import { useState } from "react";
 import logo from "../../images/logo1.png";
 import { FaCartArrowDown } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
+import Cart from "../cart";
 
-const NavBar = () => {
+const NavBar = ([cartItems]) => {
+  // Use state function for Cart visibility
+  const [isCartVisible, setIsCartVisibile] = useState(false);
+
   // Styling for the list
   const liStyle = {
     margin: "0 15px 0 0",
@@ -14,7 +19,11 @@ const NavBar = () => {
     width: "50px",
     height: "50px",
     margin: "0 15px 0 0",
+    cursor: "pointer",
   };
+
+  // Function to toggle the visibility of the cart
+  const toggleCart = () => setIsCartVisibile(!isCartVisible);
 
   return (
     <>
@@ -56,10 +65,11 @@ const NavBar = () => {
           </ul>
         </div>
         <div>
-          <FaCartArrowDown style={navBarButtons} />
+          <FaCartArrowDown style={navBarButtons} onClick={toggleCart} />
           <IoMdLogIn style={navBarButtons} />
         </div>
       </nav>
+      <Cart items={cartItems} isVisible={isCartVisible} />
     </>
   );
 };
