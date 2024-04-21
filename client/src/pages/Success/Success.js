@@ -1,20 +1,67 @@
+import { Link } from "react-router-dom";
+
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
+import styled from "styled-components";
+
 const Success = () => {
 
     return(
     // [ ] diplays some success message
     // [ ] OPTIONAL > "You May Also Like: " section, email/newsletter signup
-    <main>
-    <h1>Your Order Has Been Confirmed!</h1>
-    <h2>Thank you for shopping at E-Wear Emporium! Your order confirmation number is "insert order ID".</h2>
-    <h2>Feel free to visit the sections below for more information.</h2>
-        <button>"Link to FAQs"</button>
-        <button>"Link to TOS"</button>
-        <button>"Link to Contact section"</button>
-    <h2>"Insert back to top button here"</h2>
-    <h2>"Insert Footer component here"</h2>
-    </main>
+    <>
+    <Main>
+    <NavBar />
+    <H1>Your Order Has Been Confirmed!</H1>
+    <H2>Thank you for shopping at E-Wear Emporium! Your order confirmation number is "insert order ID".</H2>
+    <H2>Feel free to visit the sections below for more information.</H2>
+    <Div>
+        <Link to="/about">
+        <Button>Frequently Asked Questions</Button>
+        </Link>
+        <Link to="/about">
+        <Button>Terms of Service</Button>
+        </Link>
+        <Link to="/about">
+        <Button>Contact Us</Button>
+        </Link>
+    </Div>
+    </Main>
+    <Footer />
+    </>
     )
 
-}
+};
+
+const Main = styled.main`
+    margin: 150px 0 100px 0;
+    `
+
+    const Div = styled.div`
+    text-align: center;
+    padding: 20px;
+    `
+
+    const Button = styled.button`
+    margin: 10px;
+    padding: 10px;
+    
+    &:hover {
+        cursor: pointer;
+    }
+    `
+
+    const H1 = styled.h1`
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px;
+    text-decoration: underline;
+    margin: 30px;
+    `
+
+    const H2 = styled.h2`
+    text-align: center;
+    margin: 30px;
+    `
 
 export default Success;

@@ -7,6 +7,7 @@ import Brands from "./pages/Brands/Brands.js";
 import Login from "./pages/Login/Login.js";
 import Checkout from "./pages/Checkout/Checkout.js";
 import Success from "./pages/Success/Success.js";
+import Contact from "./pages/Contact/Contact.js";
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/products/:productId" element={<Product/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/brands" element={<Brands/>}/>
+        <Route path="/contact" element={<Contact/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/success" element={<Success/>}/>

@@ -17,6 +17,7 @@ const Footer = () => {
                 textDecoration: "underline",
                 padding: "0 0 0 25px",
                 margin: "20px 20px 0 20px",
+                fontWeight: "bold"
               }}
             >
               Stay Connected
@@ -42,27 +43,22 @@ const Footer = () => {
                 textDecoration: "underline",
                 padding: "0 0 0 25px",
                 margin: "50px 0 20px 0",
+                fontWeight: "bold"
               }}
             >
               Navigate
             </h2>
             <ul>
-              <li>About Us</li>
-              <li>Contact</li>
-              <li>Frequently Asked Questions</li>
-              <li>Terms and Conditions</li>
+              <Link to="/about"><li>About Us</li></Link>
+              <Link to="/contact"><li>Contact Us</li></Link>
+              <Link to="/about"><li>Frequently Asked Questions</li></Link>
+              <Link to="/about"><li>Terms and Conditions</li></Link>
             </ul>
           </div>
           <br />
-          <div>
-            <p>
-              "Insert 5 imgs of the most popular/intriguing brands from our
-              data"
-            </p>
-            <p>and more! "Link this text to the page with all of the brands"</p>
-          </div>
+          <br/>
         </div>
-        <hr style={{ color: "black", width: "80vw" }} />
+        <hr style={{width: "75%", margin: "auto"}}/>
         <br />
         <div className="brand-info">
           <h1 className="brand-text1">
