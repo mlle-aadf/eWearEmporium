@@ -117,3 +117,13 @@ footer ul {
 .form {
   text-align: center;
 }
+
+.question {
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+.answer {
+  text-align: center;
+}
