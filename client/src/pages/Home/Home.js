@@ -24,9 +24,7 @@ const Home = () => {
       <br />
       <h2>"Insert Hero section here"</h2>
       <br />
-      <div className="footer-section">
-        <Footer />
-      </div>
+      <Footer/>
     </>
   );
 };

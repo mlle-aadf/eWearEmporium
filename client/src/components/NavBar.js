@@ -1,8 +1,10 @@
 import { useState } from "react";
 import logo from "../images/logo1.png";
+import logoMobile from "../images/logo2.png";
 import { FaCartArrowDown } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
 import Cart from "./Cart/Cart";
+import styled from "styled-components";
 
 const NavBar = () => {
   // Use state function for Cart visibility
@@ -22,6 +24,16 @@ const NavBar = () => {
     cursor: "pointer",
   };
 
+  const Logo = styled.img`
+    width: auto;
+    height: clamp(39px, calc(2.4375rem + ((1vw - 7.68px) * 3.125)), 75px);
+
+    @media (max-width: 768px) {
+      content: url(${(props) => props.mobileSrc});
+      height: clamp(25px, calc(1.5625rem + ((1vw - 3px) * 7.4786)), 60px);
+    }
+  `;
+
   // Function to toggle the visibility of the cart
   const toggleCart = () => setIsCartVisibile(!isCartVisible);
 
@@ -29,15 +41,7 @@ const NavBar = () => {
     <>
       <nav>
         <div style={{ margin: "0px 0 0 0px" }}>
-          <img
-            src={logo}
-            alt="Logo"
-            style={{
-              width: "auto",
-              height:
-                "clamp(39px, calc(2.4375rem + ((1vw - 3.2px) * 2.25)), 75px)", // Responsive styling for the logo based on device
-            }}
-          />
+          <Logo src={logo} alt="Logo" mobileSrc={logoMobile} />
         </div>
         <div>
           <ul
