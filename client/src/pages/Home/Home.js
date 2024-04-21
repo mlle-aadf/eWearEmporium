@@ -1,6 +1,7 @@
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import { useEffect } from "react";
+import HeroSection from "./HeroSection";
 
 const Home = () => {
   useEffect(() => {
@@ -18,13 +19,8 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <h1>
-        E-WEAR <br /> EMPORIUM
-      </h1>
-      <br />
-      <h2>"Insert Hero section here"</h2>
-      <br />
-      <Footer/>
+      <HeroSection />
+      <Footer />
     </>
   );
 };
