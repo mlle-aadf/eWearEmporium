@@ -19,14 +19,16 @@ const NavBar = () => {
   return (
     <>
       <nav
+  // CONSOLIDATED STYLING TO nav in INDEX.CSS, DELETE THIS COMMENT IF OK      
+  
         // Styling for the navbar, uses clamp to change the heigh based on the width of the device.
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          position: "fixed",
-          height: "clamp(39px, calc(2.4375rem + ((1vw - 3.2px) * 2.25)), 75px)",
-        }}
+        // style={{
+        //   display: "flex",
+        //   justifyContent: "space-between",
+        //   alignItems: "center",
+        //   position: "fixed",
+        //   height: "clamp(39px, calc(2.4375rem + ((1vw - 3.2px) * 2.25)), 75px)",
+        // }}
       >
         <div style={{ margin: "0px 0 0 0px" }}>
           <img
