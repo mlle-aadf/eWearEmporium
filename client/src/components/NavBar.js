@@ -59,9 +59,9 @@ const NavBar = () => {
             }}
           >
             <li style={liStyle}>shop all</li>
-            <li style={liStyle}>categories</li>
+            <li style={liStyle}>products</li>
             <li style={liStyle}>contact</li>
-            <li style={liStyle}>faq</li>
+            <li style={liStyle}>about</li>
           </ul>
         </div>
         <div>

@@ -56,13 +56,24 @@ const About = () => {
                     <br/>
                     <p className="question">Q: How can I subscribe to get all the latest news and promotional deals from E-Wear Emporium?</p>
                     <p className="answer">A: Simply enter your email address below!</p>
+                    <label>
+                      <input
+                        type="text"
+                        placeholder="Your email address"
+                        className="sub-email"
+                      />
+                    </label>
+                    <button type="submit" className="sub-btn">
+                      Subscribe
+                    </button>
                     </div>
                     <br/>
                     <br/>
                     <div className="tos-section">
                         <h2 style={{textDecoration: "underline", textAlign: "center"}}>Terms of Service</h2>
                         <br/>
-                    <p className="tos-text">
+                    <div className="tos-text">
+                    <p>   
                     Please read these terms and conditions ("Terms", "Terms of Service") carefully before using our e-commerce website (the "Service") operated by [Your Company] ("us", "we", or "our").
                     <br/>
                     Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service.
@@ -131,7 +142,8 @@ const About = () => {
                     <br/>
                     <br/>
                     By accessing or using the Service, you agree to be bound by these Terms. 
-                        </p>
+                    </p>
+                        </div>
                     </div>
                 </div>
         </main>
