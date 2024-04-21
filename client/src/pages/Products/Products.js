@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { useState, useEffect } from "react"
 import TopButton from "../../components/TopButton"
-import Footer from "../../components/Footer/Footer"
+import Footer from "../../components/Footer"
 
 
 const Products = () => {
