@@ -11,6 +11,10 @@ import Footer from "../../components/Footer"
 
 const Products = () => {
 
+    useEffect(() => {
+        document.title = "Our Products"
+    }, []);
+
     const [products, setProducts] = useState([])
 
     useEffect( ()=> {

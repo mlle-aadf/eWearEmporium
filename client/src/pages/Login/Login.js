@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
+
 const Login = () => {
 
     useEffect(() => {
@@ -59,9 +62,10 @@ const Login = () => {
 // [ ] cart retrieves previous user saved items
 // [ ] option to view past orders (?)
 <>
-    <h1>E-WEAR <br/> EMPORIUM</h1>
-        <form className="form">
-        <h2 style={{textDecoration: "underline"}}>Sign Up</h2>
+    <NavBar />
+        <form className="signup">
+        <h1 style={{textDecoration: "underline", fontWeight: "bold"}}>Sign Up</h1>
+        <br/>
         <p>Create an account to take advantage of all the benefits we have to offer!</p>
     <br/>
         <label>First Name: </label>
@@ -93,10 +97,10 @@ const Login = () => {
     <br/>
     </form>
     <br/>
-    <hr/>
+    <hr style={{width: "75%", margin: "auto"}}/>
 
-        <form className="form">
-        <h2 style={{textDecoration: "underline"}}>Login</h2>
+        <form className="login">
+        <h1 style={{textDecoration: "underline", fontWeight: "bold"}}>Login</h1>
     <br/>
         <label>Email Address: </label>
     <br/>
@@ -113,6 +117,9 @@ const Login = () => {
         </Link> 
     <br/>
         </form>
+        <br/>
+        <br/>
+        <Footer />
             </>
     )
 }

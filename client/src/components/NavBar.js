@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import logo from "../images/logo1.png";
 import { FaCartArrowDown } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
@@ -11,7 +13,8 @@ const NavBar = () => {
   // Styling for the list
   const liStyle = {
     margin: "0 15px 0 0",
-    textDecoration: "underline",
+    textDecoration: "none",
+    fontWeight: "bold"
   };
 
   // Styling for login and cart buttons
@@ -29,6 +32,7 @@ const NavBar = () => {
     <>
       <nav>
         <div style={{ margin: "0px 0 0 0px" }}>
+          <Link to="/">
           <img
             src={logo}
             alt="Logo"
@@ -38,6 +42,7 @@ const NavBar = () => {
                 "clamp(39px, calc(2.4375rem + ((1vw - 3.2px) * 2.25)), 75px)", // Responsive styling for the logo based on device
             }}
           />
+          </Link>
         </div>
         <div>
           <ul
@@ -50,14 +55,22 @@ const NavBar = () => {
             }}
           >
             <li style={liStyle}>shop all</li>
+            <Link to="/products">
             <li style={liStyle}>products</li>
+            </Link>
+            <Link to="/contact">
             <li style={liStyle}>contact</li>
+            </Link>
+            <Link to="/about">
             <li style={liStyle}>about</li>
+            </Link>
           </ul>
         </div>
         <div>
           <FaCartArrowDown style={navBarButtons} onClick={toggleCart} />
+          <Link to="/login">
           <IoMdLogIn style={navBarButtons} />
+          </Link>
         </div>
       </nav>
       <Cart isVisible={isCartVisible} />
