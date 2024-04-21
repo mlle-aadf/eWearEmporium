@@ -1,4 +1,5 @@
 import NavBar from "../../components/NavBar"
+import Footer from "../../components/Footer"
 
 const About = () => {
 
@@ -16,6 +17,7 @@ const About = () => {
         <br/>
         <main>
             <div className="about-section">
+                <br/>
                 <br/>
                 <div className="about-img">
                     <p>"Insert corporate img"</p>
@@ -56,6 +58,7 @@ const About = () => {
                     <br/>
                     <p className="question">Q: How can I subscribe to get all the latest news and promotional deals from E-Wear Emporium?</p>
                     <p className="answer">A: Simply enter your email address below!</p>
+                    <div className="sub-form">
                     <label>
                       <input
                         type="text"
@@ -66,6 +69,7 @@ const About = () => {
                     <button type="submit" className="sub-btn">
                       Subscribe
                     </button>
+                    </div>
                     </div>
                     <br/>
                     <br/>
@@ -147,6 +151,7 @@ const About = () => {
                     </div>
                 </div>
         </main>
+        <Footer />
         </>
 
     )
