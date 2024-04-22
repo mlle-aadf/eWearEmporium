@@ -16,11 +16,21 @@ const Products = () => {
     }, []);
 
     const [products, setProducts] = useState([])
+    const [sortBy, setSortBy] = useState("AZ")
+    const [filters, setFilters] = useState(["Fitness", "Medical", "Lifestyle", "Entertainment", "Industrial", "Pets and Animals", "Gaming"])
 
-    useEffect( ()=> {
+    let queryString = `?sort=${sortBy}&filters=${filters}`
+  
+
+    useEffect( ()=> {        
         const getProducts = async () => {
             try {
-                const res = await fetch('/products')
+
+                const res = await fetch(`/products`)
+
+                // const res = await fetch(`/products${queryString}`)
+
+    
                 const {data} = await res.json()
                 // console.log(data)
                 setProducts(data)
@@ -32,15 +42,57 @@ const Products = () => {
 // NEED DEPENDENCY? OR CLEANUP
     }, []) 
 
-// display LOADING ITEMS message
+
+
+    // const fetchFiltered = async () => {
+        // try {    
+        //     const res = await fetch(`/products/filtered`)
+        //     const {data} = await res.json()
+        //         setProducts(data)
+        //     } catch (err) {
+        //         console.log(err)
+        //     }
+    // }
+    
+//     const sortHandler = (event) => {
+        //   setSortBy(event.target.value)
+        //   fetchFiltered()
+// }
+
+//     const filtersHandler = (event) => {
+        //   setFilters( ??? )
+        //   fetchFiltered()
+// }
 
 
 
     return(
     <>
-        <Navbar>NAVBAR PLACEHOLDER</Navbar>
-        <All>All Products (348)</All>
-        <Filter/>
+        <Navbar/>
+        <All>All Products ({products.length})</All>
+        
+        {/*  input onChange adds category to url params, APPLY button launches new fetch with updated params
+         <Category>
+            <input type="checkbox"/>
+            <label> CHECK ME OUT</label>
+        </Category>
+        <button onClick={fetchFiltered}>Apply</button>
+        */}
+
+        
+        {/* onChange adds sort method to url params, launches new fetch with updated params
+        <Sort onChange={sortHandler} defaultValue={"sort"}>
+            <option value={"sort"} disabled>Sort</option>
+            <option value={"AZ"}>A - Z</option>
+            <option value={"ZA"}>Z - A</option>
+            <option value={"priceLH"}>- $ +</option>
+            <option value={"priceHL"}>+ $ -</option>
+        </Sort> */}
+
+
+        
+    
+        {(products.length === 0 || !products) ? <Loading>Loading . . .</Loading> :
             <ProductsContainer>
                 {products.map((product)=> { 
                     
@@ -55,17 +107,27 @@ const Products = () => {
                 )
                 })}
             </ProductsContainer>
+        }        
+        
         <TopButton/>
         <Footer/>
-        {/* <Footer style={FooterStyle}/> */}
+  
     </>
-
-    
     )
-
 }
 
 export default Products
+
+const Loading = styled.h2`
+    height:70vh;
+    width:90vw;
+    margin: 16vh auto 0 auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+`
+
+
 
 const All = styled.h3`
     position: fixed;
@@ -92,6 +154,20 @@ const All = styled.h3`
 
     }
     `
+
+const Sort = styled.select`
+    position: fixed;
+    top: 12vh;
+    right: 5%;
+    z-index: 1;
+`
+
+const Category = styled.div`
+    position: fixed;
+    top: 18vh;
+    left: 5%;
+    z-index: 1;
+`
 
 const ProductsContainer = styled.div`
     display: grid;

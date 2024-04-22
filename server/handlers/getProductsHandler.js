@@ -11,7 +11,8 @@ const getProductsHandlers = async (req, res) => {
     try {
         await client.connect();
         const db = client.db(dbName);
-        const products = await db.collection("items").find({}).toArray();
+    // returns all items sorted alphabetically
+        const products = await db.collection("items").find({}).sort({ name: 1 }).toArray();
 
         if (products.length === 0) {
             res.status(404).send("No products found");
