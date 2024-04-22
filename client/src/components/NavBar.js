@@ -1,4 +1,6 @@
 import { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+
 import logo from "../images/logo1.png";
 import { FaCartArrowDown } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
@@ -17,7 +19,8 @@ const NavBar = () => {
   // Styling for the list
   const liStyle = {
     margin: "0 15px 0 0",
-    textDecoration: "underline",
+    textDecoration: "none",
+    fontWeight: "bold"
   };
 
   // Styling for login and cart buttons
@@ -33,17 +36,9 @@ const NavBar = () => {
 
   return (
     <>
-      <nav
-        // Styling for the navbar, uses clamp to change the heigh based on the width of the device.
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          position: "fixed",
-          height: "clamp(39px, calc(2.4375rem + ((1vw - 3.2px) * 2.25)), 75px)",
-        }}
-      >
+      <nav>
         <div style={{ margin: "0px 0 0 0px" }}>
+          <Link to="/">
           <img
             src={logo}
             alt="Logo"
@@ -53,6 +48,7 @@ const NavBar = () => {
                 "clamp(39px, calc(2.4375rem + ((1vw - 3.2px) * 2.25)), 75px)", // Responsive styling for the logo based on device
             }}
           />
+          </Link>
         </div>
         <div>
           <ul
@@ -65,9 +61,15 @@ const NavBar = () => {
             }}
           >
             <li style={liStyle}>shop all</li>
-            <li style={liStyle}>categories</li>
+            <Link to="/products">
+            <li style={liStyle}>products</li>
+            </Link>
+            <Link to="/contact">
             <li style={liStyle}>contact</li>
-            <li style={liStyle}>faq</li>
+            </Link>
+            <Link to="/about">
+            <li style={liStyle}>about</li>
+            </Link>
           </ul>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
