@@ -7,7 +7,7 @@ import LoggedInUserProvider from "./pages/LoginSignUp/LoggedInUserContext";
 ReactDOM.render(
   <React.StrictMode>
     <LoggedInUserProvider>
-    <App />
+      <App />
     </LoggedInUserProvider>
   </React.StrictMode>,
   document.getElementById("root")

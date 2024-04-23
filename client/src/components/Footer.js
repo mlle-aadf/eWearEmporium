@@ -17,7 +17,7 @@ const Footer = () => {
                 textDecoration: "underline",
                 padding: "0 0 0 25px",
                 margin: "20px 20px 0 20px",
-                fontWeight: "bold"
+                fontWeight: "bold",
               }}
             >
               Stay Connected
@@ -43,22 +43,30 @@ const Footer = () => {
                 textDecoration: "underline",
                 padding: "0 0 0 25px",
                 margin: "50px 0 20px 0",
-                fontWeight: "bold"
+                fontWeight: "bold",
               }}
             >
               Navigate
             </h2>
             <ul>
-              <Link to="/about"><li>About Us</li></Link>
-              <Link to="/contact"><li>Contact Us</li></Link>
-              <Link to="/about"><li>Frequently Asked Questions</li></Link>
-              <Link to="/about"><li>Terms and Conditions</li></Link>
+              <Link to="/about">
+                <li>About Us</li>
+              </Link>
+              <Link to="/contact">
+                <li>Contact Us</li>
+              </Link>
+              <Link to="/about">
+                <li>Frequently Asked Questions</li>
+              </Link>
+              <Link to="/about">
+                <li>Terms and Conditions</li>
+              </Link>
             </ul>
           </div>
           <br />
-          <br/>
+          <br />
         </div>
-        <hr style={{width: "75%", margin: "auto"}}/>
+        <hr style={{ width: "75%", margin: "auto" }} />
         <br />
         <div className="brand-info">
           <h1 className="brand-text1">

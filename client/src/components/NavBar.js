@@ -28,14 +28,22 @@ const NavBar = () => {
         <Link to="/">
           <Logo src={logo} alt="Logo" mobileSrc={logoMobile} />
         </Link>
-    
+
         <div className="navText">
-            <Link to="/products" className="navLink">shop all</Link>
-            <Link to="/brands" className="navLink">brands</Link>
-            <Link to="/contact" className="navLink">contact</Link>
-            <Link to="/about" className="navLink">about</Link>
+          <Link to="/products" className="navLink">
+            shop all
+          </Link>
+          <Link to="/brands" className="navLink">
+            brands
+          </Link>
+          <Link to="/contact" className="navLink">
+            contact
+          </Link>
+          <Link to="/about" className="navLink">
+            about
+          </Link>
         </div>
-    
+
         <div style={{ display: "flex", alignItems: "center" }}>
           <FaCartArrowDown className="navbar-buttons" onClick={toggleCart} />
           {!isAuthenticated && (
@@ -53,7 +61,7 @@ const NavBar = () => {
               <p style={{ margin: "0 15px 0 0" }}>{name}</p>
               <button
                 onClick={() => logOut()}
-                style={{background: "transparent"}}
+                style={{ background: "transparent" }}
                 className="navbar-buttons"
               >
                 <IoMdLogOut className="navbar-buttons" />
@@ -68,7 +76,6 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
 
 const Logo = styled.img`
   width: auto;
