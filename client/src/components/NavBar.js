@@ -19,63 +19,28 @@ const NavBar = () => {
     useContext(LoggedInUserContext);
   const name = loggedInUser && loggedInUser.user ? loggedInUser.user.fname : "";
 
-  // Styling for the list
-  const liStyle = {
-    margin: "0 15px 0 0",
-    textDecoration: "none",
-    fontWeight: "bold",
-  };
-
-  const Logo = styled.img`
-    width: auto;
-    height: clamp(34px, calc(2.125rem + ((1vw - 3.9px) * 1.0458)), 50px);
-
-    @media (max-width: 768px) {
-      content: url(${(props) => props.mobileSrc});
-      height: clamp(25px, calc(1.5625rem + ((1vw - 3px) * 7.4786)), 60px);
-    }
-  `;
-
   // Function to toggle the visibility of the cart
   const toggleCart = () => setIsCartVisibile(!isCartVisible);
 
   return (
     <>
       <nav>
-        <div style={{ margin: "0px 0 0 0px" }}>
-          <Logo src={logo} alt="Logo" mobileSrc={logoMobile} />
+        <Logo src={logo} alt="Logo" mobileSrc={logoMobile} />
+    
+        <div className="navText">
+            <Link to="/products" className="navLink">shop all</Link>
+            <Link to="/brands" className="navLink">brands</Link>
+            <Link to="/contact" className="navLink">contact</Link>
+            <Link to="/about" className="navLink">about</Link>
         </div>
-        <div>
-          <ul
-            // styling for the navbar text
-            style={{
-              fontWeight: "700",
-              textTransform: "uppercase",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            <li style={liStyle}>shop all</li>
-            <Link to="/products">
-              <li style={liStyle}>products</li>
-            </Link>
-            <Link to="/contact">
-              <li style={liStyle}>contact</li>
-            </Link>
-            <Link to="/about">
-              <li style={liStyle}>about</li>
-            </Link>
-          </ul>
-        </div>
+    
         <div style={{ display: "flex", alignItems: "center" }}>
           <FaCartArrowDown className="navbar-buttons" onClick={toggleCart} />
           {!isAuthenticated && (
             <>
               <NavLink to="/login">
                 <IoMdLogIn
-                  style={{
-                    background: "transparent",
-                  }}
+                  style={{ background: "transparent" }}
                   className="navbar-buttons"
                 />
               </NavLink>
@@ -86,9 +51,7 @@ const NavBar = () => {
               <p style={{ margin: "0 15px 0 0" }}>{name}</p>
               <button
                 onClick={() => logOut()}
-                style={{
-                  background: "transparent",
-                }}
+                style={{background: "transparent"}}
                 className="navbar-buttons"
               >
                 <IoMdLogOut className="navbar-buttons" />
@@ -103,3 +66,14 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
+const Logo = styled.img`
+  width: auto;
+  height: clamp(34px, calc(2.125rem + ((1vw - 3.9px) * 1.0458)), 50px);
+
+  @media (max-width: 768px) {
+    content: url(${(props) => props.mobilesrc});
+    height: clamp(25px, calc(1.5625rem + ((1vw - 3px) * 7.4786)), 60px);
+  }
+`;
