@@ -57,7 +57,6 @@ const Products = () => {
             </ProductsContainer>
         <TopButton/>
         <Footer/>
-        {/* <Footer style={FooterStyle}/> */}
     </>
 
     
@@ -186,14 +185,8 @@ const ProductName = styled.p`
 
 const Price = styled.p`
     font-size: var(--base-font-size);
-    /* font-weight: 200; */
     color: #a6a39e ;
     position: absolute;
     bottom: 5%;
     pointer-events: none;
-    `
-
-// const FooterStyle = {
-    // position: "static",
-    // bottom: "0%"
-// }
+`
