@@ -10,6 +10,7 @@
 
 
   --accent-color: #d7e9e9;
+  --hover-color: #eafaf8;
   --nav-bar-color: #e5e1d6;
   --white: #ffffff;
   --black: #000000;
@@ -54,10 +55,10 @@ button {
 }
 
 .addToCart {
-  background-color: var(--nav-bar-color)
+  background-color: var(--nav-bar-color);
 }
-.addToCart:hover{
-  background-color: var(--accent-color) ;
+.addToCart:hover {
+  background-color: var(--accent-color);
   cursor: pointer;
   scale: 105%;
 }
@@ -81,7 +82,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ;
 }
 
 .navText {
@@ -102,6 +102,12 @@ nav {
   border-bottom: 2px solid #ffffff;
 }
 
+.navbar-buttons {
+  width: clamp(20px, calc(1.25rem + ((1vw - 3px) * 1.8519)), 50px);
+  height: clamp(20px, calc(1.25rem + ((1vw - 3px) * 1.8519)), 50px);
+  margin: 0 15px 0 0;
+  cursor: pointer;
+}
 
 footer {
   background-color: var(--nav-bar-color);
@@ -212,3 +218,5 @@ footer ul {
 .sub-form {
   text-align: center;
 }
+
+
