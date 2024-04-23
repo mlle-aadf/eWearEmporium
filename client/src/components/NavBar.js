@@ -25,7 +25,9 @@ const NavBar = () => {
   return (
     <>
       <nav>
-        <Logo src={logo} alt="Logo" mobileSrc={logoMobile} />
+        <Link to="/">
+          <Logo src={logo} alt="Logo" mobileSrc={logoMobile} />
+        </Link>
     
         <div className="navText">
             <Link to="/products" className="navLink">shop all</Link>

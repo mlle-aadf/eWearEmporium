@@ -4,8 +4,8 @@ import { useState, useEffect } from "react"
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
 import AddToCart from "../../components/AddToCart"
-import Instock from "./InStock"
-import SoldOut from "./SoldOut"
+import Instock from "../Products/InStock"
+import SoldOut from "../Products/SoldOut"
 
 const Product = () => {
 
