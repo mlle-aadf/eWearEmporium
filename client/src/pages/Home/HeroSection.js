@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const HeroContainer = styled.div`
   margin: 150px clamp(76.8px, calc(4.8rem + ((1vw - 7.68px) * 10)), 192px);
-
   width: clamp(615px, calc(38.4375rem + ((1vw - 7.69px) * 80.0174)), 1536px);
 
   @media (max-width: 768px) {
