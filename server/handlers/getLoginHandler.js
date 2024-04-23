@@ -56,6 +56,7 @@ const getLoginHandler = async (req, res) => {
             message: "Login successful",
             user: userData
         });
+        console.log("This is userData: ", userData);
     } catch (error) {
         console.log(error);
         res.status(500).json({

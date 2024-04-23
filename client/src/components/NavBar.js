@@ -1,22 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../images/logo1.png";
 import logoMobile from "../images/logo2.png";
 import { FaCartArrowDown } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
+import { IoMdLogOut } from "react-icons/io";
 import Cart from "./Cart/Cart";
 import styled from "styled-components";
+import { LoggedInUserContext } from "../pages/LoginSignUp/LoggedInUserContext";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   // Use state function for Cart visibility
   const [isCartVisible, setIsCartVisibile] = useState(false);
+  //Set name of the user that logged in
+  const { loggedInUser, logOut, isAuthenticated } =
+    useContext(LoggedInUserContext);
+  const name = loggedInUser && loggedInUser.user ? loggedInUser.user.fname : "";
 
   // Styling for the list
   const liStyle = {
     margin: "0 15px 0 0",
     textDecoration: "none",
-    fontWeight: "bold"
+    fontWeight: "bold",
   };
 
   const Logo = styled.img`
@@ -50,21 +57,44 @@ const NavBar = () => {
           >
             <li style={liStyle}>shop all</li>
             <Link to="/products">
-            <li style={liStyle}>products</li>
+              <li style={liStyle}>products</li>
             </Link>
             <Link to="/contact">
-            <li style={liStyle}>contact</li>
+              <li style={liStyle}>contact</li>
             </Link>
             <Link to="/about">
-            <li style={liStyle}>about</li>
+              <li style={liStyle}>about</li>
             </Link>
           </ul>
         </div>
-        <div>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <FaCartArrowDown className="navbar-buttons" onClick={toggleCart} />
-          <Link to="/login">
-          <IoMdLogIn className="navbar-buttons" />
-          </Link>
+          {!isAuthenticated && (
+            <>
+              <NavLink to="/login">
+                <IoMdLogIn
+                  style={{
+                    background: "transparent",
+                  }}
+                  className="navbar-buttons"
+                />
+              </NavLink>
+            </>
+          )}
+          {isAuthenticated && (
+            <>
+              <p style={{ margin: "0 15px 0 0" }}>{name}</p>
+              <button
+                onClick={() => logOut()}
+                style={{
+                  background: "transparent",
+                }}
+                className="navbar-buttons"
+              >
+                <IoMdLogOut className="navbar-buttons" />
+              </button>
+            </>
+          )}
         </div>
       </nav>
       <Cart isVisible={isCartVisible} />
