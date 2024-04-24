@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const PORT = 4000;
 
 //require the handlers
-const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getItemHandler, deleteItemHandler } = require("./handlers");
+const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getFilteredHandler, getItemHandler, deleteItemHandler} = require("./handlers");
 
 express()
   .use(function (req, res, next) {
@@ -30,8 +30,10 @@ express()
 
   //  getProductsHandler -> returns all items from db
   .get('/products', getProductsHandler)
+
   //  getProductHandler -> returns specific item from db using _id
   .get("/products/:_id", getProductHandler)
+  
 
 
 
@@ -58,10 +60,6 @@ express()
   .get("/brands", getBrandsHandler)
 
   // 
-
-
-
-
 
 
 
