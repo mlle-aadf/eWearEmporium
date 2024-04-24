@@ -4,37 +4,28 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import styled from "styled-components";
 
-const Success = () => {
+const ContactSuccess = () => {
 
-    return(
-    // [ ] diplays some success message
-    // [ ] OPTIONAL > "You May Also Like: " section, email/newsletter signup
-    <>
+
+    return (
+        <>
     <Main>
     <NavBar />
-    <H1>Your Order Has Been Confirmed!</H1>
+    <H1>Thank You For Reaching Out!</H1>
     <br/>
-    <H2>Thank you for shopping at E-Wear Emporium! Your order confirmation number is "insert order ID".</H2>
-    <H2>Feel free to visit the sections below for more information.</H2>
+    <H2>Your message has been delivered successfully. We'll get back to you under the briefest delays to assist you.</H2>
     <Div>
-        <Link to="/about">
-        <Button>Frequently Asked Questions</Button>
-        </Link>
-        <Link to="/about">
-        <Button>Terms of Service</Button>
-        </Link>
-        <Link to="/about">
-        <Button>Contact Us</Button>
+        <Link to="/">
+        <Button>Back to HOME</Button>
         </Link>
     </Div>
     </Main>
     <Footer />
-    </>
+        </>
     )
-
 };
 
-const Main = styled.main`
+    const Main = styled.main`
     margin: 150px 0 100px 0;
     `
 
@@ -48,7 +39,7 @@ const Main = styled.main`
     padding: 10px;
     font-weight: bold;
     border-radius: 5px;
-    
+
     &:hover {
         cursor: pointer;
     }
@@ -68,4 +59,4 @@ const Main = styled.main`
     font-weight: bold;
     `
 
-export default Success;
+    export default ContactSuccess;
