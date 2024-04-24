@@ -4,22 +4,19 @@ import { useState, useEffect } from "react"
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
 import AddToCart from "../../components/AddToCart"
+import Instock from "../Products/InStock"
+import SoldOut from "../Products/SoldOut"
 
 const Product = () => {
 
     const {productId} = useParams()
     const [productInfo, setProductInfo] = useState({})
 
-
-
-// const [brand, setBrand] = useState()
-
     useEffect( ()=> {
         const getProduct = async () => {
             try {
                 const res = await fetch(`/products/${productId}`)
                 const {data} = await res.json()
-                // console.log(data)
                 setProductInfo(data)
             } catch (err) {
                 console.log(err)
@@ -30,22 +27,22 @@ const Product = () => {
 
     }, [productId])
 
-    const {name, price, imageSrc, numInStock, companyId} = productInfo
+    const {name, price, imageSrc, numInStock} = productInfo
     
-// IN STOCK -> numInStock > 0 ? "In Stock" : "Sold out"
-
-
-
     return(
         <>
             <NavBar/>
             <Card>
-{/* LOADING ITEM DISPLAY if !productInfo */}
-                
-                <Img src={imageSrc}/>
-                <Name>{name}</Name>
-                <Price>{price}</Price>
-                <AddToCart/>
+            {!productInfo ? <p>Loading ...</p> :
+                <>
+                    <Img src={imageSrc}/>
+                    <Name>{name}</Name>
+                    <Stock>{numInStock > 0 ? <Instock/> : <SoldOut/>}</Stock>
+                    <Price>{price}</Price>
+        {/* DISABLE BUTTON IF numInStock === 0 */}
+                    <AddToCart/>
+                </>
+            }
             </Card>
             <Footer/>
         </>
@@ -72,7 +69,8 @@ const Card = styled.div`
         height: 75vh;
         width: 75%;
     }
-    `
+`
+
 const Img = styled.img`
     height: 50%;
     /* border: 2px solid fuchsia; */
@@ -89,36 +87,40 @@ const Img = styled.img`
         top: 2%; */
         margin: 1rem auto;
     }
-    `
+`
+
 const Name = styled.p`
-    /* border: 2px solid fuchsia; */
     width: 45%;
     height: fit-content;
     font-size: 2.5rem;
     font-weight: 400;
     margin: 0 0.5rem;
     text-align: left;
-    
-    
     position: absolute;
     left: 5%;
     top: 10%;
-
     
     @media (max-width: 500px) {
         font-size: 1.5rem;
         height: 30%;
-        border-bottom: 2px solid var(--nav-bar-color);
         width: 90%;
         position: static;
         text-align: center;
-        
+    }
+`
+
+const Stock = styled.div`
+    position: absolute;
+    left: 25%;
+    bottom: 31%;
+    
+    @media (max-width: 500px) {
+        position: static;
+        text-align: center;
     }
 `
 
 const Price = styled.p`
-    /* border: 2px solid fuchsia; */
-    /* height: 50%; */
     font-size: 2rem;
     margin: 0 auto;
     width: fit-content;
@@ -131,11 +133,4 @@ const Price = styled.p`
         font-size: 1.25rem;
         
     }
-
 `
-
-
-// const FooterStyle = {
-//     position: "relative",
-//     top: "100vh"
-// }

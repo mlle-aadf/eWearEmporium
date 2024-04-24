@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
@@ -6,20 +6,20 @@ import TopButton from "../../components/TopButton"
 
 import styled from "styled-components";
 
-const Bold = styled.h3`
-    font-weight: bold;
-`
-const H2 = styled.h2`
-    text-decoration: underline;
-    text-align: center;
-    font-weight: bold;
-`
-
 const About = () => {
 
     useEffect(() => {
         document.title = "About Us"
     }, []);
+
+    const [subEmail, setSubEmail] = useState("");
+    const [isSubbed, setIsSubbed] = useState(false);
+  
+    const userSubEmail = (event) => {
+      setSubEmail(event.target.value)
+    };
+  
+    const noInput = !subEmail;
 
 return(
 // contains :
@@ -76,18 +76,26 @@ return(
             <br/>
             <p className="question">Q: How can I subscribe to get all the latest news and promotional deals from E-Wear Emporium?</p>
             <p className="answer">A: Simply enter your email address below!</p>
-            <div className="sub-form">
+            {!isSubbed ? (
+              <div className="sub-form">
             <label>
               <input
                 type="text"
                 placeholder="Your email address"
                 className="sub-email"
+                onChange={userSubEmail}
               />
             </label>
-            <button type="submit" className="sub-btn">
+            <button type="submit" className="sub-btn" disabled={noInput} onClick={() => setIsSubbed(true)}>
               Subscribe
             </button>
-            </div>
+              </div>
+            ) : (
+              <>
+              <br/>
+                <ConfirmationMsg>Thank you for subscribing! You will receive an email confirmation to {subEmail}.</ConfirmationMsg>
+              </>
+            )}
             </div>
             <br/>
             <br/>
@@ -167,9 +175,23 @@ return(
 <TopButton />
 <Footer />
 </>
-
     )
+};
 
-}
+const Bold = styled.h3`
+    font-weight: bold;
+`
+const H2 = styled.h2`
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bold;
+`
+const ConfirmationMsg = styled.p`
+  font-weight: bold;
+  margin: 0 60px 0 60px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+` 
 
 export default About

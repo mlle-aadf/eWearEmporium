@@ -1,6 +1,8 @@
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import { useEffect } from "react";
+import HeroSection from "./HeroSection";
+import RotatingSlides from "./RotatingSlides";
 
 const Home = () => {
   useEffect(() => {
@@ -18,15 +20,9 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <h1>
-        E-WEAR <br /> EMPORIUM
-      </h1>
-      <br />
-      <h2>"Insert Hero section here"</h2>
-      <br />
-      <div className="footer-section">
-        <Footer />
-      </div>
+      <HeroSection />
+      <RotatingSlides />
+      <Footer />
     </>
   );
 };
