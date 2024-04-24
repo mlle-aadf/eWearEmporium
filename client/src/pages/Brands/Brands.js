@@ -5,6 +5,10 @@ import styled from "styled-components"
 
 const Brands = () => {
 
+    useEffect(() => {
+        document.title = "Our Brands"
+    }, []);
+
     const [brands, setBrands] = useState()
 
     useEffect( ()=> {

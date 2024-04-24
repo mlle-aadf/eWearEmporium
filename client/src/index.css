@@ -102,6 +102,17 @@ nav {
   border-bottom: 2px solid #ffffff;
 }
 
+.footer-link {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  margin: 0 20px 10px 0;
+}
+
+.footer-link:hover {
+  text-decoration: underline 2px white;
+}
+
 .navbar-buttons {
   width: clamp(20px, calc(1.25rem + ((1vw - 3px) * 1.8519)), 50px);
   height: clamp(20px, calc(1.25rem + ((1vw - 3px) * 1.8519)), 50px);
@@ -133,6 +144,12 @@ footer ul {
 
 .sub-btn {
   padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.sub-btn:hover {
+  cursor: pointer;
 }
 
 .sub-email {
@@ -162,6 +179,7 @@ footer ul {
   margin: 0 40px 0 40px;
   display: inline-block;
   vertical-align: middle;
+  font-weight: bold;
 }
 
 .signup,
@@ -219,4 +237,22 @@ footer ul {
   text-align: center;
 }
 
+.input-field {
+  width: 35vw;
+  height: 30px;
+  padding: 5px;
+}
 
+.msg-field {
+  width: 40%;
+  height: 100px;
+  float: initial;
+  padding: 5px;
+}
+
+.contact-btn {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
