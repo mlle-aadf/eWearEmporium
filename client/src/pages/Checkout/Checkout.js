@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import styled from "styled-components";
-import BillingInfo from "./BillingInfo";
+import ShippingInfo from "./ShippingInfo";
 import PaymentMethod from "./PaymentMethod";
 import CartDetails from "./CartDetails";
 import PriceTotal from "./PriceTotal";
@@ -16,7 +16,7 @@ const Checkout = () => {
     <>
       <NavBar />
       <GridLayout>
-        <BillingInfo />
+        <ShippingInfo />
         <PaymentMethod />
         <CartDetails />
         <PriceTotal />
