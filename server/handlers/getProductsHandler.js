@@ -4,7 +4,7 @@ const { MONGO_URI } = process.env;
 const dbName = 'e-wear_emporium';
 
 
-const getFilteredHandler = async (req, res) => {
+const getProductsHandler = async (req, res) => {
     
     const client = new MongoClient(MONGO_URI);
     const {sort, filters} = req.query
@@ -70,4 +70,4 @@ const getFilteredHandler = async (req, res) => {
     }
 };
 
-module.exports = getFilteredHandler;
+module.exports = getProductsHandler;
