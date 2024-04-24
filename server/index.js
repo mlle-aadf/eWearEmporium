@@ -32,9 +32,6 @@ express()
   //  getProductsHandler -> returns all items from db
   .get('/products', getProductsHandler)
 
-  // TEMP PLACEHOLDER handler for all products, sorted and filtered
-  .get('/filtered', getFilteredHandler)
-
   //  getProductHandler -> returns specific item from db using _id
   .get("/products/:_id", getProductHandler)
   
