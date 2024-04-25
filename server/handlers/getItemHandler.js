@@ -39,6 +39,7 @@ const getItemHandler = async (req, res) => {
         return res.status(200).json({
             status: 200,
             message: "Stock has been updated",
+            data: existingItem
         });
     } catch (error) {
         return res.status(500).json({

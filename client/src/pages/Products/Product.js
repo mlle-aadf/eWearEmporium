@@ -54,7 +54,7 @@ const Product = () => {
                 {inStock ? <Instock /> : <SoldOut />}
             </Stock>
             <Price>{price}</Price>
-            <AddToCart inStock={inStock} setInStock={setInStock} />
+            <AddToCart inStock={inStock} setInStock={setInStock} item={productInfo} />
             </>
         )}
         </Card>
