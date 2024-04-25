@@ -29,7 +29,7 @@ const StyledHeroText = styled.div`
   transform: translate(-50%, -50%);
 
   @media (max-width: 1200px) {
-    top: 25vw;
+    top: 27vw;
   }
 
   @media (max-width: 768px) {
@@ -69,7 +69,7 @@ const StyledButton = styled.button`
   }
 
   @media (max-width: 1200px) {
-    top: 28vw;
+    top: 32vw;
   }
 
   @media (max-width: 768px) {
