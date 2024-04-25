@@ -12,6 +12,7 @@ export const Filters = styled.button`
     border: 2px solid var(--nav-bar-color);
     padding: 0.5rem 0.75rem;
     border-radius: 20px;
+    cursor: pointer;
 
     @media (max-width: 500px) {
         display: block;
@@ -63,9 +64,9 @@ export const Sort = styled.select`
     z-index: 1;
     background-color: white;
     border: 2px solid var(--nav-bar-color);
-    padding: 0.5rem 0.25rem 0.5rem 0.75rem;
+    padding: 0.75rem 0.25rem 0.75rem 0.75rem;
     border-radius: 20px;
-    
+        
     @media (max-width: 500px) {
         padding: 0.5rem 0 0.5rem 0.75rem;
         width: 5rem;
