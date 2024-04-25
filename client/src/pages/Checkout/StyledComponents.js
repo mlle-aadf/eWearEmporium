@@ -6,9 +6,8 @@ export const GridLayout = styled.div`
   grid-template-rows: auto auto auto;
   gap: 20px;
   grid-template-areas:
-    "info price"
-    "method ."
-    "cart .";
+    "info cart"
+    "method cart";
   margin: 200px 100px;
 `;
 
@@ -30,19 +29,13 @@ export const PayMethodContainer = styled.div`
   gap: 20px;
 `;
 
-export const PriceTotalContainer = styled.div`
-  grid-area: price;
+export const CartDetailsContainer = styled.div`
+  grid-area: cart;
   background: var(--box-color);
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-`;
-
-export const CartDetailsContainer = styled.div`
-  grid-area: cart;
-  background: var(--box-color);
-  padding: 20px;
 `;
 
 export const Header = styled.h2`
