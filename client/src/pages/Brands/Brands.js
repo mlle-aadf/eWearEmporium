@@ -7,6 +7,10 @@ const Brands = () => {
   const [brands, setBrands] = useState();
 
   useEffect(() => {
+        document.title = "Our Brands"
+    }, []);
+  
+  useEffect(() => {
     const getBrands = async () => {
       try {
         const res = await fetch("/brands");
