@@ -9,9 +9,8 @@ import styled from "styled-components";
 import { CartContentContext } from "../../components/Cart/CartContentContext";
 import { useContext } from "react";
 
-const PriceTotal = () => {
+const CartDetails = () => {
   const { cart, quantity } = useContext(CartContentContext);
-  console.log("This is cart: ", cart);
   return (
     <>
       <CartDetailsContainer>
@@ -36,7 +35,7 @@ const PriceTotal = () => {
     </>
   );
 };
-export default PriceTotal;
+export default CartDetails;
 
 const CartItemContainer = styled.div`
   display: flex;

@@ -6,8 +6,8 @@ export const GridLayout = styled.div`
   grid-template-rows: auto auto;
   gap: 20px;
   grid-template-areas:
-    "info price"
-    "method cartDetails";
+    "info cart"
+    "method cart";
   margin: 200px 100px;
 `;
 
@@ -23,14 +23,8 @@ export const PayMethodContainer = styled.div`
   padding: 20px;
 `;
 
-export const PriceTotalContainer = styled.div`
-  grid-area: price;
-  background: var(--box-color);
-  padding: 20px;
-  height: 100%; 
-`;
-
 export const CartDetailsContainer = styled.div`
+  grid-area: cart;
   background: var(--box-color);
   padding: 20px;
   width: 70%;

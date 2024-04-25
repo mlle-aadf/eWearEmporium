@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import { GridLayout } from "./StyledComponents";
 import ShippingInfo from "./ShippingInfo";
 import PaymentMethod from "./PaymentMethod";
-import PriceTotal from "./PriceTotal";
+import CartDetails from "./CartDetails";
 
 const Checkout = () => {
   useEffect(() => {
@@ -17,7 +17,7 @@ const Checkout = () => {
       <GridLayout>
         <ShippingInfo />
         <PaymentMethod />
-        <PriceTotal/>
+        <CartDetails />
       </GridLayout>
       <Footer />
     </>
