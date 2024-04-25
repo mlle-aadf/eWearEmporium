@@ -13,9 +13,9 @@ const Cart = ({ isVisible }) => {
           border: "1px solid black",
           padding: "10px",
           backgroundColor: "white",
+          zIndex: "2000",
         }}
       >
-        <div>Your cart is empty</div>
         <CartItem />
       </div>
     </>

@@ -1,17 +1,38 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import { CartContentContext } from "./Cart/CartContentContext";
+import { useContext } from "react";
 
-const AddToCart = () => {
+const AddToCart = ({item}) => {
+    const {addToCart, cart} = useContext(CartContentContext);
 
-    const handleClick = () => {
-        console.log("item added")
-    }
+    const handleClick = async () => {
+        try {
+            const response = await fetch(`/products/${item._id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+    
+            const data = await response.json();
+    
+            if (response.ok) {
+                addToCart(data);
+                console.log("Item added to cart:", cart);
+            } else {
+                console.error("Failed to fetch item:", data.message);
+            }
+        } catch (error) {
+            console.error("Error adding item to cart:", error);
+        }
+    };
 
     return(
         <AddBTN onClick={handleClick} className="addToCart">Add to cart</AddBTN>
     )
 }
 
-export default AddToCart
+export default AddToCart;
 
 const AddBTN = styled.button`
     border: none;

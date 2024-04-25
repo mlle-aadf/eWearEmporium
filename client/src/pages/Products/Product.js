@@ -40,7 +40,7 @@ const Product = () => {
                     <Stock>{numInStock > 0 ? <Instock/> : <SoldOut/>}</Stock>
                     <Price>{price}</Price>
         {/* DISABLE BUTTON IF numInStock === 0 */}
-                    <AddToCart/>
+                    <AddToCart item={productInfo}/>
                 </>
             }
             </Card>
