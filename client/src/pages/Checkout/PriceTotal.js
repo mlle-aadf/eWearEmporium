@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import {
+  PriceTotalContainer,
+  Header,
+  FormGroup,
+  Label,
+  Input,
+} from "./StyledComponents";
 
 const PriceTotal = () => {
   return (
@@ -9,9 +15,3 @@ const PriceTotal = () => {
 };
 
 export default PriceTotal;
-
-const PriceTotalContainer = styled.div`
-  grid-area: price;
-  background: var(--box-color);
-  padding: 20px;
-`;

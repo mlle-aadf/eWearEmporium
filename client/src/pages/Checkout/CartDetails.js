@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import {
+  CartDetailsContainer,
+  Header,
+  FormGroup,
+  Label,
+  Input,
+} from "./StyledComponents";
 
 const CartDetails = () => {
   return (
@@ -8,9 +14,3 @@ const CartDetails = () => {
   );
 };
 export default CartDetails;
-
-const CartDetailsContainer = styled.div`
-  grid-area: cart;
-  background: var(--box-color);
-  padding: 20px;
-`;

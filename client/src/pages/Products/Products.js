@@ -84,8 +84,6 @@ const Products = () => {
   // sets filter parameters
   const filtersHandler = (checked, event) => {
     const checkedFilter = event.currentTarget.innerText;
-    // console.log(checked, event)
-    console.log(checkedFilter);
     // if filter array contains value,
     filters.includes(checkedFilter)
       ? // remove it from array,
@@ -155,7 +153,11 @@ const Products = () => {
         <ApplyMobile onClick={applyMobile}>Apply</ApplyMobile>
       </CategoriesMobile>
 
-      <Sort onChange={sortHandler} defaultValue={"sort"}>
+      <Sort
+        onChange={sortHandler}
+        defaultValue={"sort"}
+        style={{ cursor: "pointer" }}
+      >
         <SortOption value={"sort"} disabled>
           Sort
         </SortOption>

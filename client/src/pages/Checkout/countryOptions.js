@@ -1,4 +1,6 @@
 export const countryOptions = [
+  { value: "Canada", label: "Canada" },
+  { value: "United States", label: "United States" },
   { value: "Afghanistan", label: "Afghanistan" },
   { value: "Åland Islands", label: "Åland Islands" },
   { value: "Albania", label: "Albania" },
@@ -40,7 +42,7 @@ export const countryOptions = [
   { value: "Burundi", label: "Burundi" },
   { value: "Cambodia", label: "Cambodia" },
   { value: "Cameroon", label: "Cameroon" },
-  { value: "Canada", label: "Canada" },
+
   { value: "Cape Verde", label: "Cape Verde" },
   { value: "Cayman Islands", label: "Cayman Islands" },
   { value: "Central African Republic", label: "Central African Republic" },
@@ -271,7 +273,6 @@ export const countryOptions = [
   { value: "Ukraine", label: "Ukraine" },
   { value: "United Arab Emirates", label: "United Arab Emirates" },
   { value: "United Kingdom", label: "United Kingdom" },
-  { value: "United States", label: "United States" },
   {
     value: "United States Minor Outlying Islands",
     label: "United States Minor Outlying Islands",

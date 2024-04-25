@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
-import styled from "styled-components";
+import { GridLayout } from "./StyledComponents";
 import ShippingInfo from "./ShippingInfo";
 import PaymentMethod from "./PaymentMethod";
 import CartDetails from "./CartDetails";
@@ -27,15 +27,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
-const GridLayout = styled.div`
-  display: grid;
-  grid-template-columns: repeat(60%, 1fr);
-  grid-template-rows: auto auto auto;
-  gap: 20px;
-  grid-template-areas:
-    "info price"
-    "method ."
-    "cart .";
-  margin: 200px 100px;
-`;
