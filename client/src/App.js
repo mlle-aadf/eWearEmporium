@@ -8,6 +8,7 @@ import LoginSignUp from "./pages/LoginSignUp/index.js";
 import Checkout from "./pages/Checkout/Checkout.js";
 import Success from "./pages/Success/Success.js";
 import Contact from "./pages/Contact/Contact.js";
+import ContactSuccess from "./pages/Success/ContactSuccess.js";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/login" element={<LoginSignUp />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/contact-success" element={<ContactSuccess />} />
       </Routes>
     </Router>
   );

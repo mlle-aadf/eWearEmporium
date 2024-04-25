@@ -16,17 +16,6 @@ const createOrderHandler = async (req, res) => {
         // Extracting the data needed from the body
         const { userId, shippingInfo, items } = req.body;
 
-        // Validation if we have enough items in stock for the order
-        for (const item of items) {
-            const existingItem = await itemsCollection.findOne({ _id: item.itemId });
-            if (!existingItem || existingItem.numInStock < item.quantity) {
-                return res.status(400).json({
-                    status: 400,
-                    message: `Not enough stock for item ID ${item.itemId}. Available stock: ${existingItem ? existingItem.numInStock : 'Not found'}`,
-                });
-            }
-        }
-
         // Creation of the order if there is enough items in stock
         const newOrder = {
             _id: uuidv4(),
@@ -42,21 +31,6 @@ const createOrderHandler = async (req, res) => {
                 status: 500,
                 message: "Failed to create order",
             });
-        }
-
-        // Update the items stock 
-        for (const item of items) {
-            const updateResult = await itemsCollection.updateOne(
-                { _id: item.itemId },
-                { $inc: { numInStock: -item.quantity } }
-            );
-
-            if (!updateResult || updateResult.modifiedCount !== 1) {
-                return res.status(500).json({
-                    status: 500,
-                    message: `Failed to update stock for item: ${item.itemId}`,
-                });
-            }
         }
 
         // Send response if the order is successful

@@ -2,9 +2,14 @@
 
 const getProductsHandler = require("./handlers/getProductsHandler");
 const getProductHandler = require("./handlers/getProductHandler");
+
+// const getFilteredHandler = require("./handlers/getProductsHandler");
+
 const getBrandsHandler = require("./handlers/getBrandsHandler");
 const getLoginHandler = require("./handlers/getLoginHandler");
 const newUserHandler = require("./handlers/newUserHandler");
 const createOrderHandler = require("./handlers/createOrderHandler");
+const getItemHandler = require("./handlers/getItemHandler");
+const deleteItemHandler = require("./handlers/deleteItemHandler");
 
-module.exports = {getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler};
+module.exports = {getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getItemHandler, deleteItemHandler};

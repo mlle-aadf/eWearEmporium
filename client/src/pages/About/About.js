@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
@@ -6,19 +6,23 @@ import TopButton from "../../components/TopButton";
 
 import styled from "styled-components";
 
-const Bold = styled.h3`
-  font-weight: bold;
-`;
-const H2 = styled.h2`
-  text-decoration: underline;
-  text-align: center;
-  font-weight: bold;
-`;
-
 const About = () => {
   useEffect(() => {
     document.title = "About Us";
   }, []);
+
+  useEffect(() => {
+    document.title = "About Us";
+  }, []);
+
+  const [subEmail, setSubEmail] = useState("");
+  const [isSubbed, setIsSubbed] = useState(false);
+
+  const userSubEmail = (event) => {
+    setSubEmail(event.target.value);
+  };
+
+  const noInput = !subEmail;
 
   return (
     // contains :
@@ -46,6 +50,20 @@ const About = () => {
             >
               About Us
             </h1>
+            <br />
+            <p>
+              Founded in Montreal, Quebec in 1978, at <b>E-Wear Emporium</b>,
+              our brand was built on authenticity in order to provide the best
+              possible service to our clients. We specialize in the sale of
+              athletic sportswear for any gender and age group. We pride
+              ourselves in our professionalism and courtesy to assist our
+              customers so that they can benefit from nothing but the best
+              service available.
+            </p>
+            <br />
+            <h3 style={{ fontWeight: "bold", textAlign: "center" }}>
+              <i>Empower Your Everyday with Wearable Technology.</i>
+            </h3>
             <br />
             <p>
               Founded in Montreal, Quebec in 1978, at <b>E-Wear Emporium</b>,
@@ -111,18 +129,34 @@ const About = () => {
               deals from E-Wear Emporium?
             </p>
             <p className="answer">A: Simply enter your email address below!</p>
-            <div className="sub-form">
-              <label>
-                <input
-                  type="text"
-                  placeholder="Your email address"
-                  className="sub-email"
-                />
-              </label>
-              <button type="submit" className="sub-btn">
-                Subscribe
-              </button>
-            </div>
+            {!isSubbed ? (
+              <div className="sub-form">
+                <label>
+                  <input
+                    type="text"
+                    placeholder="Your email address"
+                    className="sub-email"
+                    onChange={userSubEmail}
+                  />
+                </label>
+                <button
+                  type="submit"
+                  className="sub-btn"
+                  disabled={noInput}
+                  onClick={() => setIsSubbed(true)}
+                >
+                  Subscribe
+                </button>
+              </div>
+            ) : (
+              <>
+                <br />
+                <ConfirmationMsg>
+                  Thank you for subscribing! You will receive an email
+                  confirmation to {subEmail}.
+                </ConfirmationMsg>
+              </>
+            )}
           </div>
           <br />
           <br />
@@ -250,5 +284,21 @@ const About = () => {
     </>
   );
 };
+
+const Bold = styled.h3`
+  font-weight: bold;
+`;
+const H2 = styled.h2`
+  text-decoration: underline;
+  text-align: center;
+  font-weight: bold;
+`;
+const ConfirmationMsg = styled.p`
+  font-weight: bold;
+  margin: 0 60px 0 60px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+`;
 
 export default About;

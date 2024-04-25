@@ -7,6 +7,7 @@
 |------------------------|--------|-------------------------------------------------------------------------------------------------------|
 | `"/products"`          | `GET`  | Returns an array of all products objects with keys: `_id`, `name`, `price`, `body_location`, `category`, `imageSrc`, `numInStock`, `companyId` |
 | `"/products/:_id"`     | `GET`  | Returns a single product data object with keys: `_id`, `name`, `price`, `body_location`, `category`, `imageSrc`, `numInStock`, `companyId` |
+|  `"/products/:_id"`    | `PATCH` | Update the stock 
 
 ### User Endpoints
 | URL                   | Method | Description                                                                                           |
@@ -17,7 +18,8 @@
 ### Order Endpoints
 | URL                   | Method | Description                                                                                           |
 |-----------------------|--------|-------------------------------------------------------------------------------------------------------|
-| `"/checkout"`         | `POST` | Creates an order from the cart and adds it to the database, also updates the stock                      |
+| `"/checkout"`         | `POST` | Creates an order from the cart and adds it to the database
+| `"/checkout"`         | `PATCH` | Update the stock
 
 ### Brand Endpoints
 | URL                   | Method | Description                                                                                           |
@@ -77,12 +79,25 @@ On success:
 
 Unsuccessful status codes: 404, 500.
 
+#### `"/products/:_id"`
+- **Method:** `PATCH`
+- **Description:** Update the stock according to item _id.
+- **Param:** `_id`
+- **Response:** 
+On success:
+{
+	"status": 200,
+	"message": "Stock has been updated"
+}
+
+Unsuccessful status codes: 400, 500.
+
 ### 2. User Endpoints
 
 #### `"/signUp"`
 - **Method:** `POST`
 - **Description:** Adds a new user to the database.
-- **Parameters:** `fname`, `lname`, `phone`, `email`, `address`, `city`, `province`, `postcode`, `country`, `password`, `confirmPassword`
+- **Keys:** `fname`, `lname`, `phone`, `email`, `address`, `city`, `province`, `postcode`, `country`, `password`, `confirmPassword`
 - **Response:** 
 On success:
 {
@@ -95,7 +110,7 @@ Unsuccessful status codes: 404, 400, 500.
 #### `"/login"`
 - **Method:** `POST`
 - **Description:** Logs in an existing user.
-- **Parameters:** `email`, `password`
+- **Keys:** `email`, `password`
 - **Response:** 
 On success:
 {
@@ -122,7 +137,7 @@ Unsuccessful status codes: 404, 401 500.
 #### `"/checkout"`
 - **Method:** `POST`
 - **Description:** Creates a new order from the cart and updates the stock in the database.
-- **Parameters:** 
+- **Keys:** 
   - `userId`
   - `shippingInfo`: Object containing:
     - `fname`
@@ -141,6 +156,19 @@ On success:
 	"status": 201,
 	message: "Order created successfully"
 }
+Unsuccessful status codes: 400, 500.
+
+#### `"/checkout"`
+- **Method:** `PATCH`
+- **Description:** Update the stock.
+- **Keys:** `_id`
+- **Response:** 
+On success:
+{
+	"status": 200,
+	"message": "Stock has been updated"
+}
+
 Unsuccessful status codes: 400, 500.
 
 ### 4. Brands Endpoint
