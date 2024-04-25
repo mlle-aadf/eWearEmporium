@@ -26,7 +26,7 @@ const PaymentMethods = () => {
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="ccv">CCV:</Label>
+          <Label htmlFor="ccv">CVV:</Label>
           <Input
             type="tel"
             name="ccv"
