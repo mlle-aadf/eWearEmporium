@@ -34,8 +34,6 @@ const CartItem = () => {
   );
 };
 
-<<<<<<< HEAD
-=======
 const CartItemContainer = styled.div`
   display: flex;
   position: relative;
@@ -72,5 +70,4 @@ const CheckoutBtn = styled.div`
 `;
 
 
->>>>>>> 0d0635f2a718e7d6d49e0498f738a23c22eb8873
 export default CartItem;
