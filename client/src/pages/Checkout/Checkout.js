@@ -4,7 +4,6 @@ import Footer from "../../components/Footer";
 import { GridLayout } from "./StyledComponents";
 import ShippingInfo from "./ShippingInfo";
 import PaymentMethod from "./PaymentMethod";
-import CartDetails from "./CartDetails";
 import PriceTotal from "./PriceTotal";
 
 const Checkout = () => {
@@ -18,8 +17,7 @@ const Checkout = () => {
       <GridLayout>
         <ShippingInfo />
         <PaymentMethod />
-        <CartDetails />
-        <PriceTotal />
+        <PriceTotal/>
       </GridLayout>
       <Footer />
     </>

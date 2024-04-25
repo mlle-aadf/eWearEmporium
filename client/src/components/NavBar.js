@@ -15,9 +15,10 @@ const NavBar = () => {
   // Use state function for Cart visibility
   const [isCartVisible, setIsCartVisibile] = useState(false);
   //Set name of the user that logged in
-  const { loggedInUser, logOut, isAuthenticated } =
-    useContext(LoggedInUserContext);
+  const { loggedInUser, logOut, isAuthenticated } = useContext(LoggedInUserContext);
   const name = loggedInUser && loggedInUser.user ? loggedInUser.user.fname : "";
+  console.log("This is auth nav: ", isAuthenticated);
+  console.log("This is User infos in nav: ", loggedInUser);
 
   // Function to toggle the visibility of the cart
   const toggleCart = () => setIsCartVisibile(!isCartVisible);

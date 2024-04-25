@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const GridLayout = styled.div`
   display: grid;
-  grid-template-columns: repeat(60%, 1fr);
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 20px;
   grid-template-areas:
     "info price"
-    "method ."
-    "cart .";
+    "method cartDetails";
   margin: 200px 100px;
 `;
 
@@ -16,33 +15,26 @@ export const ShippingInfoContainer = styled.div`
   grid-area: info;
   background: var(--box-color);
   padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
 `;
 
 export const PayMethodContainer = styled.div`
   grid-area: method;
   background: var(--box-color);
   padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
 `;
 
 export const PriceTotalContainer = styled.div`
   grid-area: price;
   background: var(--box-color);
   padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  height: 100%; 
 `;
 
 export const CartDetailsContainer = styled.div`
-  grid-area: cart;
   background: var(--box-color);
   padding: 20px;
+  width: 70%;
+  margin-left: 30%;
 `;
 
 export const Header = styled.h2`
@@ -64,7 +56,7 @@ export const Input = styled.input`
   margin: 5px 0;
 `;
 
-export const Country = styled.select`
+export const Country = styled.input`
   padding: 5px;
   margin: 5px 0;
 `;
