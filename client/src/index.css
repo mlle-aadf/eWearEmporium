@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 :root {
   --font-lato: "Lato", sans-serif;
@@ -8,10 +8,10 @@
   --h3-font-size: clamp(20px, calc(1.25rem + ((1vw - 3.2px) * 0.5)), 28px);
   --navbar-font-size: clamp(12px, calc(1rem + ((1vw - 3.2px) * 0.25)), 16px);
 
-
   --accent-color: #d7e9e9;
   --hover-color: #eafaf8;
   --nav-bar-color: #e5e1d6;
+  --box-color: #f1ece9;
   --white: #ffffff;
   --black: #000000;
   --text-line-height: 130%;
@@ -65,13 +65,12 @@ button {
 
 .addToCartDisabled:hover {
   background-color: lightgray;
-  cursor:not-allowed;
+  cursor: not-allowed;
   scale: unset;
 }
 
-
-.brand:hover{
-  outline: 4px solid var(--nav-bar-color) ;
+.brand:hover {
+  outline: 4px solid var(--nav-bar-color);
   cursor: pointer;
   scale: 110%;
 }
@@ -92,17 +91,16 @@ nav {
 }
 
 .navText {
-  text-Transform: uppercase;
+  text-transform: uppercase;
   display: flex;
-  flex-Direction: row;
+  flex-direction: row;
 }
-
 
 .navLink {
   text-decoration: none;
   color: #000000;
   margin: 0 20px 0 0;
-  font-Weight: 500;
+  font-weight: 500;
 }
 
 .navLink:hover {

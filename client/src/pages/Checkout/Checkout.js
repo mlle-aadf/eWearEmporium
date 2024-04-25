@@ -1,12 +1,29 @@
+import { useEffect } from "react";
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
+import { GridLayout } from "./StyledComponents";
+import ShippingInfo from "./ShippingInfo";
+import PaymentMethod from "./PaymentMethod";
+import CartDetails from "./CartDetails";
+import PriceTotal from "./PriceTotal";
+
 const Checkout = () => {
+  useEffect(() => {
+    document.title = "Checkout";
+  }, []);
 
-    return(
-    // [ ] display cart items being checked out, prices + taxes + shipping, any applied discounts etc
-    // [ ] confirm order (and POST to mongoDB 'orders')
-    // [ ] redirects to SUCCESS page onSubmit/after order is processed
-        <p>i am the CHECKOUT page</p>
-    )
+  return (
+    <>
+      <NavBar />
+      <GridLayout>
+        <ShippingInfo />
+        <PaymentMethod />
+        <CartDetails />
+        <PriceTotal />
+      </GridLayout>
+      <Footer />
+    </>
+  );
+};
 
-}
-
-export default Checkout
+export default Checkout;

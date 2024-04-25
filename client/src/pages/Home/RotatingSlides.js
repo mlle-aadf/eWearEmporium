@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { slidesData } from "./slidesData";
 
-
 const RotatingSlides = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -25,7 +24,6 @@ const RotatingSlides = () => {
 };
 
 export default RotatingSlides;
-
 
 const SlideContainer = styled.div`
   position: relative;
