@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const PORT = 4000;
 
 //require the handlers
-const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getFilteredHandler} = require("./handlers");
+const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getFilteredHandler, getItemHandler, deleteItemHandler} = require("./handlers");
 
 express()
   .use(function (req, res, next) {
@@ -25,7 +25,6 @@ express()
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
   .use('/', express.static(__dirname + '/'))
-
 
   // PRODUCT ENDPOINTS___________________________________________________
 
@@ -50,10 +49,10 @@ express()
 
   // createOrderHandler -> creates order from cart and adds to db
   .post("/checkout", createOrderHandler)
-  // updateOrderHandler -> updates order in db
-  //.patch("/checkout/:orderId", updateOrderHandler)
-  // STRETCH deleteOrderHandler -> deletes order in db
-  //.delete("/checkout/:orderId", deleteOrderHandler)
+  // getItemHandler -> update the stock according to what the user added
+  .patch("/products/:_id", getItemHandler)
+  // deleteItemHandler -> update the stock if the user delete the item from his cart
+  .patch("/checkout", deleteItemHandler)
 
 
 
@@ -61,10 +60,6 @@ express()
   .get("/brands", getBrandsHandler)
 
   // 
-
-
-
-
 
 
 
