@@ -63,6 +63,12 @@ button {
   scale: 105%;
 }
 
+.addToCartDisabled:hover {
+  background-color: lightgray;
+  cursor: not-allowed;
+  scale: unset;
+}
+
 .brand:hover {
   outline: 4px solid var(--nav-bar-color);
   cursor: pointer;
@@ -254,4 +260,12 @@ footer ul {
   cursor: pointer;
   font-weight: bold;
   border-radius: 5px;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
