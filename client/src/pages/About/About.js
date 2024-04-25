@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
@@ -7,10 +8,6 @@ import TopButton from "../../components/TopButton";
 import styled from "styled-components";
 
 const About = () => {
-  useEffect(() => {
-    document.title = "About Us";
-  }, []);
-
   useEffect(() => {
     document.title = "About Us";
   }, []);
@@ -25,13 +22,6 @@ const About = () => {
   const noInput = !subEmail;
 
   return (
-    // contains :
-    // [ ] about > short blurb about company
-    // [ ] FAQ > generic FAQs, Return/Shipping policies, Terms & Conditions
-    // [ ] contact > email?("mailto:")
-    //     or short messaging form (user email input, textArea input, submit button > displays success message
-    //     ex "Thanks for reaching out! We'll be in touch soon :)")
-    // [ ] socials (icons/links)
     <>
       <NavBar />
       <br />
@@ -50,20 +40,6 @@ const About = () => {
             >
               About Us
             </h1>
-            <br />
-            <p>
-              Founded in Montreal, Quebec in 1978, at <b>E-Wear Emporium</b>,
-              our brand was built on authenticity in order to provide the best
-              possible service to our clients. We specialize in the sale of
-              athletic sportswear for any gender and age group. We pride
-              ourselves in our professionalism and courtesy to assist our
-              customers so that they can benefit from nothing but the best
-              service available.
-            </p>
-            <br />
-            <h3 style={{ fontWeight: "bold", textAlign: "center" }}>
-              <i>Empower Your Everyday with Wearable Technology.</i>
-            </h3>
             <br />
             <p>
               Founded in Montreal, Quebec in 1978, at <b>E-Wear Emporium</b>,
@@ -269,7 +245,7 @@ const About = () => {
                 <Bold>7. Contact Us</Bold>
                 <br />
                 7.1. If you have any questions about these Terms, please contact
-                us by clicking the following button:
+                us by <Link to={"/contact"}>clicking here</Link>
                 <br />
                 <br />
                 By accessing or using the Service, you agree to be bound by
