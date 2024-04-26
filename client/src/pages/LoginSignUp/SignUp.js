@@ -8,15 +8,14 @@ const SignUp = ({
   signUpMessage,
 }) => {
   return (
-    <SUContainer>
-      <Div>
-
+        <SUContainer>
+          <Div>
       <form className="form" onSubmit={handleSignUp}>
-        <H1>Sign Up</H1>
-        <h3 className="h3">
+        <h2 style={{ textDecoration: "underline" }}>Sign Up</h2>
+        <p>
           Create an account to take advantage of all the benefits we have to
           offer!
-        </h3>
+        </p>
         <br />
         <br/>
         <Label>First Name: </Label>
@@ -177,6 +176,10 @@ const SignUp = ({
   );
 };
 
+
+export default SignUp;
+
+
 const SUContainer = styled.div`
   margin: 50px 0 0 0;
   padding: 100px 0;
@@ -203,5 +206,3 @@ const Div = styled.div`
   padding: 50px;
   margin: 0 50px 0 50px;
 `
-
-export default SignUp;

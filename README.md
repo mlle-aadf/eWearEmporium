@@ -1,145 +1,157 @@
-# Wearables E-Commerce Project
+# E-Wear Emporium :office:
 
-You've and your team have been hired by a client to create an e-commerce website that will showcase wearable technology. The client believes that wearable tech is the way of the future!
 
-Your job will be to build a functional e-commerce website where users can come in and shop around for the tech they want.
 
----
+Our brand focuses on selling high quality sportswear equipment at the right price. 
 
-## Getting Started
 
-You have your assignment and your team. What should you do first? This will vary for every team, and even every team member.
 
-> **The important thing is to NOT just jump in and start coding!**
+Our website includes the following pages that users can access: 
 
-A good brainstorming session is **STRONGLY** recommended! Plan out together :
-- What it will look like.
-- How it will behave.
-- What features you want to have.
-- What stretch goals you want to aim for.
-- etc...
+- Home
+- Shop All
+- Brands
+- Contact
+- About
 
-There probably shouldn't be any coding until a skeleton has been planned out.
 
 ---
 
-## Meet your Product Manager!
 
-Each team has been assigned a product manager!
-- This person is in charge of answering questions, guiding you and basically preventing everything from falling apart!
-- This person will be directing a team stand-up every day.
-    - A stand-up is a meeting that lasts around 10 to 15 minutes where each member of the team updates the PM (and other members) about their progress or problems they're facing.
 
----
+## Home Page :house:
 
-## MVP
 
-You have plenty of freedom in how the app will look and behave. As long as you meet the MVP requirements below, your poject will be deemed successful! You are allowed to use external UI libraries to build some nice functionality.
 
-> **✋ You CANNOT use any external styling libraries, including, but not limited to, Material UI, Bootstrap, and Tailwind to style your project!**
+Our home page features the hero section of our website, which includes our slogan: “Empower your everyday with wearable technology”.
 
-## Frontend
 
-Users should be able to:
 
-- View all items in the database.
-- Purchase items that are in stock.
-- View their cart containing the items they intend to purchase.
-    - The cart **CANNOT** use `sessionStorage` or `localStorage`, and must be persistent.
-    - **HINT**: use the database. Yes it will be slow, but use it anyways.
-- Edit the cart before completing the purchase.
-    - **HINT**: use a reducer.
+In order to make our users’ experience simple but enjoyable when browsing our e-commerce website, we’ve created a navbar which will lead our clients directly to parts of our website our customers will be interested in. 
 
-## Backend Requirements
 
-The Node server should
-
-- Be RESTful (use the right `method` for the right job and hold nothing in memory).
-- Provide the FE with the required data in a clear and organized way.
-- Update the database as users make purchases.
-
-## Code Requirements
-
-That's right! We're dropping code requirements on you! 
-
-- No console logs! _Unless they are part of a catch (logging an error)._
-- Comments! Comments everywhere! 
-    - Every function should have a comment above it that briefly explains what it does.
-        - Remember: a component is a function!
-    - Any large / complex block of code should have comments above it that briefly explain what it's doing.
-    - Variables should have comments explaing what they're for. **_Especially if there are many with similar names or the name isn't very clear._**
-- Organization! No file should be several hundred lines long! Split your code up into different files.
-- No bugs! (In a perfect world this would be possible. For now, try to minimize them).
-
-## Project Requirements
-
-You thought we were done? Oh there's more!
-
-- Attendance to the daily stand-ups conducted by your PM.
-- A [Trello](https://trello.com) board to divide up the tasks (other similar sites are fine too).
-- A group chat or new private discord server for your team and your PM.
-
-## Stretch Goals
-
-Yeup!
-
-> For this project, stretch goals are highly recommended (though not necessary)!
-
-The MVP for this project is small; in fact it's tiny. We strongly encourage you to flex your skills and build something cool and functional! 
-
-Make use of any and all libraries (except styling libraries) you can get your hands on if you think it will make the user's experience on your website better!
 
 ---
 
-## About the Data
 
-All about Wearables!
-You will find 349 items in the `_data/items.json` file. The data is mostly clean, but there could be some irregularities, i.e. empty values, values that we really don't need. _This is common in large databases, and something that we have to deal with._
 
-> No modifying the data at all. We use what we get!
+## Shop All :shopping_cart:
 
-### Item Object
 
-```js
-  {
-    "name": "Barska GB12166 Fitness Watch with Heart Rate Monitor",
-    "price": "$49.99",
-    "body_location": "Wrist",
-    "category": "Fitness",
-    "id": 6543,
-    "imageSrc": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHB...<REST_OF_IMAGE_ENCODING>",
-    "numInStock": 9,
-    "companyId": 19962
-  },
-```
 
-### Company Object
+In this page, you’ll be able to view all of the products that we have to offer at E-Wear Emporium. 
 
-```js
-  {
-    "name": "Barska",
-    "url": "http://www.barska.com/",
-    "country": "United States",
-    "id": 19962
-  }
-```
+
+
+You’ll even be able to sort through the items according to your liking. For example, you can sort through the various categories of our products, you can sort through our items by alphabetical order or you can even sort our products by their prices. 
+
+
+
+In addition, users will also be able to see if the products they wish to purchase is in stock or not. Of course, should the item be unavailable for transaction, they will not be able to add those items in their cart. 
+
+
 
 ---
 
-## 🤣 Don't be this guy...
 
-<img src='./client/assets/comic-strip.png' style='width: 100%;'/>
+
+## Brands :tm:
+
+
+
+Our **_Brands_** section will display all of the brands that we are partnered with. Take a quick look to see if you can spot some of your favorite brands!
+
+
+
+Users will even be able to click on brands that interest them, and they’ll be redirected to the respective companies’ website.
+
+
 
 ---
 
-## Working as a team
 
-Use the [Group Project Step by Step Instructions](https://docs.google.com/document/d/1Txc02kMSnTjyOWFj3HDXc5y5tSurt3AFJGpXZKxvX6A/edit?usp=sharing)
+
+## Contact :handshake:
+
+
+
+Do you have any questions, concerns or inquiries that you’d like to bring to our attention? This section will allow you to contact us by writing a short message, and one of our staff members will take care of your case. :people_hugging: 
+
+Whether users have an Emporium account or not, they will still be able to reach out to us as we treat anyone as a family member of E-Wear Emporium. 
+
+
 
 ---
 
-## Presentation
 
-Your team will have to present the final product on the final day in order to get a passing grade. Who will draw the short straw?
 
-- The presentation shouldn't be more than 5 mintues long.
+## About :raising_hand_man:
+
+
+
+Are you interested in learning more about our brand and our philosophy? Head on over to the **_About_** page. 
+
+
+
+In this section, you'll learn about our identity that motivates us to offer the best service to our clients. 
+
+
+If you're feel like asking us a question but may not be too certain about your certain, feel free to visit the _FAQs - Frequently Asked Questions_ section of the **_About_** page to see if your question can already be answered without needing to reach out to us. 
+
+We've also included our _Terms of Service_, should you need to consult it. 
+
+
+
+---
+
+
+
+### The Footer :heavy_plus_sign:
+
+
+
+Our website's footer includes various resources such as a _Stay Connected_ and _Navigate_ area. 
+
+
+
+#### Stay Connected :calling:
+
+
+As a part of our identity, we offer our clients the option to opt in to our promotional offers and our updates by entering their email address to to subscribe to our brand. Once users have successfully entered their email address, they will see a success message indicating they will receive a confirmation email after clicking the _Subscribe_ button. 
+
+Similarly, that same section will also appear in the _FAQs - Frequently Asked Questions_ to make sure our clients take full advantage of our services.
+
+
+
+#### Navigate :earth_americas:
+
+
+The _Navigate_ area of our footer includes the following links: 
+
+
+- _About Us_
+- _Contact Us_
+- _Frequently Asked Questions_
+- _Terms and Conditions_
+
+
+These links will redirect them to our **_About_** page, in order for our customers to know more about our brand and our policies. The _Contact Us_ link will redirect users to our **_Contact_** page in order for them to write to us in regards of their questions, concerns or inquiries. 
+
+
+
+### Our Login/Signup page :woman:
+
+
+
+Our clients will have the option access this page by clicking the login/signup button, which is the last button to the right in our navbar. 
+
+
+
+Once users have reached that page, the option to login or signup will be offered on the same page. However, if they wish to make some purchases without having to create an account, they will be able to fill out a short form that will allow them to access and buy our products. 
+
+The catch? They won't be able to register to know about our deals and offers since they didn't create their account. :man_shrugging:
+
+
+
+## Thank you for reading this brief overview of our e-commerce website. We hope you enjoy your browsing experience!
+

@@ -4,7 +4,9 @@ const Login = ({ loginInfo, handleChange, blankInputLI, handleLogin }) => {
   return (
     <>
       <FormContainer>
-        <H2>Empower Your Everyday with Wearable Technology.</H2>
+      <H2>
+          Empower Your Everyday with Wearable Technology
+      </H2>
         <Div>
         <form className="form" onSubmit={handleLogin}>
           <H1>Login</H1>

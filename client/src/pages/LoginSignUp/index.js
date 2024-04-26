@@ -167,8 +167,8 @@ const LoginSignUp = () => {
         handleSignUp={handleSignUp}
         signUpMessage={signUpMessage}
       />
-      </FormsLayout>
       <Footer />
+      </FormsLayout>
     </>
   );
 };
