@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/NavBar";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import Footer from "../../components/Footer";
 import { LoggedInUserContext } from "./LoggedInUserContext";
 
 const LoginSignUp = () => {
@@ -164,6 +165,7 @@ const LoginSignUp = () => {
         handleSignUp={handleSignUp}
         signUpMessage={signUpMessage}
       />
+      <Footer />
     </>
   );
 };
