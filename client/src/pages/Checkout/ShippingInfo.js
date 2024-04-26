@@ -13,8 +13,8 @@ import { Link } from "react-router-dom";
 
 const ShippingInfo = () => {
   const { loggedInUser, isAuthenticated } = useContext(LoggedInUserContext);
-  //If user not log in then will store the info the user in this state
-  const [userInfo, setUserInfo] = useState({
+  // Info is stored in this state if the user is not logged in
+  const [guestInfo, setGuestInfo] = useState({
     country: "",
     province: "",
     city: "",
@@ -25,11 +25,11 @@ const ShippingInfo = () => {
     lname: "",
     email: "",
   });
-//Handle the changement in the input of the form and store them in the state
+// Handle changes in the form inputs and stores them in the state
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserInfo({
-      ...userInfo,
+    setGuestInfo({
+      ...guestInfo,
       [name]: value,
     });
   };
@@ -44,7 +44,7 @@ const ShippingInfo = () => {
           <Country
             name="country"
             id="country"
-            value={isAuthenticated ? loggedInUser.user.country : userInfo.country}
+            value={isAuthenticated ? loggedInUser.user.country : guestInfo.country}
             onChange={handleChange}
             required
           />
@@ -56,7 +56,7 @@ const ShippingInfo = () => {
             type="text"
             name="province"
             id="province-state"
-            value={isAuthenticated ? loggedInUser.user.province : userInfo.province}
+            value={isAuthenticated ? loggedInUser.user.province : guestInfo.province}
             onChange={handleChange}
             required
           />
@@ -68,7 +68,7 @@ const ShippingInfo = () => {
             type="text"
             name="city"
             id="city"
-            value={isAuthenticated ? loggedInUser.user.city : userInfo.city}
+            value={isAuthenticated ? loggedInUser.user.city : guestInfo.city}
             onChange={handleChange}
             required
           />
@@ -80,7 +80,7 @@ const ShippingInfo = () => {
             type="text"
             name="address"
             id="address"
-            value={isAuthenticated ? loggedInUser.user.address : userInfo.address}
+            value={isAuthenticated ? loggedInUser.user.address : guestInfo.address}
             onChange={handleChange}
             required
           />
@@ -92,7 +92,7 @@ const ShippingInfo = () => {
             type="text"
             name="postcode"
             id="zip"
-            value={isAuthenticated ? loggedInUser.user.postcode : userInfo.postcode}
+            value={isAuthenticated ? loggedInUser.user.postcode : guestInfo.postcode}
             onChange={handleChange}
             required
           />
@@ -104,7 +104,7 @@ const ShippingInfo = () => {
             type="tel"
             name="phone"
             id="phone"
-            value={isAuthenticated ? loggedInUser.user.phone : userInfo.phone}
+            value={isAuthenticated ? loggedInUser.user.phone : guestInfo.phone}
             onChange={handleChange}
             required
           />
@@ -116,7 +116,7 @@ const ShippingInfo = () => {
             type="text"
             name="fname"
             id="fname"
-            value={isAuthenticated ? loggedInUser.user.fname : userInfo.fname}
+            value={isAuthenticated ? loggedInUser.user.fname : guestInfo.fname}
             onChange={handleChange}
             required
           />
@@ -128,7 +128,7 @@ const ShippingInfo = () => {
             type="text"
             name="lname"
             id="lname"
-            value={isAuthenticated ? loggedInUser.user.lname : userInfo.lname}
+            value={isAuthenticated ? loggedInUser.user.lname : guestInfo.lname}
             onChange={handleChange}
             required
           />
@@ -140,7 +140,7 @@ const ShippingInfo = () => {
             type="email"
             name="email"
             id="email"
-            value={isAuthenticated ? loggedInUser.user.email : userInfo.email}
+            value={isAuthenticated ? loggedInUser.user.email : guestInfo.email}
             onChange={handleChange}
             required
           />
