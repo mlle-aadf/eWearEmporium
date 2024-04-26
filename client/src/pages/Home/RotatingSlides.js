@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { slidesData } from "./slidesData";
+import { slidesData, slidesMobile } from "./slidesData";
 
 const RotatingSlides = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,7 +18,13 @@ const RotatingSlides = () => {
 
   return (
     <SlideContainer>
-      <StyledSlideImage src={slidesData[currentIndex].imageURL} alt="Slide" />
+      <picture>
+        <source media="(max-width: 768px)" srcSet={slidesMobile[currentIndex].imageURL} />
+        <StyledSlideImage
+          src={slidesData[currentIndex].imageURL}
+          alt={`Slide ${currentIndex}`}
+        />
+      </picture>
     </SlideContainer>
   );
 };
