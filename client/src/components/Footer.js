@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
+import miniLogo from "../images/logo2.png";
 
 const Footer = () => {
   //The input field should be aligned and centered horizontally with the btn.
@@ -100,9 +101,7 @@ const Footer = () => {
         <hr style={{ width: "75%", margin: "auto" }} />
         <br />
         <div className="brand-info">
-          <h1 className="brand-text1">
-            E-WEAR <br /> EMPORIUM
-          </h1>
+        <img src={miniLogo} alt="Small brand logo" className="brand-logo"></img>
           <h2 className="brand-text2">A local brand based in Montreal, QC</h2>
         </div>
         <br />

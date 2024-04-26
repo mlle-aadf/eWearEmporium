@@ -24,7 +24,7 @@
   padding: 0;
   list-style: none;
   font-family: var(--font-lato);
-  font-weight: 300;
+  font-weight: 500;
   line-height: var(--text-line-height);
   letter-spacing: var(--text-spacing);
 }
@@ -149,11 +149,7 @@ footer ul {
 
 .sub-btn {
   padding: 5px;
-  font-weight: bold;
   border-radius: 5px;
-}
-
-.sub-btn:hover {
   cursor: pointer;
 }
 
@@ -168,6 +164,7 @@ footer ul {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+  justify-content: space-between;
 }
 
 .colTwo li {
@@ -177,14 +174,18 @@ footer ul {
 .brand-info {
   text-align: center;
   justify-content: space-around;
+  display: flex;
 }
 
-.brand-text1,
+.brand-logo,
 .brand-text2 {
-  margin: 0 40px 0 40px;
   display: inline-block;
   vertical-align: middle;
   font-weight: bold;
+}
+
+.brand-text2 {
+  margin: 12px 0 0 0;
 }
 
 .signup,
@@ -214,26 +215,14 @@ footer ul {
   margin: 100px 0 0 0;
 }
 
-.about-text {
-  background-color: white;
-  color: black;
-  border-radius: 15px;
-  margin: 15px;
-  padding: 15px;
-}
-
-.faq-section {
-  background-color: white;
-  color: black;
-  border-radius: 15px;
-  margin: 15px;
-  padding: 15px;
-}
-
+.about-text,
+.faq-section,
 .tos-section {
   background-color: white;
   color: black;
   border-radius: 15px;
+  outline-style: solid;
+  outline-color: black;
   margin: 15px;
   padding: 15px;
 }
@@ -243,7 +232,7 @@ footer ul {
 }
 
 .input-field {
-  width: 35vw;
+  width: 170px;
   height: 30px;
   padding: 5px;
 }
@@ -256,10 +245,15 @@ footer ul {
 }
 
 .contact-btn {
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
-  font-weight: bold;
   border-radius: 5px;
+}
+
+.website-btn {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .invisible {

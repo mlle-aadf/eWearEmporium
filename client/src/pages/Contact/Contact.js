@@ -37,6 +37,7 @@ const Contact = () => {
     <>
       <NavBar />
       <Main>
+        <Div>
         <Form>
           <H1>Let's Get In Touch!</H1>
           <br />
@@ -47,7 +48,6 @@ const Contact = () => {
           <br />
           <br />
           <Label>Your First Name: </Label>
-          <br />
           <br />
           <input
             className="input-field"
@@ -60,7 +60,6 @@ const Contact = () => {
           <br />
           <Label>Your Last Name: </Label>
           <br />
-          <br />
           <input
             className="input-field"
             type="text"
@@ -72,7 +71,6 @@ const Contact = () => {
           <br />
           <Label>Your Email: </Label>
           <br />
-          <br />
           <input
             className="input-field"
             type="text"
@@ -83,7 +81,6 @@ const Contact = () => {
           <br />
           <br />
           <Label>Your Message: </Label>
-          <br />
           <br />
           <input
             className="msg-field"
@@ -104,6 +101,7 @@ const Contact = () => {
           </Link>
           <br />
         </Form>
+        </Div>
       </Main>
       <Footer />
     </>
@@ -125,13 +123,22 @@ const H1 = styled.h1`
   font-size: xx-large;
 `;
 
-const Subtext = styled.p`
+const Subtext = styled.h3`
   text-align: center;
   font-weight: bold;
 `;
 
 const Label = styled.label`
   font-weight: bold;
+`;
+
+const Div = styled.div`
+  background-color: white;
+  outline-style: solid;
+  outline-color: black;
+  border-radius: 10px;
+  padding: 75px;
+  margin: 0 50px 0 50px;
 `;
 
 export default Contact;

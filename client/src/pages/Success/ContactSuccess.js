@@ -16,7 +16,7 @@ const ContactSuccess = () => {
     <H2>Your message has been delivered successfully. We'll get back to you under the briefest delays to assist you.</H2>
     <Div>
         <Link to="/">
-        <Button>Back to HOME</Button>
+        <Button>Back to Home Page</Button>
         </Link>
     </Div>
     </Main>
@@ -35,14 +35,9 @@ const ContactSuccess = () => {
     `
 
     const Button = styled.button`
-    margin: 10px;
     padding: 10px;
-    font-weight: bold;
     border-radius: 5px;
-
-    &:hover {
-        cursor: pointer;
-    }
+    cursor: pointer;
     `
 
     const H1 = styled.h1`
