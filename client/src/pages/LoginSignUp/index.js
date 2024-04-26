@@ -146,7 +146,6 @@ const LoginSignUp = () => {
       setSignUpMessage("An error occurred, please try again.");
     }
   };
-  console.log("This is sign up message: ", signUpMessage);
   return (
     <>
       <NavBar />

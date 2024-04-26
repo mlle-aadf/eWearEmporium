@@ -5,40 +5,51 @@ import {
   Label,
   Input,
 } from "./StyledComponents";
-import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { CartContentContext } from "../../components/Cart/CartContentContext";
+import { useContext } from "react";
 
 const CartDetails = () => {
+  const { cart, quantity } = useContext(CartContentContext);
   return (
     <>
       <CartDetailsContainer>
-        <Header>Cart:</Header>
-        {/* Cart item pulls from backend data */}
-        <div>
-          <h3>Cart Items:</h3>
-          <div>
-            <p>image</p>
-            <p>item name</p>
-            <p>price</p>
-            <p>amount in cart</p>
-          </div>
-        </div>
-        {/* Pulls price from backend then add formula to calc */}
-        <div>
-          <h3>Price</h3>
-          <div>
-            <p>Total Item Cost:</p>
-            <p>Shipping Cost:</p>
-          </div>
-        </div>
-
-        <div>
-          {/* Needs to confirm that item is in stock and can succesfully checkout then update backend */}
-          <Link to="/success" className="success">
-            Checkout
-          </Link>
-        </div>
+      <h1>Your Cart</h1>
+      {cart.length === 0 ? (
+        <p>Your cart is empty</p>
+      ) : (
+        cart.map((item) => (
+          <>
+          <CartItemContainer key={item.data._id}>
+            <ItemImage src={item.data.imageSrc} alt={item.data.name} />
+            <ItemDetails>
+              <p>{item.data.name}</p>
+              <p>Price: {item.data.price}</p>
+              <p>Quantity: {quantity}</p>
+            </ItemDetails>
+          </CartItemContainer>
+        </>
+        ))
+      )}
       </CartDetailsContainer>
     </>
   );
 };
 export default CartDetails;
+
+const CartItemContainer = styled.div`
+  display: flex;
+  position: relative;
+  margin-bottom: 1rem;
+`;
+
+const ItemImage = styled.img`
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 1rem;
+`;
+
+const ItemDetails = styled.div`
+  flex-grow: 1;
+`;
