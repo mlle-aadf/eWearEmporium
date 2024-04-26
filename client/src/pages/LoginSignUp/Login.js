@@ -4,10 +4,16 @@ const Login = ({ loginInfo, handleChange, blankInputLI, handleLogin }) => {
   return (
     <>
       <FormContainer>
+        <H2>Empower Your Everyday with Wearable Technology.</H2>
+        <Div>
         <form className="form" onSubmit={handleLogin}>
-          <h2 style={{ textDecoration: "underline" }}>Login</h2>
+          <H1>Login</H1>
+          <h3>
+          Log back in and continue exploring!
+          </h3>
           <br />
-          <label>Email Address: </label>
+          <br/>
+          <Label>Email Address: </Label>
           <br />
           <input
             className="input-field"
@@ -19,7 +25,7 @@ const Login = ({ loginInfo, handleChange, blankInputLI, handleLogin }) => {
           ></input>
           <br />
           <br />
-          <label>Password: </label>
+          <Label>Password: </Label>
           <br />
           <input
             className="input-field"
@@ -35,8 +41,9 @@ const Login = ({ loginInfo, handleChange, blankInputLI, handleLogin }) => {
           </button>
           <br />
         </form>
+        </Div>
       </FormContainer>
-      <hr />
+      <HR />
     </>
   );
 };
@@ -44,5 +51,41 @@ const Login = ({ loginInfo, handleChange, blankInputLI, handleLogin }) => {
 export default Login;
 
 const FormContainer = styled.div`
+  margin: 50px 0 0 0;
   padding: 100px 0;
-`;
+  text-align: center;
+`
+
+const H1 = styled.h1`
+  font-size: 40px;
+  text-decoration: underline;
+  font-weight: bold;
+`
+
+const H2 = styled.h2`
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+  padding: 0 0 50px 15px;
+`
+
+const Label = styled.label`
+  font-weight: bold;
+  padding: 0 0 10px 0;
+  font-size: large;
+`
+
+const HR = styled.hr`
+  height: 75%;
+  margin: auto;
+`
+
+const Div = styled.div`
+  background-color: #e5e1d6;
+  outline-style: solid;
+  outline-color: black;
+  border-radius: 10px;
+  padding: 75px;
+  margin: 0 50px 0 50px;
+`

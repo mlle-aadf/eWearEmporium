@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/NavBar";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import Footer from "../../components/Footer";
 import { LoggedInUserContext } from "./LoggedInUserContext";
+
+import styled from "styled-components";
 
 const LoginSignUp = () => {
   useEffect(() => {
@@ -149,6 +152,7 @@ const LoginSignUp = () => {
   return (
     <>
       <NavBar />
+      <FormsLayout>
       <Login
         loginInfo={loginInfo}
         handleChange={handleChange}
@@ -163,8 +167,15 @@ const LoginSignUp = () => {
         handleSignUp={handleSignUp}
         signUpMessage={signUpMessage}
       />
+      </FormsLayout>
+      <Footer />
     </>
   );
 };
+
+const FormsLayout = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 
 export default LoginSignUp;

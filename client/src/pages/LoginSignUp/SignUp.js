@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 const SignUp = ({
   formData,
   handleChangeForm,
@@ -6,16 +8,18 @@ const SignUp = ({
   signUpMessage,
 }) => {
   return (
-    <>
+    <SUContainer>
+      <Div>
+
       <form className="form" onSubmit={handleSignUp}>
-        <h2 style={{ textDecoration: "underline" }}>Sign Up</h2>
-        <p>
+        <H1>Sign Up</H1>
+        <h3 className="h3">
           Create an account to take advantage of all the benefits we have to
           offer!
-        </p>
+        </h3>
         <br />
-
-        <label>First Name: </label>
+        <br/>
+        <Label>First Name: </Label>
         <br />
         <input
           className="input-field"
@@ -29,7 +33,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>Last Name: </label>
+        <Label>Last Name: </Label>
         <br />
         <input
           className="input-field"
@@ -43,7 +47,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>Email Address: </label>
+        <Label>Email Address: </Label>
         <br />
         <input
           className="input-field"
@@ -57,7 +61,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>Phone Number (Optional): </label>
+        <Label>Phone Number (Optional): </Label>
         <br />
         <input
           className="input-field"
@@ -70,7 +74,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>Address: </label>
+        <Label>Address: </Label>
         <br />
         <input
           className="input-field"
@@ -83,7 +87,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>City: </label>
+        <Label>City: </Label>
         <br />
         <input
           className="input-field"
@@ -96,7 +100,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>Province: </label>
+        <Label>Province: </Label>
         <br />
         <input
           className="input-field"
@@ -109,7 +113,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>Postcode: </label>
+        <Label>Postcode: </Label>
         <br />
         <input
           className="input-field"
@@ -122,7 +126,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>Country: </label>
+        <Label>Country: </Label>
         <br />
         <input
           className="input-field"
@@ -135,7 +139,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>Password: </label>
+        <Label>Password: </Label>
         <br />
         <input
           className="input-field"
@@ -148,7 +152,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <label>Confirm Password: </label>
+        <Label>Confirm Password: </Label>
         <br />
         <input
           className="input-field"
@@ -168,8 +172,36 @@ const SignUp = ({
       </form>
       <br />
       <p>{signUpMessage}</p>
-    </>
+      </Div>
+    </SUContainer>
   );
 };
+
+const SUContainer = styled.div`
+  margin: 50px 0 0 0;
+  padding: 100px 0;
+  text-align: center;
+`;
+
+const H1 = styled.h1`
+  font-size: 40px;
+  text-decoration: underline;
+  font-weight: bold;
+`
+
+const Label = styled.label`
+  font-weight: bold;
+  padding: 0 0 10px 0;
+  font-size: large;
+`
+
+const Div = styled.div`
+  background-color: #e5e1d6;
+  outline-style: solid;
+  outline-color: black;
+  border-radius: 10px;
+  padding: 50px;
+  margin: 0 50px 0 50px;
+`
 
 export default SignUp;
