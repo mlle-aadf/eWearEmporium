@@ -2,10 +2,14 @@
 
 :root {
   --font-lato: "Lato", sans-serif;
-  --base-font-size: clamp(16px, calc(1rem + ((1vw - 3.2px) * 0.25)), 20px);
-  --h1-font-size: clamp(24px, calc(1.5rem + ((1vw - 3.2px) * 0.625)), 34px);
-  --h2-font-size: clamp(22px, calc(1.375rem + ((1vw - 3.2px) * 0.5)), 30px);
-  --h3-font-size: clamp(20px, calc(1.25rem + ((1vw - 3.2px) * 0.5)), 28px);
+  --base-font-size: clamp(
+    14px,
+    calc(0.875rem + ((1vw - 3.3px) * 0.3774)),
+    20px
+  );
+  --h1-font-size: clamp(20px, calc(1.25rem + ((1vw - 3.3px) * 0.5031)), 28px);
+  --h2-font-size: clamp(18px, calc(1.125rem + ((1vw - 3.3px) * 0.5031)), 26px);
+  --h3-font-size: clamp(16px, calc(1rem + ((1vw - 3.3px) * 0.5031)), 24px);
   --navbar-font-size: clamp(
     10px,
     calc(0.625rem + ((1vw - 3.3px) * 1.3699)),
@@ -85,7 +89,7 @@ nav {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: clamp(50px, calc(3.125rem + ((1vw - 3.3px) * 2.5786)), 91px);;
+  height: clamp(50px, calc(3.125rem + ((1vw - 3.3px) * 2.5786)), 91px);
   position: fixed;
   top: 0%;
   z-index: 1;

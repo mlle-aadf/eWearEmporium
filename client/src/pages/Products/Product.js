@@ -9,84 +9,88 @@ import Instock from "../Products/InStock";
 import SoldOut from "../Products/SoldOut";
 
 const Product = () => {
-    const { productId } = useParams();
-    const [productInfo, setProductInfo] = useState({});
-    const [inStock, setInStock] = useState();
+  const { productId } = useParams();
+  const [productInfo, setProductInfo] = useState({});
+  const [inStock, setInStock] = useState();
 
-    useEffect(() => {
+  useEffect(() => {
     const getProduct = async () => {
-        try {
+      try {
         const res = await fetch(`/products/${productId}`);
         const { data } = await res.json();
         setProductInfo(data);
-        } catch (err) {
+      } catch (err) {
         console.log(err);
-        }
+      }
     };
     getProduct();
-    }, [productId]);
+  }, [productId]);
 
-    const { name, price, imageSrc, numInStock } = productInfo;
+  const { name, price, imageSrc, numInStock } = productInfo;
 
   // set inStock state only if productInfo returned successfully
-    useEffect(() => {
+  useEffect(() => {
     const set = () => setInStock(numInStock > 0 ? true : false);
     productInfo && set();
-    }, [productInfo]);
+  }, [productInfo]);
 
-    return (
+  return (
     <>
-        <NavBar />
-        <BackBTN to="/products">Back to All</BackBTN>
-        <Card>
+      <NavBar />
+      <BackBTN to="/products">Back to All</BackBTN>
+      <Card>
         {!productInfo ? (
-            <p>Loading ...</p>
+          <p>Loading ...</p>
         ) : (
-            <>
+          <>
             <Img src={imageSrc} />
             <Name>{name}</Name>
             {/*only display inStock state if productInfo returned successfully */}
             <Stock
-                className={
+              className={
                 Object.keys(productInfo).length > 0 ? "visible" : "invisible"
-                }
+              }
             >
-                {inStock ? <Instock /> : <SoldOut />}
+              {inStock ? <Instock /> : <SoldOut />}
             </Stock>
             <Price>{price}</Price>
-            <AddToCart inStock={inStock} setInStock={setInStock} item={productInfo} />
-            </>
+            <AddToCart
+              inStock={inStock}
+              setInStock={setInStock}
+              item={productInfo}
+            />
+          </>
         )}
-        </Card>
-        <Footer />
+      </Card>
+      <Footer />
     </>
-    );
+  );
 };
 
 export default Product;
 
 const BackBTN = styled(Link)`
-    position: fixed;
-    top: 20vh;
-    left: 4rem;
-    background-color: white;
-    border-radius: 25px;
-    border: 4px solid var(--nav-bar-color);
-    padding: 0.5rem 1.5rem;
-    margin: 0.5rem 1.5rem;
-    z-index: 1;
-    cursor: pointer;
-    text-decoration: none;
+position: relative;
+  top: 24vh;
+  left: 8rem;
+  background-color: white;
+  border-radius: 25px;
+  border: 4px solid var(--nav-bar-color);
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem 1.5rem;
+  z-index: 1;
+  cursor: pointer;
+  text-decoration: none;
 
-    @media (max-width: 500px) {
-        top: 12vh;
-        left: 1rem;
-    }
-
-    @media (min-width: 500px) and (max-width:800px) {
-    top: 15vh;
+  @media (max-width: 500px) {
+    top: 10vh;
     left: 2rem;
-    }
+  }
+
+  @media (min-width: 500px) and (max-width: 800px) {
+    top: 14vh;
+    left: 10rem;
+  }
 `;
 
 const Card = styled.div`
