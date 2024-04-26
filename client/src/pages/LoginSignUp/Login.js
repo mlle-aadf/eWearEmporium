@@ -50,6 +50,8 @@ const Login = ({ loginInfo, handleChange, blankInputLI, handleLogin }) => {
   );
 };
 
+export default Login;
+
 const FormContainer = styled.div`
   margin: 50px 0 0 0;
   padding: 100px 0;

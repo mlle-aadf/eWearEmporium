@@ -8,7 +8,8 @@ const SignUp = ({
   signUpMessage,
 }) => {
   return (
-    <>
+        <SUContainer>
+          <Div>
       <form className="form" onSubmit={handleSignUp}>
         <h2 style={{ textDecoration: "underline" }}>Sign Up</h2>
         <p>
@@ -174,6 +175,7 @@ const SignUp = ({
     </SUContainer>
   );
 };
+
 
 export default SignUp;
 
