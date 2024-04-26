@@ -2,11 +2,19 @@
 
 :root {
   --font-lato: "Lato", sans-serif;
-  --base-font-size: clamp(16px, calc(1rem + ((1vw - 3.2px) * 0.25)), 20px);
-  --h1-font-size: clamp(24px, calc(1.5rem + ((1vw - 3.2px) * 0.625)), 34px);
-  --h2-font-size: clamp(22px, calc(1.375rem + ((1vw - 3.2px) * 0.5)), 30px);
-  --h3-font-size: clamp(20px, calc(1.25rem + ((1vw - 3.2px) * 0.5)), 28px);
-  --navbar-font-size: clamp(12px, calc(1rem + ((1vw - 3.2px) * 0.25)), 16px);
+  --base-font-size: clamp(
+    14px,
+    calc(0.875rem + ((1vw - 3.3px) * 0.3774)),
+    20px
+  );
+  --h1-font-size: clamp(20px, calc(1.25rem + ((1vw - 3.3px) * 0.5031)), 28px);
+  --h2-font-size: clamp(18px, calc(1.125rem + ((1vw - 3.3px) * 0.5031)), 26px);
+  --h3-font-size: clamp(16px, calc(1rem + ((1vw - 3.3px) * 0.5031)), 24px);
+  --navbar-font-size: clamp(
+    10px,
+    calc(0.625rem + ((1vw - 3.3px) * 1.3699)),
+    16px
+  );
 
   --accent-color: #d7e9e9;
   --hover-color: #eafaf8;
@@ -24,7 +32,7 @@
   padding: 0;
   list-style: none;
   font-family: var(--font-lato);
-  font-weight: 300;
+  font-weight: 500;
   line-height: var(--text-line-height);
   letter-spacing: var(--text-spacing);
 }
@@ -81,7 +89,7 @@ nav {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 10vh;
+  height: clamp(50px, calc(3.125rem + ((1vw - 3.3px) * 2.5786)), 91px);
   position: fixed;
   top: 0%;
   z-index: 1;
@@ -149,11 +157,7 @@ footer ul {
 
 .sub-btn {
   padding: 5px;
-  font-weight: bold;
   border-radius: 5px;
-}
-
-.sub-btn:hover {
   cursor: pointer;
 }
 
@@ -168,6 +172,7 @@ footer ul {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+  justify-content: space-between;
 }
 
 .colTwo li {
@@ -177,14 +182,18 @@ footer ul {
 .brand-info {
   text-align: center;
   justify-content: space-around;
+  display: flex;
 }
 
-.brand-text1,
+.brand-logo,
 .brand-text2 {
-  margin: 0 40px 0 40px;
   display: inline-block;
   vertical-align: middle;
   font-weight: bold;
+}
+
+.brand-text2 {
+  margin: 12px 0 0 0;
 }
 
 .signup,
@@ -214,26 +223,14 @@ footer ul {
   margin: 100px 0 0 0;
 }
 
-.about-text {
-  background-color: white;
-  color: black;
-  border-radius: 15px;
-  margin: 15px;
-  padding: 15px;
-}
-
-.faq-section {
-  background-color: white;
-  color: black;
-  border-radius: 15px;
-  margin: 15px;
-  padding: 15px;
-}
-
+.about-text,
+.faq-section,
 .tos-section {
   background-color: white;
   color: black;
   border-radius: 15px;
+  outline-style: solid;
+  outline-color: black;
   margin: 15px;
   padding: 15px;
 }
@@ -243,7 +240,7 @@ footer ul {
 }
 
 .input-field {
-  width: 35vw;
+  width: 170px;
   height: 30px;
   padding: 5px;
 }
@@ -256,10 +253,15 @@ footer ul {
 }
 
 .contact-btn {
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
-  font-weight: bold;
   border-radius: 5px;
+}
+
+.website-btn {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .invisible {
@@ -268,4 +270,10 @@ footer ul {
 
 .visible {
   display: block;
+}
+
+@media (max-width: 768px) {
+  .navLink {
+    margin: 0 10px 0 0;
+  }
 }

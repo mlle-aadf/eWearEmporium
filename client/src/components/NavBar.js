@@ -15,8 +15,7 @@ const NavBar = () => {
   // Use state function for Cart visibility
   const [isCartVisible, setIsCartVisibile] = useState(false);
   //Set name of the user that logged in
-  const { loggedInUser, logOut, isAuthenticated } =
-    useContext(LoggedInUserContext);
+  const { loggedInUser, logOut, isAuthenticated } = useContext(LoggedInUserContext);
   const name = loggedInUser && loggedInUser.user ? loggedInUser.user.fname : "";
 
   // Function to toggle the visibility of the cart
@@ -82,7 +81,7 @@ const Logo = styled.img`
   height: clamp(34px, calc(2.125rem + ((1vw - 3.9px) * 1.0458)), 50px);
 
   @media (max-width: 768px) {
-    content: url(${(props) => props.mobilesrc});
-    height: clamp(25px, calc(1.5625rem + ((1vw - 3px) * 7.4786)), 60px);
+    content: url(${(props) => props.mobileSrc});
+    height  : clamp(20px, calc(1.25rem + ((1vw - 3.3px) * 6.8493)), 50px);
   }
 `;

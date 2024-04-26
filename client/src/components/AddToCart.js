@@ -1,15 +1,21 @@
 import styled from "styled-components";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CartContentContext } from "./Cart/CartContentContext";
 import { useContext } from "react";
 
 const AddToCart = ({ item, inStock, setInStock }) => {
   const { addToCart, cart } = useContext(CartContentContext);
+  const [buttonText, setButtonText] = useState("Add to cart");
+
   useEffect(() => {
     setInStock(inStock);
-  }, [inStock]);
+    return () => {
+    };
+  }, [inStock, setInStock]);
 
   const handleClick = async () => {
+    setButtonText("Adding item...");
+
     try {
       const response = await fetch(`/products/${item._id}`, {
         method: "PATCH",
@@ -17,13 +23,19 @@ const AddToCart = ({ item, inStock, setInStock }) => {
           "Content-Type": "application/json",
         },
       });
-
+      
       const data = await response.json();
-
+      
       if (response.ok) {
         addToCart(data);
         console.log("Item added to cart:", cart);
+        setButtonText("Added to cart!");
+
+        setTimeout(() => {
+          setButtonText("Add to cart");
+        }, 5000);
       } else {
+        setButtonText("Error");
         console.error("Failed to fetch item:", data.message);
       }
     } catch (error) {
@@ -37,7 +49,7 @@ const AddToCart = ({ item, inStock, setInStock }) => {
       className={inStock ? "addToCart" : "addToCartDisabled"}
       disabled={!inStock}
     >
-      Add to cart
+      {buttonText}
     </AddBTN>
   );
 };

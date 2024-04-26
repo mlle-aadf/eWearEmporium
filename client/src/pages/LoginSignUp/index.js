@@ -6,6 +6,8 @@ import SignUp from "./SignUp";
 import Footer from "../../components/Footer";
 import { LoggedInUserContext } from "./LoggedInUserContext";
 
+import styled from "styled-components";
+
 const LoginSignUp = () => {
   useEffect(() => {
     document.title = "Signup | Login";
@@ -147,10 +149,10 @@ const LoginSignUp = () => {
       setSignUpMessage("An error occurred, please try again.");
     }
   };
-  console.log("This is sign up message: ", signUpMessage);
   return (
     <>
       <NavBar />
+      <FormsLayout>
       <Login
         loginInfo={loginInfo}
         handleChange={handleChange}
@@ -165,9 +167,13 @@ const LoginSignUp = () => {
         handleSignUp={handleSignUp}
         signUpMessage={signUpMessage}
       />
-      <Footer />
     </>
   );
 };
+
+const FormsLayout = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 
 export default LoginSignUp;
