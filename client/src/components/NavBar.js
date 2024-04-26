@@ -82,6 +82,6 @@ const Logo = styled.img`
 
   @media (max-width: 768px) {
     content: url(${(props) => props.mobileSrc});
-    height: clamp(25px, calc(1.5625rem + ((1vw - 3px) * 7.4786)), 60px);
+    height  : clamp(20px, calc(1.25rem + ((1vw - 3.3px) * 6.8493)), 50px);
   }
 `;
