@@ -179,3 +179,30 @@ const SignUp = ({
 
 export default SignUp;
 
+
+const SUContainer = styled.div`
+  margin: 50px 0 0 0;
+  padding: 100px 0;
+  text-align: center;
+`;
+
+const H1 = styled.h1`
+  font-size: 40px;
+  text-decoration: underline;
+  font-weight: bold;
+`
+
+const Label = styled.label`
+  font-weight: bold;
+  padding: 0 0 10px 0;
+  font-size: large;
+`
+
+const Div = styled.div`
+  background-color: #e5e1d6;
+  outline-style: solid;
+  outline-color: black;
+  border-radius: 10px;
+  padding: 50px;
+  margin: 0 50px 0 50px;
+`
