@@ -101,10 +101,10 @@ export const CartItemQuantity = styled.p``;
 export const DeleteBTN = styled(TiDelete)`
   top: 1vw;
   right: 5%;
-  width: 1.5rem; 
-  height: 1.5rem; 
+  width: 1.5rem;
+  height: 1.5rem;
   cursor: pointer;
-  position: absolute; 
+  position: absolute;
 `;
 
 // ORDER_SUMMARY.js
