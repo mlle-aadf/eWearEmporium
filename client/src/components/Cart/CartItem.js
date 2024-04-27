@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 const CartItem = () => {
   const { cart, quantity } = useContext(CartContentContext);
   const navigate = useNavigate();
-  const handleCheckout = ()=> {
-    navigate('/checkout');
+  const handleCheckout = () => {
+    navigate("/checkout");
   };
 
   return (
@@ -18,16 +18,16 @@ const CartItem = () => {
       ) : (
         cart.map((item) => (
           <>
-          <CartItemContainer key={item.data._id}>
-            <ItemImage src={item.data.imageSrc} alt={item.data.name} />
-            <ItemDetails>
-              <h3>{item.data.name}</h3>
-              <p>Price: {item.data.price}</p>
-              <p>Quantity: {quantity}</p>
-            </ItemDetails>
-          </CartItemContainer>
-          <CheckoutBtn onClick={handleCheckout}>Checkout</CheckoutBtn>
-        </>
+            <CartItemContainer key={item.data._id}>
+              <ItemImage src={item.data.imageSrc} alt={item.data.name} />
+              <ItemDetails>
+                <h3>{item.data.name}</h3>
+                <p>Price: {item.data.price}</p>
+                <p>Quantity: {quantity}</p>
+              </ItemDetails>
+            </CartItemContainer>
+            <CheckoutBtn onClick={handleCheckout}>Checkout</CheckoutBtn>
+          </>
         ))
       )}
     </div>
@@ -46,6 +46,11 @@ const ItemImage = styled.img`
   height: 100px;
   object-fit: cover;
   margin-right: 1rem;
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 const ItemDetails = styled.div`
@@ -62,12 +67,12 @@ const CheckoutBtn = styled.div`
   font-size: 20px;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  margin-bottom: 20px;
 
   &:hover {
     background-color: var(--accent-color);
     cursor: pointer;
   }
 `;
-
 
 export default CartItem;

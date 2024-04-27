@@ -41,7 +41,7 @@ export const Loading = styled.h2`
 
 export const All = styled.h3`
   position: fixed;
-  top: 10vh;
+  top: clamp(50px, calc(3.364375rem + ((1vw - 7.69px) * 2.8297)), 86.4px);
   margin: 0;
   padding-left: 3rem;
   z-index: +1;

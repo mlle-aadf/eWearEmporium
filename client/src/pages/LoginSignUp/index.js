@@ -153,29 +153,29 @@ const LoginSignUp = () => {
     <>
       <NavBar />
       <FormsLayout>
-      <Login
-        loginInfo={loginInfo}
-        handleChange={handleChange}
-        blankInputLI={blankInputLI}
-        navigate={navigate}
-        handleLogin={handleLogin}
-      />
-      <SignUp
-        formData={formData}
-        handleChangeForm={handleChangeForm}
-        blankInputSU={blankInputSU}
-        handleSignUp={handleSignUp}
-        signUpMessage={signUpMessage}
-      />
-      <Footer />
+        <Login
+          loginInfo={loginInfo}
+          handleChange={handleChange}
+          blankInputLI={blankInputLI}
+          navigate={navigate}
+          handleLogin={handleLogin}
+        />
+        <SignUp
+          formData={formData}
+          handleChangeForm={handleChangeForm}
+          blankInputSU={blankInputSU}
+          handleSignUp={handleSignUp}
+          signUpMessage={signUpMessage}
+        />
       </FormsLayout>
+      <Footer />
     </>
   );
 };
 
 const FormsLayout = styled.div`
-  display: flex;
-  flex-direction: row;
-`
+  display: grid;
+  grid-template-columns: auto(2, 1fr);
+`;
 
 export default LoginSignUp;

@@ -9,6 +9,11 @@ export const GridLayout = styled.div`
     "info cart"
     "method cart";
   margin: 200px 100px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "info" "method" "cart";
+  }
 `;
 
 export const ShippingInfoContainer = styled.div`
@@ -29,6 +34,11 @@ export const CartDetailsContainer = styled.div`
   padding: 20px;
   width: 70%;
   margin-left: 30%;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin-left: 0%;
+  }
 `;
 
 export const Header = styled.h2`
