@@ -6,6 +6,8 @@ import {
   ItemDetails,
   ItemName,
   PriceQTY,
+  CartItemPrice,
+  CartItemQuantity,
 } from "./StyledComponents";
 import Delete from "./Delete";
 
@@ -19,10 +21,8 @@ const CartItem = ({ item }) => {
         <ItemName>{item.data.name}</ItemName>
       </ItemDetails>
       <PriceQTY>
-        <p style={{ fontSize: "1.5rem", marginTop: "0.5rem" }}>
-          {item.data.price}
-        </p>
-        <p style={{ fontSize: "1rem", marginTop: "-3rem" }}>QTY: {quantity}</p>
+        <CartItemPrice> {item.data.price}</CartItemPrice>
+        <CartItemQuantity>QTY: {quantity}</CartItemQuantity>
       </PriceQTY>
       <Delete itemID={`${item.data._id}`} quantity={quantity} />
     </CartItemContainer>

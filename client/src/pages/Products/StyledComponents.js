@@ -15,11 +15,7 @@ export const categories = [
 
 export const All = styled.h3`
   position: fixed;
-<<<<<<< HEAD
   top: clamp(50px, calc(3.364375rem + ((1vw - 7.69px) * 2.8297)), 86.4px);
-=======
-  top: clamp(50px, calc(3.125rem + ((1vw - 3.3px) * 2.5786)), 91px);
->>>>>>> 588822a4bc0d8d5f3ca9eaa0a2a86cc4f0f220aa
   margin: 0;
   padding-left: 3rem;
   z-index: +1;
@@ -160,8 +156,6 @@ export const FiltersBTN = styled.button`
   position: fixed;
   top: 12vh;
   right: 6.5rem;
-  height: 5vw;
-  font-size: 0.75rem;
   display: none;
   z-index: 1;
   background-color: white;
@@ -170,21 +164,22 @@ export const FiltersBTN = styled.button`
   border-radius: 20px;
   cursor: pointer;
 
-  @media (max-width: 375px) {
-    top: 8vh;
-    right: 6rem;
-  }
+   @media (max-width: 375px) {
+     top: 8vh;
+     right: 6rem;
+   }
 
-  @media (max-width: 500px) {
-    display: block;
-    margin-right: 0.25rem;
-  }
+   @media (max-width: 500px) {
+     display: block;
+     margin-right: 0.25rem;
+     padding: 0.5rem 0 0.5rem 0.75rem;
+   }
   @media (min-width: 500px) and (max-width: 800px) {
-    display: block;
-    margin-right: 0.25rem;
-    right: 7rem;
-  }
-`;
+     display: block;
+     margin-right: 0.25rem;
+     right: 7rem;
+   }
+`; 
 
 export const Loading = styled.h2`
   height: 70vh;

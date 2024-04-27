@@ -16,7 +16,7 @@ export const CartContainer = styled.div`
   z-index: 2000;
 
   @media (max-width: 768px) {
-    width: 50%;
+    width: 60vw;
   }
 `;
 
@@ -91,6 +91,12 @@ export const PriceQTY = styled.div`
   align-items: flex-end;
   justify-content: space-around;
 `;
+
+export const CartItemPrice = styled.p`
+  margin-top: 3rem;
+`;
+
+export const CartItemQuantity = styled.p``;
 
 export const DeleteBTN = styled(TiDelete)`
   position: relative;
