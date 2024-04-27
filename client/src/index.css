@@ -131,12 +131,21 @@ nav {
   height: clamp(20px, calc(1.25rem + ((1vw - 3px) * 1.8519)), 50px);
   margin: 0 15px 0 0;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
 .navbar-buttons:visited {
-  color: #000000;
+  text-decoration: none;
+  color: black;
 }
-
+  
+.navbar-buttons:active {
+  text-decoration: none;
+  color: black;
+}
+ 
+  
 footer {
   background-color: var(--nav-bar-color);
   margin: 0;
