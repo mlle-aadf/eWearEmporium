@@ -24,7 +24,7 @@ const CalcTotal = () => {
 
   return (
     <CalcContainer>
-      <Subtotal>{`Subtotal: $${subTotal}`}</Subtotal>
+      <Subtotal>{`Subtotal: $${subTotal.toFixed(2)}`}</Subtotal>
       <Taxes>{`+ ${taxRate * 100}% - HST / GST: $${taxes.toFixed(2)}`}</Taxes>
       <Shipping>{`+ Shipping & Handling: $${shippingCost}`}</Shipping>
       <Total>{`Total: $${Math.round(total).toFixed(2)}`}</Total>
