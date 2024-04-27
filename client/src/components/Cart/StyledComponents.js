@@ -106,30 +106,3 @@ export const DeleteBTN = styled(TiDelete)`
   cursor: pointer;
   position: absolute; 
 `;
-
-// ORDER_SUMMARY.js
-export const OrderContainer = styled.div`
-  grid-area: cart;
-  background: var(--box-color);
-  padding: 20px;
-  width: 70%;
-  margin-left: 30%;
-
-  @media (max-width: 1000px) {
-    width: 100%;
-    margin-left: 0%;
-  }
-`;
-export const Title = styled.h3`
-  border-bottom: 4px solid white;
-  margin: 0.5rem 1rem;
-  padding-bottom: 1rem;
-`;
-
-// CALC_TOTAL.js
-export const CalcContainer = styled.div``;
-
-export const Subtotal = styled.p``;
-export const Taxes = styled.p``;
-export const Shipping = styled.p``;
-export const Total = styled.p``;

@@ -6,7 +6,7 @@ import {
   Taxes,
   Shipping,
   Total,
-} from "../../components/Cart/StyledComponents";
+} from "../Checkout/StyledComponents";
 
 const CalcTotal = () => {
   const { cart } = useContext(CartContentContext);
@@ -24,10 +24,21 @@ const CalcTotal = () => {
 
   return (
     <CalcContainer>
-      <Subtotal>{`Subtotal: $${subTotal.toFixed(2)}`}</Subtotal>
-      <Taxes>{`+ ${taxRate * 100}% - HST / GST: $${taxes.toFixed(2)}`}</Taxes>
-      <Shipping>{`+ Shipping & Handling: $${shippingCost}`}</Shipping>
-      <Total>{`Total: $${Math.round(total).toFixed(2)}`}</Total>
+      <Subtotal>
+        <span>Item(s) Subtotal : </span>
+        <span>{`$${subTotal.toFixed(2)}`}</span>
+      </Subtotal>
+      <Taxes>
+        <span>{`+ ${taxRate * 100}%  (GST/PST)`}</span>
+        <span>{`$${taxes.toFixed(2)}`}</span>
+      </Taxes>
+      <Shipping>
+        <span>{`+ Shipping & Handling`}</span>
+        <span>{`$${shippingCost.toFixed(2)}`}</span>
+      </Shipping>
+      <Total>
+        <span>Total:</span> <span>{`$${Math.round(total).toFixed(2)}`}</span>
+      </Total>
     </CalcContainer>
   );
 };

@@ -1,18 +1,25 @@
 import { ConfirmBTN } from "./StyledComponents"
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 const Confirm = () => {
     
-    const placeOrderHandler = () => {
-        console.log("order placed")
-
+    const navigate = useNavigate()
+    const [status, setStatus] = useState(false)
+    
+    const confirmOrderHandler = () => {
+        
+        setStatus(true)
         //  fetch .post("/checkout", createOrderHandler)
+        
         // on success, redirect to Success page
-        // some visual cue "placing order"
+        navigate("/Success")
+        // some visual cue if error
 
     }
     
     return(
-        <ConfirmBTN onClick={placeOrderHandler}>Place order</ConfirmBTN>
+        <ConfirmBTN onClick={confirmOrderHandler}>{status ? "Placing order..." : "Place order"}</ConfirmBTN>
     )
 }
 

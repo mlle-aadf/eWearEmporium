@@ -1,4 +1,4 @@
-import actionSlide from "../../images/ActionSlide.png";
+import actionSlide from "../../images/ActionSlide.png"
 import fitnessSlide from "../../images/FitnessSlide.png";
 import healthSlide from "../../images/HealthSlide.png";
 import styleSlide from "../../images/StyleSlide.png";
