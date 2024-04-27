@@ -15,7 +15,7 @@ export const categories = [
 
 export const All = styled.h3`
   position: fixed;
-  top: 10vh;
+  top: clamp(50px, calc(3.125rem + ((1vw - 3.3px) * 2.5786)), 91px);
   margin: 0;
   padding-left: 3rem;
   z-index: +1;
@@ -55,37 +55,52 @@ export const All = styled.h3`
   }
 `;
 
-export const Categories = styled.div`
+export const FilterContainer = styled.div`
   position: fixed;
   top: 21vh;
   left: 3rem;
   width: 17vw;
   padding: 1rem 1.5rem;
-  z-index: 1;
+  z-index: 2;
   background-color: white;
   border: none;
   border-radius: 5px;
+  display: block;
 
   @media (max-width: 800px) {
     display: none;
   }
 `;
 
-export const Apply = styled.button`
+export const InStockMenu = styled.select`
   background-color: white;
-  border-radius: 20px;
-  border: 4px solid var(--accent-color);
-  padding: 0.25rem 1rem;
-  margin: 0.5rem 1.5rem;
+  border: none;
+  border-top: 2px solid var(--navbar-color);
+  padding: 0.5rem;
+  text-align: left;
   cursor: pointer;
 `;
 
-export const CategoriesMobile = styled.div`
+export const Apply = styled.button`
+  background-color: var(--nav-bar-color);
+  border-radius: 20px;
+  border: none;
+  padding: 0.25rem 1rem;
+  margin: 0.5rem 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--accent-color);
+    scale: 105%;
+  }
+`;
+
+export const MobileFilters = styled.div`
   position: fixed;
   top: 17vh;
   right: 5%;
   padding-top: 0.5rem;
-  z-index: 1;
+  z-index: 2;
   background-color: white;
   border: 2px solid var(--nav-bar-color);
   border-radius: 15px;
@@ -108,24 +123,25 @@ export const ApplyMobile = styled.button`
   width: 100%;
 `;
 
-export const Sort = styled.select`
+export const SortContainer = styled.select`
   position: fixed;
   top: 12vh;
   right: 5%;
+  height: ;
   z-index: 1;
   background-color: white;
   border: 2px solid var(--nav-bar-color);
-  padding: 0.75rem 0.25rem 0.75rem 0.75rem;
+  padding: 0.5rem 0 0.75rem 0.75rem;
   border-radius: 20px;
-
-  @media (max-width: 500px) {
-    padding: 0.5rem 0 0.5rem 0.75rem;
-    width: 5rem;
-  }
 
   @media (max-width: 375px) {
     top: 8vh;
     right: 4%;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0.5rem 0 0.5rem 0.75rem;
+    width: 5rem;
   }
 `;
 
@@ -137,10 +153,11 @@ export const SortOption = styled.option`
   }
 `;
 
-export const Filters = styled.button`
+export const FiltersBTN = styled.button`
   position: fixed;
   top: 12vh;
   right: 6.5rem;
+  height: 5vw;
   font-size: 0.75rem;
   display: none;
   z-index: 1;
@@ -260,7 +277,6 @@ export const ProductName = styled.p`
 
 export const Price = styled.p`
   font-size: var(--base-font-size);
-  /* font-weight: 200; */
   color: #a6a39e;
   position: absolute;
   bottom: 5%;
@@ -304,13 +320,13 @@ export const Card = styled.div`
   align-items: start;
   justify-content: space-around;
 
-@media (max-width: 500px) {
-  align-items: center;
-  justify-content: center;
-  margin: 15vh auto 10vh auto;
-  height: 75vh;
-  width: 75%;
-}
+  @media (max-width: 500px) {
+    align-items: center;
+    justify-content: center;
+    margin: 15vh auto 10vh auto;
+    height: 75vh;
+    width: 75%;
+  }
 `;
 
 export const Img = styled.img`

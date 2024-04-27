@@ -1,28 +1,20 @@
 import { useState, useEffect } from "react";
-import Checkbox from "react-custom-checkbox";
-import check from "../../images/check.png";
 import { useCollapse } from "react-collapsed";
 
 import Navbar from "../../components/NavBar";
+import Filters from "./Filters";
+import Availability from "./Availability";
+import Categories from "./Categories";
+import Sort from "./Sort";
+import Items from "./Items";
 import TopButton from "../../components/TopButton";
 import Footer from "../../components/Footer";
 import {
-  categories, // array of all categories
   All,
-  Categories,
   Apply,
-  CategoriesMobile,
-  ApplyMobile,
-  Sort,
-  SortOption,
-  Filters,
-  Loading,
-  ProductsContainer,
-  ProductCard,
-  ProductImg,
-  ProductName,
-  Price,
-} from "../Products/StyledComponents";
+  MobileFilters,
+  FiltersBTN,
+} from "./StyledComponents";
 
 const Products = () => {
   useEffect(() => {
@@ -32,6 +24,7 @@ const Products = () => {
   const [products, setProducts] = useState();
   const [sortBy, setSortBy] = useState("AZ");
   const [filters, setFilters] = useState([]);
+  const [availOnly, setAvailOnly] = useState("default");
 
   // loads all products sorted alphabetically (default)
   useEffect(() => {
@@ -47,7 +40,6 @@ const Products = () => {
     getProducts();
 
     return setProducts(null);
-
   }, []);
 
   // sends new fetch req with sort & filter parameters
@@ -57,7 +49,7 @@ const Products = () => {
       const res = await fetch(
         `/products?sort=${sortParam ? sortParam : sortBy}&filters=${
           filtersParam ? filtersParam.toString() : filters.toString()
-        }`
+        }&all=${availOnly}`
       );
       const { data } = await res.json();
       setProducts(data);
@@ -83,6 +75,12 @@ const Products = () => {
         setFilters([...filters, checkedFilter]);
   };
 
+  // sets availOnly
+  const stockFilter = (event) => {
+    setAvailOnly(event.target.value);
+    /// change appl button color
+  };
+
   // triggers new fetch to update results
   const applyFilters = () => {
     fetchFiltered(sortBy, filters);
@@ -102,87 +100,29 @@ const Products = () => {
       <Navbar />
       <All>All Products {products ? `(${products.length})` : ""}</All>
 
-      <Categories>
-        <h3>Categories</h3>
-
-        {categories.map((category) => {
-          return (
-            <Checkbox
-              onChange={filtersHandler}
-              borderColor="var(--nav-bar-color)"
-              style={{ backgroundColor: "var(--nav-bar-color)" }}
-              value={category}
-              label={category}
-              labelStyle={{ marginLeft: "0.5rem", fontSize: "1rem" }}
-              containerStyle={{ margin: "0.75rem 0", cursor: "pointer" }}
-              icon={<img src={check} style={{ height: "1rem" }} alt="check" />}
-            />
-          );
-        })}
-
-      <Apply onClick={applyFilters}>Apply</Apply>
-      </Categories>
-
-
-
-      <CategoriesMobile {...getCollapseProps()}>
-        <h3>Categories</h3>
-
-        {categories.map((category) => {
-          return (
-            <Checkbox
-              onChange={filtersHandler}
-              borderColor="var(--nav-bar-color)"
-              style={{ backgroundColor: "var(--nav-bar-color)" }}
-              value={category}
-              label={category}
-              labelStyle={{ marginLeft: "0.5rem", fontSize: "1rem" }}
-              containerStyle={{ margin: "0.75rem 0", cursor: "pointer" }}
-              icon={<img src={check} style={{ height: "1rem" }} alt="check" />}
-            />
-          );
-        })}
-
-        <ApplyMobile onClick={applyMobile}>Apply</ApplyMobile>
-      </CategoriesMobile>
-
-      <Sort
-        onChange={sortHandler}
-        defaultValue={"sort"}
-        style={{ cursor: "pointer" }}
-      >
-        <SortOption value={"sort"} disabled>Sort</SortOption>
-        <SortOption value={"AZ"}>A-Z</SortOption>
-        <SortOption value={"ZA"}>Z-A</SortOption>
-        <SortOption value={"priceLH"}>Price -</SortOption>
-        <SortOption value={"priceHL"}>Price +</SortOption>
-      </Sort>
-
       <Filters
+        filtersHandler={filtersHandler}
+        applyFilters={applyFilters}
+        stockFilter={stockFilter}
+      />
+
+      <MobileFilters {...getCollapseProps()}>
+        <Categories filtersHandler={filtersHandler} />
+        <Availability stockFilter={stockFilter} />
+        <Apply onClick={applyMobile} className="applyBTN">Apply</Apply>
+      </MobileFilters>
+
+      <Sort sortHandler={sortHandler} />
+
+      <FiltersBTN
         {...getToggleProps({
           onClick: () => setExpanded((prevExpanded) => !prevExpanded),
         })}
       >
-        {isExpanded ? "Filters -" : "Filters +"}{" "}
-      </Filters>
+        {isExpanded ? "Filters -" : "Filters +"}
+      </FiltersBTN>
 
-      {!products || products === null ? (
-        <Loading>Loading . . .</Loading>
-      ) : (
-        <ProductsContainer>
-          {products.map((product) => {
-            const { imageSrc, name, price, _id } = product;
-
-            return (
-              <ProductCard key={_id} to={`/products/${_id}`}>
-                <ProductImg src={imageSrc} alt={name} />
-                <ProductName>{name}</ProductName>
-                <Price>{price}</Price>
-              </ProductCard>
-            );
-          })}
-        </ProductsContainer>
-      )}
+      <Items products={products} />
 
       <TopButton />
       <Footer />
