@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const CartContentContext = createContext();
 
-const CartContentProvider = ({children}) => {
+const CartContentProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [quantity, setQuantity] = useState(0);
 
@@ -24,25 +24,37 @@ const CartContentProvider = ({children}) => {
         setQuantity(prevQuantity => prevQuantity + 1);
     };
 
-    
+
     // removes item (and corresponding quantity) from cart, updates mongo db
-    const removeFromCart = ({item, quantity}) => {
-        
-        console.log("currentCart: ", cart)
-        console.log("removed item:", item, " QTY: ", quantity)
+    const removeFromCart = ({ item }) => {
+        // Find the index of the item in the cart
+        const itemIndex = cart.findIndex(cartItem => cartItem.data._id === item.data._id);
 
-// **-------------- cart not updating ---------------------****  
-        // const updatedCart = cart.filter((cartItem)=> cartItem.data._id !== item)
-// ???? 
-        // cart.forEach((cartItem) => console.log(cartItem.data._id))
-        // setCart(updatedCart)
+        if (itemIndex === -1) {
+            // If the item is not found in the cart, do nothing
+            return;
+        }
 
-        // console.log("updated: ", cart)
+        const updatedCart = [...cart];
+        updatedCart[itemIndex] = { ...updatedCart[itemIndex]};
+        setCart(updatedCart);
 
-    }
+        // Decrement total quantity by 1 and check if quantity is zero then remove item from cart
+        setQuantity(prevQuantity => {
+            const newQuantity = prevQuantity - 1;
+            if (newQuantity === 0) {
+                // Remove item from cart
+                const updatedCart = cart.filter((_, index) => index !== itemIndex);
+                setCart(updatedCart);
+            }
+            return newQuantity;
+        });
+    };
+
+
 
     return (
-        <CartContentContext.Provider value={{cart, setCart, addToCart, removeFromCart, quantity}}>
+        <CartContentContext.Provider value={{ cart, setCart, addToCart, removeFromCart, quantity }}>
             {children}
         </CartContentContext.Provider>
     );
