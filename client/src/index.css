@@ -133,6 +133,10 @@ nav {
   cursor: pointer;
 }
 
+.navbar-buttons:visited {
+  color: #000000;
+}
+
 footer {
   background-color: var(--nav-bar-color);
   margin: 0;
@@ -262,6 +266,10 @@ footer ul {
     padding: 5px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.website-btn :disabled {
+  cursor: not-allowed;
 }
 
 .invisible {

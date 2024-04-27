@@ -6,6 +6,7 @@ const SignUp = ({
   blankInputSU,
   handleSignUp,
   signUpMessage,
+  btnTextSignup
 }) => {
   return (
         <SUContainer>
@@ -165,7 +166,7 @@ const SignUp = ({
         <br />
 
         <button className="website-btn" type="submit" disabled={blankInputSU}>
-          Register
+          {btnTextSignup}
         </button>
         <br />
       </form>
