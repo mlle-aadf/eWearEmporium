@@ -7,12 +7,13 @@ const AddToCart = ({ item, inStock, setInStock }) => {
   const { addToCart, cart } = useContext(CartContentContext);
   const [buttonText, setButtonText] = useState("Add to cart");
 
+  // useEffect hook for updating the stock when the inStock prop changes
   useEffect(() => {
     setInStock(inStock);
-    return () => {
-    };
+    return () => {};
   }, [inStock, setInStock]);
 
+  // Handler for click event on the add to cart button
   const handleClick = async () => {
     setButtonText("Adding item...");
 
@@ -23,9 +24,10 @@ const AddToCart = ({ item, inStock, setInStock }) => {
           "Content-Type": "application/json",
         },
       });
-      
+
       const data = await response.json();
-      
+
+      // If response is successful, update the cart, else display an error
       if (response.ok) {
         addToCart(data);
         console.log("Item added to cart:", cart);
@@ -43,6 +45,7 @@ const AddToCart = ({ item, inStock, setInStock }) => {
     }
   };
 
+  // Renders the button with appropriate text and style.
   return (
     <AddBTN
       onClick={handleClick}

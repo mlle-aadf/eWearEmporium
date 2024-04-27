@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import up_arrow from "../images/up_arrow.png";
 
+// Button that allows to go back to top of page on press
 const TopButton = () => {
   const topFunction = () => {
     document.body.scrollTop = 0; // For Safari
@@ -9,7 +10,7 @@ const TopButton = () => {
 
   return (
     <ToTop onClick={topFunction} id="topBTN">
-      <img src={up_arrow} style={ImgStyle} />
+      <img src={up_arrow} style={ImgStyle} alt="up-arrow" />
     </ToTop>
   );
 };
