@@ -1,9 +1,5 @@
 import {
-  CartDetailsContainer,
-  Header,
-  FormGroup,
-  Label,
-  Input,
+  CartDetailsContainer
 } from "./StyledComponents";
 import styled from "styled-components";
 import { CartContentContext } from "../../components/Cart/CartContentContext";
