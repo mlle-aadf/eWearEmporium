@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo1.png";
 import logoMobile from "../images/logo2.png";
