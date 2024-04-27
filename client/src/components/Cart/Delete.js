@@ -2,7 +2,7 @@ import { CartContentContext } from "./CartContentContext";
 import { useContext } from "react";
 import { DeleteBTN } from "./StyledComponents";
 
-const Delete = ({ itemID, quantity }) => {
+const Delete = ({ itemID }) => {
     const { removeFromCart } = useContext(CartContentContext);
 
     const deleteItemHandler = async () => {
