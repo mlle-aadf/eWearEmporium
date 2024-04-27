@@ -6,6 +6,7 @@ const CartContentProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     const [quantity, setQuantity] = useState(0);
 
+    // adds item to cart
     const addToCart = (item) => {
         // Check if the item is already in the cart by using the findIndex method
         const existingItemIndex = cart.findIndex(cartItem => cartItem.data._id === item.data._id);
@@ -23,8 +24,25 @@ const CartContentProvider = ({children}) => {
         setQuantity(prevQuantity => prevQuantity + 1);
     };
 
+    
+    // removes item (and corresponding quantity) from cart, updates mongo db
+    const removeFromCart = ({item, quantity}) => {
+        
+        console.log("currentCart: ", cart)
+        console.log("removed item:", item, " QTY: ", quantity)
+
+// **-------------- cart not updating ---------------------****  
+        // const updatedCart = cart.filter((cartItem)=> cartItem.data._id !== item)
+// ???? 
+        // cart.forEach((cartItem) => console.log(cartItem.data._id))
+        // setCart(updatedCart)
+
+        // console.log("updated: ", cart)
+
+    }
+
     return (
-        <CartContentContext.Provider value={{cart, setCart, addToCart, quantity}}>
+        <CartContentContext.Provider value={{cart, setCart, addToCart, removeFromCart, quantity}}>
             {children}
         </CartContentContext.Provider>
     );

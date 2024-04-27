@@ -1,55 +1,15 @@
-import {
-  CartDetailsContainer,
-  Header,
-  FormGroup,
-  Label,
-  Input,
-} from "./StyledComponents";
-import styled from "styled-components";
 import { CartContentContext } from "../../components/Cart/CartContentContext";
 import { useContext } from "react";
+import CartItem from "../../components/Cart/CartItem";
 
-const CartDetails = () => {
-  const { cart, quantity } = useContext(CartContentContext);
+const CartItems = () => {
+  const { cart } = useContext(CartContentContext);
+
   return (
     <>
-      <CartDetailsContainer>
-      <h1>Your Cart</h1>
-      {cart.length === 0 ? (
-        <p>Your cart is empty</p>
-      ) : (
-        cart.map((item) => (
-          <>
-          <CartItemContainer key={item.data._id}>
-            <ItemImage src={item.data.imageSrc} alt={item.data.name} />
-            <ItemDetails>
-              <p>{item.data.name}</p>
-              <p>Price: {item.data.price}</p>
-              <p>Quantity: {quantity}</p>
-            </ItemDetails>
-          </CartItemContainer>
-        </>
-        ))
-      )}
-      </CartDetailsContainer>
+      {cart.length === 0 ? null : cart.map((item) => <CartItem item={item} />)}
     </>
   );
 };
-export default CartDetails;
 
-const CartItemContainer = styled.div`
-  display: flex;
-  position: relative;
-  margin-bottom: 1rem;
-`;
-
-const ItemImage = styled.img`
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-right: 1rem;
-`;
-
-const ItemDetails = styled.div`
-  flex-grow: 1;
-`;
+export default CartItems;

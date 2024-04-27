@@ -1,18 +1,13 @@
 import { FaCheckCircle } from "react-icons/fa";
-import styled from "styled-components";
+import { StockStatus } from "./StyledComponents";
 
 const Instock = () => {
   return (
-    <In>
+    <StockStatus>
       <FaCheckCircle style={{ color: "green", marginRight: "10px" }} />
       <p>In stock</p>
-    </In>
+    </StockStatus>
   );
 };
 
 export default Instock;
-
-const In = styled.div`
-  display: flex;
-  align-items: center;
-`;

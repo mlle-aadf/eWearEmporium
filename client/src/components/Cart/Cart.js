@@ -1,31 +1,24 @@
-import CartItem from "./CartItem";
-import styled from "styled-components";
+import { CartContentContext } from "./CartContentContext";
+import { useContext } from "react";
+import CartDetails from "../../pages/Checkout/CartDetails";
+import {CartContainer, YourCart, CheckoutBtn, Empty} from "../Cart/StyledComponents"
 
 const Cart = ({ isVisible }) => {
+  const {cart} = useContext(CartContentContext);
+  
   if (!isVisible) return null;
 
   return (
     <>
-      <CartShop>
-        <CartItem />
-      </CartShop>
+      <CartContainer>
+        <YourCart>Your Cart</YourCart>
+        {cart.length === 0 
+        ? <Empty>Your cart is empty.</Empty>
+        : <CartDetails/>}
+        <CheckoutBtn to={"/checkout"} className={cart.length === 0 ? "invisible" : "visible"}>Checkout</CheckoutBtn>
+      </CartContainer>
     </>
   );
 };
 
 export default Cart;
-
-const CartShop = styled.div`
-  position: fixed;
-  top: clamp(60px, calc(3.75rem + ((1vw - 7.69px) * 1.7376)), 80px);
-  right: clamp(60px, calc(3.75rem + ((1vw - 7.69px) * 1.7376)), 80px);
-  border: 1px solid black;
-  padding: 10px;
-  background-color: white;
-  z-index: 2000;
-  width: 30%;
-
-  @media (max-width: 768px) {
-    width: 50%;
-  }
-`;

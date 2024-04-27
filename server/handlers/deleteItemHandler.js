@@ -4,8 +4,8 @@ const { MONGO_URI } = process.env;
 const dbName = 'e-wear_emporium';
 
 const deleteItemHandler = async (req, res) => {
+
     const client = new MongoClient(MONGO_URI);
-      
 
     try {
         await client.connect();

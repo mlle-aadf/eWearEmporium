@@ -1,3 +1,5 @@
+// CHECKOUT - related styled components
+
 import styled from "styled-components";
 
 export const GridLayout = styled.div`
@@ -28,19 +30,6 @@ export const PayMethodContainer = styled.div`
   padding: 20px;
 `;
 
-export const CartDetailsContainer = styled.div`
-  grid-area: cart;
-  background: var(--box-color);
-  padding: 20px;
-  width: 70%;
-  margin-left: 30%;
-
-  @media (max-width: 1000px) {
-    width: 100%;
-    margin-left: 0%;
-  }
-`;
-
 export const Header = styled.h2`
   grid-column: 1 / -1;
   margin-bottom: 20px;
@@ -64,3 +53,5 @@ export const Country = styled.input`
   padding: 5px;
   margin: 5px 0;
 `;
+
+export const ConfirmBTN = styled.button``;
