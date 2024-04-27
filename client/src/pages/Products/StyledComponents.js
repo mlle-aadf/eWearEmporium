@@ -127,7 +127,6 @@ export const SortContainer = styled.select`
   position: fixed;
   top: 12vh;
   right: 5%;
-  height: ;
   z-index: 1;
   background-color: white;
   border: 2px solid var(--nav-bar-color);

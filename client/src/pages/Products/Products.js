@@ -9,12 +9,7 @@ import Sort from "./Sort";
 import Items from "./Items";
 import TopButton from "../../components/TopButton";
 import Footer from "../../components/Footer";
-import {
-  All,
-  Apply,
-  MobileFilters,
-  FiltersBTN,
-} from "./StyledComponents";
+import { All, Apply, MobileFilters, FiltersBTN } from "./StyledComponents";
 
 const Products = () => {
   useEffect(() => {
@@ -78,7 +73,6 @@ const Products = () => {
   // sets availOnly
   const stockFilter = (event) => {
     setAvailOnly(event.target.value);
-    /// change appl button color
   };
 
   // triggers new fetch to update results
@@ -109,7 +103,7 @@ const Products = () => {
       <MobileFilters {...getCollapseProps()}>
         <Categories filtersHandler={filtersHandler} />
         <Availability stockFilter={stockFilter} />
-        <Apply onClick={applyMobile} className="applyBTN">Apply</Apply>
+        <Apply onClick={applyMobile}>Apply</Apply>
       </MobileFilters>
 
       <Sort sortHandler={sortHandler} />

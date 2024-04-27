@@ -7,7 +7,7 @@ const Filters = ({filtersHandler, applyFilters, stockFilter}) => {
         <FilterContainer >
             <Categories filtersHandler={filtersHandler}/>
             <Availability stockFilter={stockFilter}/>
-            <Apply className="applyBTN" onClick={applyFilters}>Apply</Apply>
+            <Apply onClick={applyFilters}>Apply</Apply>
         </FilterContainer>
     )
 }
