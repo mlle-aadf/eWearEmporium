@@ -4,57 +4,50 @@ export const CartContentContext = createContext();
 
 const CartContentProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
-    const [quantity, setQuantity] = useState(0);
-
+    
     // adds item to cart
     const addToCart = (item) => {
         // Check if the item is already in the cart by using the findIndex method
         const existingItemIndex = cart.findIndex(cartItem => cartItem.data._id === item.data._id);
-
+    
         if (existingItemIndex > -1) {
-            // If item exists doesn't change the cart
+            // If item exists, update its quantity in the cart
             const updatedCart = [...cart];
+            updatedCart[existingItemIndex] = { ...updatedCart[existingItemIndex], quantity: updatedCart[existingItemIndex].quantity + 1 };
             setCart(updatedCart);
         } else {
-            // If item does not exist, add it
-            setCart([...cart, { ...item }]);
+            // If item does not exist, add it to the cart with quantity set to 1
+            setCart([...cart, { ...item, quantity: 1 }]);
         }
-
-        // Increment total quantity by 1
-        setQuantity(prevQuantity => prevQuantity + 1);
     };
 
+  // removes item (and corresponding quantity) from cart, updates mongo db
+  const removeFromCart = ({ item }) => {
+    // Find the index of the item in the cart
+    const itemIndex = cart.findIndex(cartItem => cartItem.data._id === item.data._id);
 
-    // removes item (and corresponding quantity) from cart, updates mongo db
-    const removeFromCart = ({ item }) => {
-        // Find the index of the item in the cart
-        const itemIndex = cart.findIndex(cartItem => cartItem.data._id === item.data._id);
+    if (itemIndex === -1) {
+        // If the item is not found in the cart, do nothing
+        return;
+    }
 
-        if (itemIndex === -1) {
-            // If the item is not found in the cart, do nothing
-            return;
-        }
-
-        const updatedCart = [...cart];
-        updatedCart[itemIndex] = { ...updatedCart[itemIndex]};
+    // If the quantity of the item is 1, remove it from the cart
+    if (cart[itemIndex].quantity === 1) {
+        // If item exists and its quantity is 1, remove it from the cart
+        const updatedCart = cart.filter((_, index) => index !== itemIndex);
         setCart(updatedCart);
-
-        // Decrement total quantity by 1 and check if quantity is zero then remove item from cart
-        setQuantity(prevQuantity => {
-            const newQuantity = prevQuantity - 1;
-            if (newQuantity === 0) {
-                // Remove item from cart
-                const updatedCart = cart.filter((_, index) => index !== itemIndex);
-                setCart(updatedCart);
-            }
-            return newQuantity;
-        });
-    };
+    } else {
+        // If the quantity is more than 1, update the quantity by subtracting 1
+        const updatedCart = [...cart];
+        updatedCart[itemIndex] = { ...updatedCart[itemIndex], quantity: updatedCart[itemIndex].quantity - 1 };
+        setCart(updatedCart);
+    }
+};
 
 
 
     return (
-        <CartContentContext.Provider value={{ cart, setCart, addToCart, removeFromCart, quantity }}>
+        <CartContentContext.Provider value={{ cart, setCart, addToCart, removeFromCart }}>
             {children}
         </CartContentContext.Provider>
     );

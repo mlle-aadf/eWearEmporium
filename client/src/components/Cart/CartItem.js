@@ -12,7 +12,7 @@ import {
 import Delete from "./Delete";
 
 const CartItem = ({ item }) => {
-  const { quantity } = useContext(CartContentContext);
+  // const { quantity } = useContext(CartContentContext);
 
   return (
     <CartItemContainer>
@@ -22,9 +22,9 @@ const CartItem = ({ item }) => {
       </ItemDetails>
       <PriceQTY>
         <CartItemPrice> {item.data.price}</CartItemPrice>
-        <CartItemQuantity>QTY: {quantity}</CartItemQuantity>
+        <CartItemQuantity>QTY: {item.quantity}</CartItemQuantity>
       </PriceQTY>
-      <Delete itemID={`${item.data._id}`} quantity={quantity} />
+      <Delete itemID={`${item.data._id}`} quantity={item.quantity} />
     </CartItemContainer>
   );
 };
