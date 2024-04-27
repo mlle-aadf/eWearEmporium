@@ -35,11 +35,11 @@ In order to make our users’ experience simple but enjoyable when browsing our 
 
 
 
-## Shop All :shopping_cart:
+## Shop All :eyes:
 
 
 
-In this page, you’ll be able to view all of the products that we have to offer at E-Wear Emporium. 
+In this page, you’ll be able to view all of the products that we have to offer at **E-Wear Emporium**. 
 
 
 
@@ -50,6 +50,23 @@ You’ll even be able to sort through the items according to your liking. For ex
 In addition, users will also be able to see if the products they wish to purchase is in stock or not. Of course, should the item be unavailable for transaction, they will not be able to add those items in their cart. 
 
 
+### Our Cart Feature :shopping_cart:
+
+
+
+Our cart feature enables our customers to add items to a list that they would like to purchase, but that's not all. They will also be able to view each product's price tag and how many quantities of each item they've inserted in their cart. 
+
+However, to simplify our user interface, the cart feature won't lead them to a separate browser tab. Instead, a small window pop-up will appear where they can see all the information previously mentioned, but also be able to keep surfing through our products at the same time. 
+
+
+
+### Order Confirmed! :white_check_mark:
+
+
+
+Moreover, once users would like to finalize their purchase, they simply have to click the _Checkout_, which will lead them to a confirmation page for users to verify their cart before confirming their purchase.  
+
+Lastly, once our clients have confirmed their transaction, they will be redirected to a _Success_ page to confirm their order has been placed successfully. But that's not all; their order #ID will also be displayed on the page, should they have any questions or concerns in regards to their order.
 
 ---
 
@@ -75,9 +92,9 @@ Users will even be able to click on brands that interest them, and they’ll be 
 
 
 
-Do you have any questions, concerns or inquiries that you’d like to bring to our attention? This section will allow you to contact us by writing a short message, and one of our staff members will take care of your case. :people_hugging: 
+Do you have any questions, concerns or inquiries that you’d like to bring to our attention? This section will allow you to contact us by writing a short message, and one of our staff members will take care of your case. :raised_hands: 
 
-Whether users have an Emporium account or not, they will still be able to reach out to us as we treat anyone as a family member of E-Wear Emporium. 
+Whether users have an Emporium account or not, they will still be able to reach out to us as we treat anyone as a family member of **E-Wear Emporium**. All that is needed is their full name and email address! :grin:
 
 
 
@@ -110,7 +127,7 @@ We've also included our _Terms of Service_, should you need to consult it.
 
 
 
-Our website's footer includes various resources such as a _Stay Connected_ and _Navigate_ area. 
+Our website's footer includes various resources such as a **_Stay Connected_** and **_Navigate_** area. 
 
 
 
@@ -139,6 +156,10 @@ These links will redirect them to our **_About_** page, in order for our custome
 
 
 
+---
+
+
+
 ### Our Login/Signup page :woman:
 
 
@@ -150,6 +171,10 @@ Our clients will have the option access this page by clicking the login/signup b
 Once users have reached that page, the option to login or signup will be offered on the same page. However, if they wish to make some purchases without having to create an account, they will be able to fill out a short form that will allow them to access and buy our products. 
 
 The catch? They won't be able to register to know about our deals and offers since they didn't create their account. :man_shrugging:
+
+
+
+---
 
 
 
