@@ -3,16 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 // PRODUCTS.js
-export const categories = [
-  "Fitness",
-  "Medical",
-  "Lifestyle",
-  "Entertainment",
-  "Industrial",
-  "Pets and Animals",
-  "Gaming",
-];
-
 export const All = styled.h3`
   position: fixed;
   top: clamp(50px, calc(3.364375rem + ((1vw - 7.69px) * 2.8297)), 86.4px);
@@ -55,32 +45,6 @@ export const All = styled.h3`
   }
 `;
 
-export const FilterContainer = styled.div`
-  position: fixed;
-  top: 21vh;
-  left: 3rem;
-  width: 17vw;
-  padding: 1rem 1.5rem;
-  z-index: 2;
-  background-color: white;
-  border: none;
-  border-radius: 5px;
-  display: block;
-
-  @media (max-width: 800px) {
-    display: none;
-  }
-`;
-
-export const InStockMenu = styled.select`
-  background-color: white;
-  border: none;
-  border-top: 2px solid var(--navbar-color);
-  padding: 0.5rem;
-  text-align: left;
-  cursor: pointer;
-`;
-
 export const Apply = styled.button`
   background-color: var(--nav-bar-color);
   border-radius: 20px;
@@ -113,45 +77,6 @@ export const MobileFilters = styled.div`
   }
 `;
 
-export const ApplyMobile = styled.button`
-  background-color: white;
-  border-radius: 20px;
-  border: 4px solid var(--nav-bar-color);
-  padding: 0.25rem 1rem;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  width: 100%;
-`;
-
-export const SortContainer = styled.select`
-  position: fixed;
-  top: 12vh;
-  right: 5%;
-  z-index: 1;
-  background-color: white;
-  border: 2px solid var(--nav-bar-color);
-  padding: 0.5rem 0 0.75rem 0.75rem;
-  border-radius: 20px;
-
-  @media (max-width: 375px) {
-    top: 8vh;
-    right: 4%;
-  }
-
-  @media (max-width: 500px) {
-    padding: 0.5rem 0 0.5rem 0.75rem;
-    width: 5rem;
-  }
-`;
-
-export const SortOption = styled.option`
-  font-size: 0.75rem;
-
-  @media (max-width: 500px) {
-    font-size: 0.5rem;
-  }
-`;
-
 export const FiltersBTN = styled.button`
   position: fixed;
   top: 12vh;
@@ -181,15 +106,76 @@ export const FiltersBTN = styled.button`
    }
 `; 
 
-export const Loading = styled.h2`
-  height: 70vh;
-  width: 90vw;
-  margin: 16vh auto 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+//FILTERS.js
+export const FilterContainer = styled.div`
+  position: fixed;
+  top: 21vh;
+  left: 3rem;
+  width: 17vw;
+  padding: 1rem 1.5rem;
+  z-index: 2;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  display: block;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
+// CATEGORIES.js
+export const categories = [
+  "Fitness",
+  "Medical",
+  "Lifestyle",
+  "Entertainment",
+  "Industrial",
+  "Pets and Animals",
+  "Gaming",
+];
+
+// AVAILABILITY.js
+export const InStockMenu = styled.select`
+  background-color: white;
+  border: none;
+  border-top: 2px solid var(--navbar-color);
+  padding: 0.5rem;
+  text-align: left;
+  cursor: pointer;
+`;
+
+// SORT.js
+export const SortContainer = styled.select`
+  position: fixed;
+  top: 12vh;
+  right: 5%;
+  z-index: 1;
+  background-color: white;
+  border: 2px solid var(--nav-bar-color);
+  padding: 0.5rem 0 0.75rem 0.75rem;
+  border-radius: 20px;
+
+  @media (max-width: 375px) {
+    top: 8vh;
+    right: 4%;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0.5rem 0 0.5rem 0.75rem;
+    width: 5rem;
+  }
+`;
+
+export const SortOption = styled.option`
+  font-size: 0.75rem;
+
+  @media (max-width: 500px) {
+    font-size: 0.5rem;
+  }
+`;
+
+// ITEMS.js
 export const ProductsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -279,6 +265,15 @@ export const Price = styled.p`
   position: absolute;
   bottom: 5%;
   pointer-events: none;
+`;
+
+export const Loading = styled.h2`
+  height: 70vh;
+  width: 90vw;
+  margin: 16vh auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 // PRODUCT.js

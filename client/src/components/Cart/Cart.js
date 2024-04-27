@@ -1,12 +1,8 @@
 import { CartContentContext } from "./CartContentContext";
 import { useContext } from "react";
-import CartDetails from "../../pages/Checkout/CartDetails";
-import {
-  CartContainer,
-  YourCart,
-  CheckoutBtn,
-  Empty,
-} from "../Cart/StyledComponents";
+
+import CartItems from "./CartItems";
+import {CartContainer, YourCart, CheckoutBtn, Empty} from "../Cart/StyledComponents"
 
 const Cart = ({ isVisible }) => {
   const { cart } = useContext(CartContentContext);
@@ -19,6 +15,7 @@ const Cart = ({ isVisible }) => {
       <CartContainer>
         {/* Ternary operation to check if the cart is empty and display appropriate content */}
         <YourCart>Your Cart</YourCart>
+
         {cart.length === 0 ? (
           <Empty>Your cart is empty.</Empty>
         ) : (
@@ -30,6 +27,7 @@ const Cart = ({ isVisible }) => {
         >
           Checkout
         </CheckoutBtn>
+
       </CartContainer>
     </>
   );
