@@ -16,6 +16,7 @@ const LoginSignUp = () => {
   const { logIn, loggedInUser } = useContext(LoggedInUserContext);
   const navigate = useNavigate(); // Hook to redirect user
   const [errorMessage, setErrorMessage] = useState(""); // State to display an error message to the user
+  const [buttonText, setButtonText] = useState("Login"); // Will update the login button to give info to the user
 
   const [loginInfo, setLoginInfo] = useState({
     email: "",
@@ -31,6 +32,7 @@ const LoginSignUp = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
+    setButtonText("Getting your info");
     try {
       const response = await fetch("/login", {
         method: "POST",
@@ -48,8 +50,10 @@ const LoginSignUp = () => {
         setErrorMessage(null);
         navigate("/");
       } else {
-        const errorMessage = await response.text();
-        setErrorMessage(`Log in failed: ${errorMessage}`); // Send an error message to the user
+        const error = await response.text();
+        const message = JSON.parse(error).message;
+        setButtonText("Failed to log in");
+        setErrorMessage(`Log in failed: ${message}`); // Send an error message to the user
       }
     } catch (error) {
       setErrorMessage("An error occurred, please try again.");
@@ -57,7 +61,7 @@ const LoginSignUp = () => {
   };
 
   //Everything below is used for the sign up
-
+  const [btnTextSignup, setBtnTextSignup] = useState("Register");
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -90,6 +94,7 @@ const LoginSignUp = () => {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
+    setBtnTextSignup("Creating your account!");
     try {
       const {
         fname,
@@ -127,7 +132,8 @@ const LoginSignUp = () => {
       if (response.ok) {
         const userData = await response.json();
         await logIn(userData);
-        setSignUpMessage("Your account has been created, you can now log in");
+        setSignUpMessage("Your account has been created, you can now login");
+        setBtnTextSignup("Done!");
         setFormData({
           fname: "",
           lname: "",
@@ -143,7 +149,8 @@ const LoginSignUp = () => {
         });
       } else {
         const errorMessage = await response.text();
-        setSignUpMessage(`Sign up failed: ${errorMessage}`);
+        setSignUpMessage(`Sign up failed: ${JSON.parse(errorMessage).message}`);
+        setBtnTextSignup("Sign up failed!");
       }
     } catch (error) {
       setSignUpMessage("An error occurred, please try again.");
@@ -159,6 +166,8 @@ const LoginSignUp = () => {
           blankInputLI={blankInputLI}
           navigate={navigate}
           handleLogin={handleLogin}
+          errorMessage={errorMessage}
+          buttonText={buttonText}
         />
         <SignUp
           formData={formData}
@@ -166,7 +175,9 @@ const LoginSignUp = () => {
           blankInputSU={blankInputSU}
           handleSignUp={handleSignUp}
           signUpMessage={signUpMessage}
+          btnTextSignup={btnTextSignup}
         />
+        <Footer />
       </FormsLayout>
       <Footer />
     </>

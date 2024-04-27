@@ -131,8 +131,21 @@ nav {
   height: clamp(20px, calc(1.25rem + ((1vw - 3px) * 1.8519)), 50px);
   margin: 0 15px 0 0;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
+.navbar-buttons:visited {
+  text-decoration: none;
+  color: black;
+}
+  
+.navbar-buttons:active {
+  text-decoration: none;
+  color: black;
+}
+ 
+  
 footer {
   background-color: var(--nav-bar-color);
   margin: 0;
@@ -262,6 +275,10 @@ footer ul {
   padding: 5px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.website-btn :disabled {
+  cursor: not-allowed;
 }
 
 .invisible {

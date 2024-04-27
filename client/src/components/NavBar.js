@@ -1,10 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
 import logo from "../images/logo1.png";
 import logoMobile from "../images/logo2.png";
 import { FaCartArrowDown } from "react-icons/fa";
-import { IoMdLogIn } from "react-icons/io";
+import { IoPersonSharp } from "react-icons/io5";
 import { IoMdLogOut } from "react-icons/io";
 import Cart from "./Cart/Cart";
 import styled from "styled-components";
@@ -48,9 +47,10 @@ const NavBar = () => {
           {!isAuthenticated && (
             <>
               <NavLink to="/login">
-                <IoMdLogIn
-                  style={{ background: "transparent" }}
+                <IoPersonSharp
+                  style={{ background: "transparent"}}
                   className="navbar-buttons"
+                  title="Click to login or sign up!"
                 />
               </NavLink>
             </>
@@ -63,7 +63,10 @@ const NavBar = () => {
                 style={{ background: "transparent" }}
                 className="navbar-buttons"
               >
-                <IoMdLogOut className="navbar-buttons" />
+                <IoMdLogOut 
+                className="navbar-buttons"
+                title="Click to logout!"
+                 />
               </button>
             </>
           )}

@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-const Login = ({ loginInfo, handleChange, blankInputLI, handleLogin }) => {
+const Login = ({
+  loginInfo,
+  handleChange,
+  blankInputLI,
+  handleLogin,
+  errorMessage,
+  buttonText,
+}) => {
   return (
     <>
       <FormContainer>
@@ -35,10 +42,11 @@ const Login = ({ loginInfo, handleChange, blankInputLI, handleLogin }) => {
             <br />
             <br />
             <button className="website-btn" disabled={blankInputLI}>
-              Login
+              {buttonText}
             </button>
             <br />
           </form>
+          <p>{errorMessage}</p>
         </Div>
       </FormContainer>
       <HR />
