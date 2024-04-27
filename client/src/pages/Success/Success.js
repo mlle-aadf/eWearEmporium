@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
-
+import { useEffect } from "react";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import styled from "styled-components";
 
 const Success = () => {
+  useEffect(() => {
+    document.title = "Success!";
+  }, []);
+  
   return (
-    // [ ] diplays some success message
-    // [ ] OPTIONAL > "You May Also Like: " section, email/newsletter signup
     <>
       <Main>
         <NavBar />

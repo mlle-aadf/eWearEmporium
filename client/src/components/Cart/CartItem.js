@@ -1,73 +1,24 @@
-import styled from "styled-components";
 import { CartContentContext } from "./CartContentContext";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { CartItemContainer, ItemImage, ItemDetails, ItemName, PriceQTY } from "./StyledComponents";
+import Delete from "./Delete";
 
-const CartItem = () => {
-  const { cart, quantity } = useContext(CartContentContext);
-  const navigate = useNavigate();
-  const handleCheckout = ()=> {
-    navigate('/checkout');
-  };
+const CartItem = ({item}) => {
+  const {quantity } = useContext(CartContentContext);
 
   return (
-    <div>
-      <h1>Your Cart</h1>
-      {cart.length === 0 ? (
-        <p>Your cart is empty</p>
-      ) : (
-        cart.map((item) => (
-          <>
-          <CartItemContainer key={item.data._id}>
-            <ItemImage src={item.data.imageSrc} alt={item.data.name} />
-            <ItemDetails>
-              <h3>{item.data.name}</h3>
-              <p>Price: {item.data.price}</p>
-              <p>Quantity: {quantity}</p>
-            </ItemDetails>
-          </CartItemContainer>
-          <CheckoutBtn onClick={handleCheckout}>Checkout</CheckoutBtn>
-        </>
-        ))
-      )}
-    </div>
-  );
+    <CartItemContainer>
+      <ItemDetails>
+        <ItemImage src={item.data.imageSrc} alt={item.data.name} />
+        <ItemName>{item.data.name}</ItemName>
+      </ItemDetails>
+        <PriceQTY>
+          <p style={{fontSize:"1.5rem", marginTop:"0.5rem"}}>{item.data.price}</p>
+          <p style={{fontSize:"1rem", marginTop:"-3rem"}}>QTY: {quantity}</p>
+        </PriceQTY>
+      <Delete itemID={`${item.data._id}`} quantity={quantity} />
+    </CartItemContainer>
+  )
 };
-
-const CartItemContainer = styled.div`
-  display: flex;
-  position: relative;
-  margin-bottom: 1rem;
-  z-index: 2000;
-`;
-
-const ItemImage = styled.img`
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-right: 1rem;
-`;
-
-const ItemDetails = styled.div`
-  flex-grow: 1;
-`;
-
-const CheckoutBtn = styled.div`
-  padding: 5px 5px;
-  background-color: var(--nav-bar-color);
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: var(--accent-color);
-    cursor: pointer;
-  }
-`;
-
 
 export default CartItem;
