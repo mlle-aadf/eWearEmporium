@@ -56,7 +56,11 @@ In addition, users will also be able to see if the products they wish to purchas
 
 Our cart feature enables our customers to add items to a list that they would like to purchase, but that's not all. They will also be able to view each product's price tag and how many quantities of each item they've inserted in their cart. 
 
-However, to simplify our user interface, the cart feature won't lead them to a separate browser tab. Instead, a small window pop-up will appear where they can see all the information previously mentioned, but also be able to keep surfing through our products at the same time. 
+However, to simplify our user interface, the cart feature won't lead them to a separate browser tab. Instead, a small window pop-up will appear where they can see all the information previously mentioned, but also be able to keep surfing through our products at the same time. The image below represents the cart, which is located on the right side of our navbar. 
+
+
+
+![Image of the cart feature which is in the navbar] (/src/images/cart-feature.png)
 
 
 
