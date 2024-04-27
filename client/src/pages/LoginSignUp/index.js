@@ -51,7 +51,7 @@ const LoginSignUp = () => {
         navigate("/");
       } else {
         const error = await response.text();
-        const message = JSON.parse(error).message
+        const message = JSON.parse(error).message;
         setButtonText("Failed to log in");
         setErrorMessage(`Log in failed: ${message}`); // Send an error message to the user
       }
@@ -94,7 +94,7 @@ const LoginSignUp = () => {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-    setBtnTextSignup("Creating your account!")
+    setBtnTextSignup("Creating your account!");
     try {
       const {
         fname,
@@ -133,7 +133,7 @@ const LoginSignUp = () => {
         const userData = await response.json();
         await logIn(userData);
         setSignUpMessage("Your account has been created, you can now login");
-        setBtnTextSignup("Done!")
+        setBtnTextSignup("Done!");
         setFormData({
           fname: "",
           lname: "",
@@ -151,7 +151,6 @@ const LoginSignUp = () => {
         const errorMessage = await response.text();
         setSignUpMessage(`Sign up failed: ${JSON.parse(errorMessage).message}`);
         setBtnTextSignup("Sign up failed!");
-       
       }
     } catch (error) {
       setSignUpMessage("An error occurred, please try again.");
@@ -161,32 +160,33 @@ const LoginSignUp = () => {
     <>
       <NavBar />
       <FormsLayout>
-      <Login
-        loginInfo={loginInfo}
-        handleChange={handleChange}
-        blankInputLI={blankInputLI}
-        navigate={navigate}
-        handleLogin={handleLogin}
-        errorMessage={errorMessage}
-        buttonText={buttonText}
-      />
-      <SignUp
-        formData={formData}
-        handleChangeForm={handleChangeForm}
-        blankInputSU={blankInputSU}
-        handleSignUp={handleSignUp}
-        signUpMessage={signUpMessage}
-        btnTextSignup={btnTextSignup}
-      />
-      <Footer />
+        <Login
+          loginInfo={loginInfo}
+          handleChange={handleChange}
+          blankInputLI={blankInputLI}
+          navigate={navigate}
+          handleLogin={handleLogin}
+          errorMessage={errorMessage}
+          buttonText={buttonText}
+        />
+        <SignUp
+          formData={formData}
+          handleChangeForm={handleChangeForm}
+          blankInputSU={blankInputSU}
+          handleSignUp={handleSignUp}
+          signUpMessage={signUpMessage}
+          btnTextSignup={btnTextSignup}
+        />
+        <Footer />
       </FormsLayout>
+      <Footer />
     </>
   );
 };
 
 const FormsLayout = styled.div`
-  display: flex;
-  flex-direction: row;
-`
+  display: grid;
+  grid-template-columns: auto(2, 1fr);
+`;
 
 export default LoginSignUp;

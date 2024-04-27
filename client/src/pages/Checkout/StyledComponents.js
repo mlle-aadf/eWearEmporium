@@ -11,6 +11,11 @@ export const GridLayout = styled.div`
     "info cart"
     "method cart";
   margin: 200px 100px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "info" "method" "cart";
+  }
 `;
 
 export const ShippingInfoContainer = styled.div`
@@ -49,5 +54,4 @@ export const Country = styled.input`
   margin: 5px 0;
 `;
 
-export const ConfirmBTN = styled.button`
-`
+export const ConfirmBTN = styled.button``;

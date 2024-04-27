@@ -7,7 +7,7 @@ const CartItems = () => {
 
   return (
     <>
-      {cart.length === 0 ? null : cart.map((item) => (<CartItem item={item}/>))}
+      {cart.length === 0 ? null : cart.map((item) => <CartItem item={item} />)}
     </>
   );
 };
