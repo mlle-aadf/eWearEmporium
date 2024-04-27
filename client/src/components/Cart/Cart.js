@@ -19,7 +19,7 @@ const Cart = ({ isVisible }) => {
         {cart.length === 0 ? (
           <Empty>Your cart is empty.</Empty>
         ) : (
-          <CartDetails />
+          <CartItems />
         )}
         <CheckoutBtn
           to={"/checkout"}
