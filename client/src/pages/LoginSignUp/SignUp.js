@@ -11,7 +11,7 @@ const SignUp = ({
   return (
     <SUContainer>
       <Div>
-        <form className="form" onSubmit={handleSignUp}>
+        <form className="form" onSubmit={handleSignUp} />
           <h2 style={{ textDecoration: "underline" }}>Sign Up</h2>
           <p>
             Create an account to take advantage of all the benefits we have to
