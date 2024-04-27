@@ -14,6 +14,10 @@ const Product = () => {
   const [inStock, setInStock] = useState();
 
   useEffect(() => {
+    document.title = "Our Products";
+  }, []);
+
+  useEffect(() => {
     const getProduct = async () => {
       try {
         const res = await fetch(`/products/${productId}`);
