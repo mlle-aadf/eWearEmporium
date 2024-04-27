@@ -21,4 +21,4 @@ const Delete = ({itemID, quantity}) => {
 
 }
 
-export default Delete
+export default Delete;

@@ -99,11 +99,12 @@ export const CartItemPrice = styled.p`
 export const CartItemQuantity = styled.p``;
 
 export const DeleteBTN = styled(TiDelete)`
-  position: relative;
+  top: 1vw;
   right: 5%;
-  width: 4vh;
-  height: 4vh;
+  width: 1.5rem; 
+  height: 1.5rem; 
   cursor: pointer;
+  position: absolute; 
 `;
 
 // ORDER_SUMMARY.js
