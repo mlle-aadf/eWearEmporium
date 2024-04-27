@@ -39,7 +39,7 @@ const CartContentProvider = ({ children }) => {
         updatedCart[itemIndex] = { ...updatedCart[itemIndex]};
         setCart(updatedCart);
 
-        // Decrement total quantity by 1 and check if quantity is zero then remore item from cart
+        // Decrement total quantity by 1 and check if quantity is zero then remove item from cart
         setQuantity(prevQuantity => {
             const newQuantity = prevQuantity - 1;
             if (newQuantity === 0) {
