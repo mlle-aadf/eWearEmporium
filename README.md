@@ -56,11 +56,7 @@ In addition, users will also be able to see if the products they wish to purchas
 
 Our cart feature enables our customers to add items to a list that they would like to purchase, but that's not all. They will also be able to view each product's price tag and how many quantities of each item they've inserted in their cart. 
 
-However, to simplify our user interface, the cart feature won't lead them to a separate browser tab. Instead, a small window pop-up will appear where they can see all the information previously mentioned, but also be able to keep surfing through our products at the same time. The image below represents the cart, which is located on the right side of our navbar. 
-
-
-
-![Image of the cart feature which is in the navbar] (/src/images/cart-feature.png)
+However, to simplify our user interface, the cart feature won't lead them to a separate browser tab. Instead, a small window pop-up will appear where they can see all the information previously mentioned, but also be able to keep surfing through our products at the same time. 
 
 
 
@@ -70,11 +66,11 @@ However, to simplify our user interface, the cart feature won't lead them to a s
 
 Moreover, once users would like to finalize their purchase, they simply have to click the _Checkout_, which will lead them to a confirmation page for users to verify their cart before confirming their purchase.  
 
-Lastly, once our clients have confirmed their transaction, they will be redirected to a _Success_ page to confirm their order has been placed successfully. But that's not all; their order #ID will also be displayed on the page, should they have any questions or concerns in regards to their order.
+One cool feature from our _Checkout_ page is a benefit for users that have created an account. In other words, if users are logged in while trying to checkout with their order, their information will be pre-filled on the screen in order to facilitate the process. To know more about about login features, please visit **_Our Login/Signup page_** below. 
+
+Lastly, once our clients have confirmed their transaction, they will be redirected to a _Success_ page to confirm their order has been placed successfully. But that's not all; their order #ID will also be displayed on the page. This will allow our clients to have a reference point with their order, should they have any related questions or concerns.
 
 ---
-
-
 
 ## Brands :tm:
 
