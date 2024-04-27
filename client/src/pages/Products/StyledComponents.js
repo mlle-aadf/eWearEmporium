@@ -1,43 +1,17 @@
+// PRODUCTS related components
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Filters = styled.button`
-  position: fixed;
-  top: 12vh;
-  right: 6.5rem;
-  font-size: 0.75rem;
-  display: none;
-  z-index: 1;
-  background-color: white;
-  border: 2px solid var(--nav-bar-color);
-  padding: 0.5rem 0.75rem;
-  border-radius: 20px;
-  cursor: pointer;
-
-  @media (max-width: 375px) {
-    top: 8vh;
-    right: 6rem;
-  }
-
-  @media (max-width: 500px) {
-    display: block;
-    margin-right: 0.25rem;
-  }
-  @media (min-width: 500px) and (max-width: 800px) {
-    display: block;
-    margin-right: 0.25rem;
-    right: 7rem;
-  }
-`;
-
-export const Loading = styled.h2`
-  height: 70vh;
-  width: 90vw;
-  margin: 16vh auto 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+// PRODUCTS.js
+export const categories = [
+  "Fitness",
+  "Medical",
+  "Lifestyle",
+  "Entertainment",
+  "Industrial",
+  "Pets and Animals",
+  "Gaming",
+];
 
 export const All = styled.h3`
   position: fixed;
@@ -81,6 +55,59 @@ export const All = styled.h3`
   }
 `;
 
+export const Categories = styled.div`
+  position: fixed;
+  top: 21vh;
+  left: 3rem;
+  width: 17vw;
+  padding: 1rem 1.5rem;
+  z-index: 1;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+`;
+
+export const Apply = styled.button`
+  background-color: white;
+  border-radius: 20px;
+  border: 4px solid var(--accent-color);
+  padding: 0.25rem 1rem;
+  margin: 0.5rem 1.5rem;
+  cursor: pointer;
+`;
+
+export const CategoriesMobile = styled.div`
+  position: fixed;
+  top: 17vh;
+  right: 5%;
+  padding-top: 0.5rem;
+  z-index: 1;
+  background-color: white;
+  border: 2px solid var(--nav-bar-color);
+  border-radius: 15px;
+  padding: 0.25rem 0.75rem;
+  width: fit-content;
+  display: none;
+
+  @media (max-width: 800px) {
+    display: block;
+  }
+`;
+
+export const ApplyMobile = styled.button`
+  background-color: white;
+  border-radius: 20px;
+  border: 4px solid var(--nav-bar-color);
+  padding: 0.25rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+`;
+
 export const Sort = styled.select`
   position: fixed;
   top: 12vh;
@@ -110,38 +137,42 @@ export const SortOption = styled.option`
   }
 `;
 
-export const Categories = styled.div`
+export const Filters = styled.button`
   position: fixed;
-  top: 21vh;
-  left: 3rem;
-  width: 17vw;
-  padding: 1rem 1.5rem;
-  z-index: 1;
-  background-color: white;
-  border: none;
-  border-radius: 5px;
-
-  @media (max-width: 800px) {
-    display: none;
-  }
-`;
-
-export const CategoriesMobile = styled.div`
-  position: fixed;
-  top: 17vh;
-  right: 5%;
-  padding-top: 0.5rem;
+  top: 12vh;
+  right: 6.5rem;
+  font-size: 0.75rem;
+  display: none;
   z-index: 1;
   background-color: white;
   border: 2px solid var(--nav-bar-color);
-  border-radius: 15px;
-  padding: 0.25rem 0.75rem;
-  width: fit-content;
-  display: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  cursor: pointer;
 
-  @media (max-width: 800px) {
-    display: block;
+  @media (max-width: 375px) {
+    top: 8vh;
+    right: 6rem;
   }
+
+  @media (max-width: 500px) {
+    display: block;
+    margin-right: 0.25rem;
+  }
+  @media (min-width: 500px) and (max-width: 800px) {
+    display: block;
+    margin-right: 0.25rem;
+    right: 7rem;
+  }
+`;
+
+export const Loading = styled.h2`
+  height: 70vh;
+  width: 90vw;
+  margin: 16vh auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ProductsContainer = styled.div`
@@ -236,20 +267,124 @@ export const Price = styled.p`
   pointer-events: none;
 `;
 
-export const Apply = styled.button`
+// PRODUCT.js
+export const BackBTN = styled(Link)`
+  position: relative;
+  top: 24vh;
+  left: 8rem;
   background-color: white;
-  border-radius: 20px;
-  border: 4px solid var(--accent-color);
-  padding: 0.25rem 1rem;
-  margin: 0.5rem 1.5rem;
-  cursor: pointer;
-`;
-export const ApplyMobile = styled.button`
-  background-color: white;
-  border-radius: 20px;
+  border-radius: 25px;
   border: 4px solid var(--nav-bar-color);
-  padding: 0.25rem 1rem;
-  margin-top: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem 1.5rem;
+  z-index: 1;
   cursor: pointer;
-  width: 100%;
+  text-decoration: none;
+
+  @media (max-width: 500px) {
+    top: 10vh;
+    left: 2rem;
+  }
+
+  @media (min-width: 500px) and (max-width: 800px) {
+    top: 14vh;
+    left: 10rem;
+  }
+`;
+
+export const Card = styled.div`
+  background-color: white;
+  border-radius: 10px;
+  height: 70vh;
+  width: 65vw;
+  margin: 20vh auto 10vh 25vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+
+@media (max-width: 500px) {
+  align-items: center;
+  justify-content: center;
+  margin: 15vh auto 10vh auto;
+  height: 75vh;
+  width: 75%;
+}
+`;
+
+export const Img = styled.img`
+  height: 50%;
+  max-width: 40%;
+
+  position: absolute;
+  right: 8%;
+  top: 8%;
+
+  @media (max-width: 500px) {
+    height: 40%;
+    position: static;
+    margin: 1rem auto;
+  }
+`;
+
+export const Name = styled.p`
+  width: 45%;
+  height: fit-content;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 2rem 0.5rem 0 2rem;
+  text-align: left;
+
+  @media (max-width: 500px) {
+    font-size: 2rem;
+    margin: 0.5rem auto;
+
+    height: 30%;
+    width: 90%;
+    text-align: center;
+  }
+
+  @media (min-width: 500px) and (max-width: 800px) {
+    font-size: 2.25rem;
+    height: 40%;
+    padding-right: 0.5rem;
+  }
+`;
+
+export const Stock = styled.div`
+  margin: 0 0 0.5rem 2rem;
+
+  @media (max-width: 500px) {
+    margin: 0.5rem auto;
+    position: static;
+    text-align: center;
+  }
+
+  @media (min-width: 500px) and (max-width: 800px) {
+    margin: 0 auto 0 3rem;
+  }
+`;
+
+export const ProductPrice = styled.p`
+  font-size: 2rem;
+  margin-left: 2rem;
+  width: fit-content;
+  position: static;
+
+  @media (max-width: 500px) {
+    margin: 0.5rem auto;
+    position: static;
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 500px) and (max-width: 800px) {
+    margin: 0 auto 0 3rem;
+  }
+`;
+
+// INSTOCK.js / SOLDOUT.js
+export const StockStatus = styled.div`
+  display: flex;
+  align-items: center;
 `;

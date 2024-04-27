@@ -7,20 +7,21 @@ import Navbar from "../../components/NavBar";
 import TopButton from "../../components/TopButton";
 import Footer from "../../components/Footer";
 import {
-  Filters,
-  Loading,
+  categories, // array of all categories
   All,
+  Categories,
+  Apply,
+  CategoriesMobile,
+  ApplyMobile,
   Sort,
   SortOption,
-  Categories,
-  CategoriesMobile,
+  Filters,
+  Loading,
   ProductsContainer,
   ProductCard,
   ProductImg,
   ProductName,
   Price,
-  Apply,
-  ApplyMobile,
 } from "../Products/StyledComponents";
 
 const Products = () => {
@@ -31,16 +32,6 @@ const Products = () => {
   const [products, setProducts] = useState();
   const [sortBy, setSortBy] = useState("AZ");
   const [filters, setFilters] = useState([]);
-
-  const categories = [
-    "Fitness",
-    "Medical",
-    "Lifestyle",
-    "Entertainment",
-    "Industrial",
-    "Pets and Animals",
-    "Gaming",
-  ];
 
   // loads all products sorted alphabetically (default)
   useEffect(() => {
@@ -56,7 +47,7 @@ const Products = () => {
     getProducts();
 
     return setProducts(null);
-    // NEED DEPENDENCY? OR CLEANUP
+
   }, []);
 
   // sends new fetch req with sort & filter parameters
@@ -129,8 +120,10 @@ const Products = () => {
           );
         })}
 
-        <Apply onClick={applyFilters}>Apply</Apply>
+      <Apply onClick={applyFilters}>Apply</Apply>
       </Categories>
+
+
 
       <CategoriesMobile {...getCollapseProps()}>
         <h3>Categories</h3>
@@ -158,9 +151,7 @@ const Products = () => {
         defaultValue={"sort"}
         style={{ cursor: "pointer" }}
       >
-        <SortOption value={"sort"} disabled>
-          Sort
-        </SortOption>
+        <SortOption value={"sort"} disabled>Sort</SortOption>
         <SortOption value={"AZ"}>A-Z</SortOption>
         <SortOption value={"ZA"}>Z-A</SortOption>
         <SortOption value={"priceLH"}>Price -</SortOption>

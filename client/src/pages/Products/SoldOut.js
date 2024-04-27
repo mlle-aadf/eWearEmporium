@@ -1,18 +1,13 @@
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import styled from "styled-components";
+import { StockStatus } from "./StyledComponents";
 
 const SoldOut = () => {
   return (
-    <Out>
+    <StockStatus>
       <IoIosCloseCircleOutline style={{ color: "red", marginRight: "10px" }} />
       <p>Sold out</p>
-    </Out>
+    </StockStatus>
   );
 };
 
 export default SoldOut;
-
-const Out = styled.div`
-  display: flex;
-  align-items: center;
-`;
