@@ -1,27 +1,35 @@
-import { useState, useContext } from "react"
+import { useContext } from "react";
 import { CartContentContext } from "../../components/Cart/CartContentContext";
-import { CalcContainer, Subtotal, Taxes, Shipping, Total } from "../../components/Cart/StyledComponents"
+import {
+  CalcContainer,
+  Subtotal,
+  Taxes,
+  Shipping,
+  Total,
+} from "../../components/Cart/StyledComponents";
 
 const CalcTotal = () => {
-    
-    const { cart } = useContext(CartContentContext);
+  const { cart } = useContext(CartContentContext);
+  const shippingCost = 15.0;
+  const taxRate = 0.15;
 
-// USE cart to set subTotal state, subtotal takes care of all other amounts
-// >>   retrieve price of each item in cart, convert from "$00.00" to num
-    // >>   add all converted prices
-        // >> setSubtotal(converted prices sum) 
+  // Calculates the subtotal for the cart items
+  const subTotal = cart.reduce((total, item) => {
+    const itemPrice = parseFloat(item.data.price.replace("$", ""));
+    return total + itemPrice * (item.quantity || 1);
+  }, 0);
 
+  const taxes = subTotal * taxRate;
+  const total = subTotal + taxes + shippingCost;
 
-    const [subTotal, setSubtotal] = useState(10)
-    
-    return(
-        <CalcContainer>
-            <Subtotal>{`Subtotal: $${subTotal}`}</Subtotal>
-            <Taxes>{`+ HST / GST $${Math.round(subTotal*0.15).toFixed(2)}`}</Taxes>
-            <Shipping>{`+ Shipping & Handling $${15.00}`}</Shipping>
-            <Total>{`Total: $${Math.round((subTotal*1.15)+15).toFixed(2)}`}</Total>
-        </CalcContainer>
-    )
-}
+  return (
+    <CalcContainer>
+      <Subtotal>{`Subtotal: $${subTotal}`}</Subtotal>
+      <Taxes>{`+ ${taxRate * 100}% - HST / GST: $${taxes.toFixed(2)}`}</Taxes>
+      <Shipping>{`+ Shipping & Handling: $${shippingCost}`}</Shipping>
+      <Total>{`Total: $${Math.round(total).toFixed(2)}`}</Total>
+    </CalcContainer>
+  );
+};
 
-export default CalcTotal
+export default CalcTotal;
