@@ -7,6 +7,8 @@ import TopButton from "../../components/TopButton";
 
 import styled from "styled-components";
 
+//This page gives a brief explanation about our brand.
+//It also includes an FAQ section as well as a TOS section.
 const About = () => {
   useEffect(() => {
     document.title = "About Us";

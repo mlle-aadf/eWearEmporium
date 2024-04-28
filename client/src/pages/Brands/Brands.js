@@ -3,6 +3,8 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import styled from "styled-components";
 
+//All of our brands will be displayed on this page.
+//Each brand is also linked to their respective websites.
 const Brands = () => {
   const [brands, setBrands] = useState();
 
@@ -22,7 +24,6 @@ const Brands = () => {
       }
     };
     getBrands();
-    // NEED DEPENDENCY? OR CLEANUP?
   }, []);
 
   return (

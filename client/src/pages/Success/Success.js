@@ -5,10 +5,12 @@ import Footer from "../../components/Footer";
 import styled from "styled-components";
 import { OrderIdContext } from "../Checkout/OrderIdContext";
 
+//This page will be displayed once an order has been placed successfully
 const Success = () => {
   useEffect(() => {
     document.title = "Success!";
   }, []);
+
 //Getting the order id 
   const { orderId } = useContext(OrderIdContext);
   const orderIdNumber = orderId ? orderId._id : null;
