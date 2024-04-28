@@ -6,6 +6,7 @@ import { CartContentContext } from "../../components/Cart/CartContentContext";
 import { useNavigate } from "react-router-dom";
 import { OrderIdContext } from "./OrderIdContext";
 
+//This page authenticates the user's information before confirming their order
 const Confirm = () => {
     const [buttonText, setButtonText] = useState("Place order");
     const { loggedInUser, isAuthenticated } = useContext(LoggedInUserContext);

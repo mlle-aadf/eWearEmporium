@@ -5,6 +5,7 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import styled from "styled-components";
 
+//This page contains a form for users to write their questions/comments
 const Contact = () => {
   useEffect(() => {
     document.title = "Contact Us";
