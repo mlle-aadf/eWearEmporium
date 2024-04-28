@@ -3,6 +3,7 @@ require('dotenv').config();
 const { MONGO_URI } = process.env;
 const dbName = 'e-wear_emporium';
 
+//Finding a product by its ID
 const getProductHandler = async (req, res) => {
     const { _id } = req.params;
     const client = new MongoClient(MONGO_URI);
@@ -13,6 +14,7 @@ const getProductHandler = async (req, res) => {
         const db = client.db(dbName);
         const productData = await db.collection("items").findOne({ _id: productId });
 
+        //Return an error message if product is not listed/found
         if (!productData) {
             return res.status(404).json({
                 status: 404,

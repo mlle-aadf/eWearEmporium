@@ -1,5 +1,3 @@
-import { CartContentContext } from "./CartContentContext";
-import { useContext } from "react";
 import {
   CartItemContainer,
   ItemImage,
@@ -12,7 +10,6 @@ import {
 import Delete from "./Delete";
 
 const CartItem = ({ item }) => {
-  // const { quantity } = useContext(CartContentContext);
 
   return (
     <CartItemContainer>

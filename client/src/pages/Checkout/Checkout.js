@@ -6,6 +6,7 @@ import ShippingInfo from "./ShippingInfo";
 import PaymentMethod from "./PaymentMethod";
 import OrderSummary from "./OrderSummary";
 
+
 const Checkout = () => {
   useEffect(() => {
     document.title = "Checkout";

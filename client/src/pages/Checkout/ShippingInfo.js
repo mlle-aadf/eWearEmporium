@@ -6,7 +6,6 @@ import {
   Label,
   Input,
 } from "./StyledComponents";
-import styled from "styled-components";
 import { LoggedInUserContext } from "../LoginSignUp/LoggedInUserContext";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
@@ -141,21 +140,4 @@ const ShippingInfo = () => {
 };
 
 export default ShippingInfo;
-
-
-const SignUpLogin = styled(Link)`
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  transition: color 0.3s ease, background-color 0.3s ease;
-
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  &:visited {
-    color: black;
-  }
-`;
 

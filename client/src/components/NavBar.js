@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo1.png";
 import logoMobile from "../images/logo2.png";
@@ -14,7 +14,8 @@ const NavBar = () => {
   // Use state function for Cart visibility
   const [isCartVisible, setIsCartVisibile] = useState(false);
   //Set name of the user that logged in
-  const { loggedInUser, logOut, isAuthenticated } = useContext(LoggedInUserContext);
+  const { loggedInUser, logOut, isAuthenticated } =
+    useContext(LoggedInUserContext);
   const name = loggedInUser && loggedInUser.user ? loggedInUser.user.fname : "";
 
   // Function to toggle the visibility of the cart
@@ -26,7 +27,6 @@ const NavBar = () => {
         <Link to="/">
           <Logo src={logo} alt="Logo" mobileSrc={logoMobile} />
         </Link>
-
         <div className="navText">
           <Link to="/products" className="navLink">
             shop all
@@ -43,18 +43,21 @@ const NavBar = () => {
         </div>
 
         <div style={{ display: "flex", alignItems: "center" }}>
+          {/* Navbar icons that toggle cart on press */}
           <FaCartArrowDown className="navbar-buttons" onClick={toggleCart} />
+          {/* Navbar icons for login if user is not logged in yet */}
           {!isAuthenticated && (
             <>
               <NavLink to="/login">
                 <IoPersonSharp
-                  style={{ background: "transparent"}}
+                  style={{ background: "transparent" }}
                   className="navbar-buttons"
                   title="Click to login or sign up!"
                 />
               </NavLink>
             </>
           )}
+          {/* Navbar icons for logout if user is logged in */}
           {isAuthenticated && (
             <>
               <p style={{ margin: "0 15px 0 0" }}>{name}</p>
@@ -63,10 +66,10 @@ const NavBar = () => {
                 style={{ background: "transparent" }}
                 className="navbar-buttons"
               >
-                <IoMdLogOut 
-                className="navbar-buttons"
-                title="Click to logout!"
-                 />
+                <IoMdLogOut
+                  className="navbar-buttons"
+                  title="Click to logout!"
+                />
               </button>
             </>
           )}
@@ -85,6 +88,6 @@ const Logo = styled.img`
 
   @media (max-width: 768px) {
     content: url(${(props) => props.mobileSrc});
-    height  : clamp(20px, calc(1.25rem + ((1vw - 3.3px) * 6.8493)), 50px);
+    height: clamp(20px, calc(1.25rem + ((1vw - 3.3px) * 6.8493)), 50px);
   }
 `;

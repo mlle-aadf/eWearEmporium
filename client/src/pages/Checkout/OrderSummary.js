@@ -1,5 +1,8 @@
-import { OrderContainer, Title } from "../../components/Cart/StyledComponents";
-import CartItems from "./CartDetails";
+import {
+  OrderContainer,
+  Title,
+} from "./StyledComponents";
+import CartItems from "../../components/Cart/CartItems";
 import CalcTotal from "./CalcTotal";
 import Confirm from "./Confirm";
 import { CartContentContext } from "../../components/Cart/CartContentContext";

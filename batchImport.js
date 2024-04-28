@@ -1,4 +1,3 @@
-// const companies = require("./server/data/companies.json")
 const items = require("./server/data/items.json")
 
 const { MongoClient } = require("mongodb");
@@ -11,6 +10,7 @@ const options = {
     useUnifiedTopology: true,
 };
 
+//Function to import the local data of the products to MongoDB
 batchImport = async () => {
     try {
         const client = new MongoClient(MONGO_URI, options);

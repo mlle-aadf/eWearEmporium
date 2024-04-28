@@ -5,12 +5,7 @@ import styled from "styled-components";
 import miniLogo from "../images/logo2.png";
 
 const Footer = () => {
-  //The input field should be aligned and centered horizontally with the btn.
-
-  //The "Navigate" section should be viewed as a column, aligned vertically.
-
-  //In the section following the <hr/> tag, the content should be aligned horizontally and spaced out.
-
+  // State for managing email subscription
   const [subEmail, setSubEmail] = useState("");
   const [isSubbed, setIsSubbed] = useState(false);
 
@@ -101,7 +96,11 @@ const Footer = () => {
         <hr style={{ width: "75%", margin: "auto" }} />
         <br />
         <div className="brand-info">
-        <img src={miniLogo} alt="Small brand logo" className="brand-logo"></img>
+          <img
+            src={miniLogo}
+            alt="Small brand logo"
+            className="brand-logo"
+          ></img>
           <h2 className="brand-text2">A local brand based in Montreal, QC</h2>
         </div>
         <br />
