@@ -3,14 +3,18 @@ import styled from "styled-components";
 import { slidesData, slidesMobile } from "./slidesData";
 
 const RotatingSlides = () => {
+
+  // useState to track the index of the current slide
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Function to advance to the next slide
   const switchSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === slidesData.length - 1 ? 0 : prevIndex + 1
     );
   };
 
+  // useEffect to set up an interval that switches slides every 10 seconds
   useEffect(() => {
     const intervalId = setInterval(switchSlide, 10000);
     return () => clearInterval(intervalId);
