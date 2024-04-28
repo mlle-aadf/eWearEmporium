@@ -1,11 +1,17 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import styled from "styled-components";
 
+//This page will be displayed once the user
+//has successfully submitted their message from the "Contact" page
 const ContactSuccess = () => {
 
+    useEffect(() => {
+      document.title = "Message Sent!";
+    }, []);
 
     return (
         <>

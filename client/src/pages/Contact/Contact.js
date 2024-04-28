@@ -10,6 +10,7 @@ const Contact = () => {
     document.title = "Contact Us";
   }, []);
 
+  //Created states for the values below to track the user's input when filling out the form
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
@@ -31,6 +32,7 @@ const Contact = () => {
     setMessage(event.target.value);
   };
 
+  //If any of the fields are blank, disable the "Submit" button
   const blankInput = !firstName || !lastName || !email || !message;
 
   return (
