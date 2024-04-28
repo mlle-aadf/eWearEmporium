@@ -9,6 +9,7 @@ const SignUp = ({
   btnTextSignup,
 }) => {
   return (
+    {/* Fill up already known data for logged in user */}
     <SUContainer>
       <Div>
         <form className="form" onSubmit={handleSignUp} />
