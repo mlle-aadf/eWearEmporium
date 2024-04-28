@@ -177,7 +177,6 @@ const LoginSignUp = () => {
           signUpMessage={signUpMessage}
           btnTextSignup={btnTextSignup}
         />
-        <Footer />
       </FormsLayout>
       <Footer />
     </>
