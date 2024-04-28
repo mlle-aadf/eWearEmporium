@@ -3,7 +3,7 @@
 const express = require('express');
 const morgan = require('morgan');
 
-const PORT = process.env.PORT || 4000;
+const PORT = 4000;
 
 //require the handlers
 const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getItemHandler, deleteItemHandler} = require("./handlers");
