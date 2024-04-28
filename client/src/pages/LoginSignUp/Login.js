@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Log in section of the page, allows the user to use credentials to log in.
 const Login = ({
   loginInfo,
   handleChange,

@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { slidesData, slidesMobile } from "./slidesData";
 
-const RotatingSlides = () => {
 
+// Rotates between several different slides.
+const RotatingSlides = () => {
   // useState to track the index of the current slide
   const [currentIndex, setCurrentIndex] = useState(0);
 

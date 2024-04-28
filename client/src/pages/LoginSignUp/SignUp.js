@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Sign up section of the page.
 const SignUp = ({
   formData,
   handleChangeForm,
@@ -9,7 +10,7 @@ const SignUp = ({
   btnTextSignup,
 }) => {
   return (
-    // Fill up already known data for logged in user 
+    // Fills up info from user to be used when making a shipment. 
     <SUContainer>
       <Div>
         <form className="form" onSubmit={handleSignUp} />

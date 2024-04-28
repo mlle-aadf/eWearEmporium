@@ -6,6 +6,7 @@ import {
   Input,
 } from "./StyledComponents";
 
+// Payment info for user
 const PaymentMethods = () => {
   return (
     <>

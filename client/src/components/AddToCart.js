@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { CartContentContext } from "./Cart/CartContentContext";
 import { useContext } from "react";
 
+
+// Adds items to the Cart
 const AddToCart = ({ item, inStock, setInStock }) => {
   const { addToCart, cart } = useContext(CartContentContext);
   const [buttonText, setButtonText] = useState("Add to cart");

@@ -142,5 +142,4 @@ export const ConfirmBTN = styled.button`
     background-color: var(--accent-color);
     scale: 105%
   }
-
 `;

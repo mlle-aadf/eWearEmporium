@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import HeroSection from "./HeroSection";
 import RotatingSlides from "./RotatingSlides";
 
+// Home / Landing page for the website. 
 const Home = () => {
   useEffect(() => {
     document.title = "E-Wear Emporium";

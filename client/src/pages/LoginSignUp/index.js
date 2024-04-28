@@ -5,9 +5,9 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import Footer from "../../components/Footer";
 import { LoggedInUserContext } from "./LoggedInUserContext";
-
 import styled from "styled-components";
 
+// Generates the log in / Sign up page.
 const LoginSignUp = () => {
   useEffect(() => {
     document.title = "Signup | Login";

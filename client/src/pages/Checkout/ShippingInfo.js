@@ -11,6 +11,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { GuestInfoContext } from "./GuestInfoContext";
 
+// Generates shipping info for user, if user is logged in it auto generates.
 const ShippingInfo = () => {
   const { loggedInUser, isAuthenticated } = useContext(LoggedInUserContext);
   // Info is stored in this state if the user is not logged in

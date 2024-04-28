@@ -9,6 +9,7 @@ import {
 } from "./StyledComponents";
 import Delete from "./Delete";
 
+// Populates each individual item that is added to the cart.
 const CartItem = ({ item }) => {
 
   return (

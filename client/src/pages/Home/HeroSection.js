@@ -2,6 +2,7 @@ import styled from "styled-components";
 import heroImage from "../../images/HeroSection.png";
 import { Link } from "react-router-dom";
 
+// Populates hero section for home page
 const HeroSection = () => {
   return (
     <HeroContainer>

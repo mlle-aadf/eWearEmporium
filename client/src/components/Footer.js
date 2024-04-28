@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import miniLogo from "../images/logo2.png";
 
+// The footer of the page
 const Footer = () => {
   // State for managing email subscription
   const [subEmail, setSubEmail] = useState("");

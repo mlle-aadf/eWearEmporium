@@ -4,6 +4,7 @@ import { useContext } from "react";
 import CartItems from "./CartItems";
 import {CartContainer, YourCart, CheckoutBtn, Empty} from "../Cart/StyledComponents"
 
+// Hosts the Cart and all components inside of it 
 const Cart = ({ isVisible }) => {
   const { cart } = useContext(CartContentContext);
 

@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react';
 
+// Stores and provides Order ID
 export const OrderIdContext = createContext();
 
 export const OrderIdProvider = ({ children }) => {
