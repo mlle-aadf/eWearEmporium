@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import styled from "styled-components";
+import { OrderIdContext } from "../Checkout/OrderIdContext";
 
 const Success = () => {
   useEffect(() => {
     document.title = "Success!";
   }, []);
-  
+//Getting the order id 
+  const { orderId } = useContext(OrderIdContext);
+  const orderIdNumber = orderId ? orderId._id : null;
+
   return (
     <>
       <Main>
@@ -17,7 +21,7 @@ const Success = () => {
         <br />
         <H2>
           Thank you for shopping at E-Wear Emporium! Your order confirmation
-          number is "insert order ID".
+          number is {orderIdNumber ? orderIdNumber : "not available"}.
         </H2>
         <H2>Feel free to visit the sections below for more information.</H2>
         <Div>
