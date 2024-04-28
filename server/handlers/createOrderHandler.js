@@ -12,14 +12,12 @@ const createOrderHandler = async (req, res) => {
         // Initializing the collection
         const db = client.db(dbName);
         const ordersCollection = db.collection('orders');
-        const itemsCollection = db.collection('items');
         // Extracting the data needed from the body
-        const { userId, shippingInfo, items } = req.body;
+        const { shippingInfo, items } = req.body;
 
         // Creation of the order if there is enough items in stock
         const newOrder = {
             _id: uuidv4(),
-            userId,
             shippingInfo,
             items,
         };
@@ -32,11 +30,12 @@ const createOrderHandler = async (req, res) => {
                 message: "Failed to create order",
             });
         }
-
+        const orderId = newOrder._id;
         // Send response if the order is successful
         return res.status(201).json({
             status: 201,
             message: "Order created successfully",
+            _id: orderId
         })
     } catch (error) {
         return res.status(500).json({

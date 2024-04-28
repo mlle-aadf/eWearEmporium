@@ -8,29 +8,20 @@ import {
 } from "./StyledComponents";
 import { LoggedInUserContext } from "../LoginSignUp/LoggedInUserContext";
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { GuestInfoContext } from "./GuestInfoContext";
 
 const ShippingInfo = () => {
   const { loggedInUser, isAuthenticated } = useContext(LoggedInUserContext);
   // Info is stored in this state if the user is not logged in
-  const [guestInfo, setGuestInfo] = useState({
-    country: "",
-    province: "",
-    city: "",
-    address: "",
-    postcode: "",
-    phone: "",
-    fname: "",
-    lname: "",
-    email: "",
-  });
-// Handle changes in the form inputs and stores them in the state
+  const { guestInfo, updateGuestInfo } = useContext(GuestInfoContext);
+
+  // Handle changes in the form inputs and update guest info
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setGuestInfo({
-      ...guestInfo,
-      [name]: value,
-    });
+    updateGuestInfo({ [name]: value });
   };
+  console.log("This is shipping info: ", guestInfo);
 
   return (
     <>
