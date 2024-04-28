@@ -16,7 +16,9 @@ const Products = () => {
     document.title = "Our Products";
   }, []);
 
+  // declares state/setter used to set products to render
   const [products, setProducts] = useState();
+  // declares states/setters used to set user-selected filter and sort options
   const [sortBy, setSortBy] = useState("AZ");
   const [filters, setFilters] = useState([]);
   const [availOnly, setAvailOnly] = useState("default");
@@ -70,7 +72,7 @@ const Products = () => {
         setFilters([...filters, checkedFilter]);
   };
 
-  // sets availOnly
+  // sets user-selected availabilty option
   const stockFilter = (event) => {
     setAvailOnly(event.target.value);
   };
@@ -79,7 +81,7 @@ const Products = () => {
   const applyFilters = () => {
     fetchFiltered(sortBy, filters);
   };
-
+  // same as above + collapses filters menu
   const applyMobile = () => {
     fetchFiltered(sortBy, filters);
     setExpanded(false);
@@ -92,22 +94,25 @@ const Products = () => {
   return (
     <>
       <Navbar />
+      {/* determines and displays number of items rendered */}
       <All>All Products {products ? `(${products.length})` : ""}</All>
 
       <Filters
+      // passes filter/sort selections down to Filters component
         filtersHandler={filtersHandler}
         applyFilters={applyFilters}
         stockFilter={stockFilter}
       />
-
+      {/* same as above but differentiated for mobile to allow for collapse/expanding  menu*/}
       <MobileFilters {...getCollapseProps()}>
         <Categories filtersHandler={filtersHandler} />
         <Availability stockFilter={stockFilter} />
         <Apply onClick={applyMobile}>Apply</Apply>
       </MobileFilters>
-
+      {/* renders button so user can sort by price or name */}
       <Sort sortHandler={sortHandler} />
 
+      {/* renders "Filters button to collapse/expand menu (mobile)*/}
       <FiltersBTN
         {...getToggleProps({
           onClick: () => setExpanded((prevExpanded) => !prevExpanded),
@@ -115,9 +120,9 @@ const Products = () => {
       >
         {isExpanded ? "Filters -" : "Filters +"}
       </FiltersBTN>
-
+      {/* renders all item product cards to display */}
       <Items products={products} />
-
+      {/* scrolls back to top of page */}
       <TopButton />
       <Footer />
     </>

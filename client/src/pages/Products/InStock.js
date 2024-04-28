@@ -1,6 +1,7 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { StockStatus } from "./StyledComponents";
 
+// returns "in stock" message + icon
 const Instock = () => {
   return (
     <StockStatus>

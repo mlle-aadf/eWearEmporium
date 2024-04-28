@@ -2,6 +2,7 @@ import { FilterContainer, Apply } from "./StyledComponents"
 import Availability from "./Availability"
 import Categories from "./Categories"
 
+// returns the entire Filters menu, comprised of the Categories checklist, Availability drop-down menu and Apply button
 const Filters = ({filtersHandler, applyFilters, stockFilter}) => {
     return(
         <FilterContainer >
