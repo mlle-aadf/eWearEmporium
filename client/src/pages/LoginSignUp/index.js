@@ -30,6 +30,8 @@ const LoginSignUp = () => {
 
   const blankInputLI = loginInfo.email === "" || loginInfo.password === ""; // disabled the log in button if email or password is not filled
 
+
+  // Log in the user
   const handleLogin = async (event) => {
     event.preventDefault();
     setButtonText("Getting your info");
@@ -92,6 +94,7 @@ const LoginSignUp = () => {
     !formData.password ||
     !formData.confirmPassword;
 
+  // Updates the user data on signup 
   const handleSignUp = async (event) => {
     event.preventDefault();
     setBtnTextSignup("Creating your account!");
