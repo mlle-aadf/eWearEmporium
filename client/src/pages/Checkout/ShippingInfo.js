@@ -7,8 +7,7 @@ import {
   Input,
 } from "./StyledComponents";
 import { LoggedInUserContext } from "../LoginSignUp/LoggedInUserContext";
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { GuestInfoContext } from "./GuestInfoContext";
 
 // Generates shipping info for user, if user is logged in it auto generates.
@@ -34,7 +33,9 @@ const ShippingInfo = () => {
           <Country
             name="country"
             id="country"
-            value={isAuthenticated ? loggedInUser.user.country : guestInfo.country}
+            value={
+              isAuthenticated ? loggedInUser.user.country : guestInfo.country
+            }
             onChange={handleChange}
             required
           />
@@ -46,7 +47,9 @@ const ShippingInfo = () => {
             type="text"
             name="province"
             id="province-state"
-            value={isAuthenticated ? loggedInUser.user.province : guestInfo.province}
+            value={
+              isAuthenticated ? loggedInUser.user.province : guestInfo.province
+            }
             onChange={handleChange}
             required
           />
@@ -70,7 +73,9 @@ const ShippingInfo = () => {
             type="text"
             name="address"
             id="address"
-            value={isAuthenticated ? loggedInUser.user.address : guestInfo.address}
+            value={
+              isAuthenticated ? loggedInUser.user.address : guestInfo.address
+            }
             onChange={handleChange}
             required
           />
@@ -82,7 +87,9 @@ const ShippingInfo = () => {
             type="text"
             name="postcode"
             id="zip"
-            value={isAuthenticated ? loggedInUser.user.postcode : guestInfo.postcode}
+            value={
+              isAuthenticated ? loggedInUser.user.postcode : guestInfo.postcode
+            }
             onChange={handleChange}
             required
           />
@@ -141,4 +148,3 @@ const ShippingInfo = () => {
 };
 
 export default ShippingInfo;
-

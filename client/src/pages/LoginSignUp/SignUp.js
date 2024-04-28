@@ -184,12 +184,6 @@ const SUContainer = styled.div`
   text-align: center;
 `;
 
-const H1 = styled.h1`
-  font-size: 40px;
-  text-decoration: underline;
-  font-weight: bold;
-`;
-
 const Label = styled.label`
   font-weight: bold;
   padding: 0 0 10px 0;

@@ -13,7 +13,7 @@ const LoginSignUp = () => {
     document.title = "Signup | Login";
   }, []);
   //Everything below is used for the log in
-  const { logIn, loggedInUser } = useContext(LoggedInUserContext);
+  const { logIn } = useContext(LoggedInUserContext);
   const navigate = useNavigate(); // Hook to redirect user
   const [errorMessage, setErrorMessage] = useState(""); // State to display an error message to the user
   const [buttonText, setButtonText] = useState("Login"); // Will update the login button to give info to the user

@@ -2,12 +2,18 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import NavBar from "../../components/NavBar";
-import { BackBTN, Card, Img, Name, Stock, ProductPrice } from "./StyledComponents";
+import {
+  BackBTN,
+  Card,
+  Img,
+  Name,
+  Stock,
+  ProductPrice,
+} from "./StyledComponents";
 import AddToCart from "../../components/AddToCart";
 import Instock from "../Products/InStock";
 import SoldOut from "../Products/SoldOut";
 import Footer from "../../components/Footer";
-
 
 const Product = () => {
   // retrieves id of specifc product from url
@@ -43,7 +49,7 @@ const Product = () => {
   useEffect(() => {
     const set = () => setInStock(numInStock > 0 ? true : false);
     productInfo && set();
-  }, [productInfo]);
+  }, [productInfo, numInStock]);
 
   return (
     <>
@@ -51,7 +57,7 @@ const Product = () => {
       {/* button for user to go back to all products page */}
       <BackBTN to="/products">Back to All</BackBTN>
       <Card>
-      {/* displays loading message if product info n/a */}
+        {/* displays loading message if product info n/a */}
         {!productInfo ? (
           <p>Loading ...</p>
         ) : (
