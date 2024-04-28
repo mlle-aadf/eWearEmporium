@@ -1,3 +1,4 @@
+// Generates list of countries to be used in Shipping Info
 export const countryOptions = [
   { value: "Canada", label: "Canada" },
   { value: "United States", label: "United States" },

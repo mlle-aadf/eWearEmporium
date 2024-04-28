@@ -1,7 +1,10 @@
 import { createContext, useState } from "react";
 
+// Creates context for the Cart to be used in other Components
 export const CartContentContext = createContext();
 
+
+// Provides content to the Cart, either adding or deleting them.
 const CartContentProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     

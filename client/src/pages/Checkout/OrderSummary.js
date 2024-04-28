@@ -8,6 +8,7 @@ import Confirm from "./Confirm";
 import { CartContentContext } from "../../components/Cart/CartContentContext";
 import { useContext } from "react";
 
+// Populates the order summary section of the page.
 const OrderSummary = () => {
   const { cart } = useContext(CartContentContext);
 

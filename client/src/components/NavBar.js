@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { LoggedInUserContext } from "../pages/LoginSignUp/LoggedInUserContext";
 import { NavLink } from "react-router-dom";
 
+// Navigation Bar for the page
 const NavBar = () => {
   // Use state function for Cart visibility
   const [isCartVisible, setIsCartVisibile] = useState(false);

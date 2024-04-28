@@ -1,7 +1,9 @@
 import { createContext, useState } from "react";
 
+// Stores and provides logged in user info.
 export const LoggedInUserContext = createContext();
 
+// Provides logged in user state
 const LoggedInUserProvider = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useState({
     _id: "",

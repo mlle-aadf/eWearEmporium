@@ -1,4 +1,4 @@
-import actionSlide from "../../images/ActionSlide.png"
+import actionSlide from "../../images/ActionSlide.png";
 import fitnessSlide from "../../images/FitnessSlide.png";
 import healthSlide from "../../images/HealthSlide.png";
 import styleSlide from "../../images/StyleSlide.png";
@@ -7,6 +7,7 @@ import fitnessMobile from "../../images/fitness_mobile.png";
 import healthMobile from "../../images/health_mobile.png";
 import styleMobile from "../../images/style_mobile.png";
 
+// Info rendered into the RotatingSlides component
 export const slidesData = [
   {
     description:
