@@ -8,6 +8,7 @@ import {
   Total,
 } from "../Checkout/StyledComponents";
 
+//This component will calculate the prices of the items added to the user's cart
 const CalcTotal = () => {
   const { cart } = useContext(CartContentContext);
   const shippingCost = 15.0;
