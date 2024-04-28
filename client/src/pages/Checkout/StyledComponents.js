@@ -13,7 +13,7 @@ export const GridLayout = styled.div`
     "method cart";
   margin: 200px 100px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1500px) {
     grid-template-columns: 1fr;
     grid-template-areas: "info" "method" "cart";
   }
@@ -64,7 +64,7 @@ export const OrderContainer = styled.div`
   margin-left: 30%;
   height: fit-content;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1500px) {
     width: 100%;
     margin-left: 0%;
   }
