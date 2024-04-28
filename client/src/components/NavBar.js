@@ -51,7 +51,7 @@ const NavBar = () => {
               <NavLink to="/login">
                 <IoPersonSharp
                   style={{ background: "transparent" }}
-                  claszName="navbar-buttons"
+                  className="navbar-buttons"
                   title="Click to login or sign up!"
                 />
               </NavLink>
