@@ -3,6 +3,7 @@ import { SortContainer, SortOption } from "./StyledComponents"
 const Sort = ({sortHandler}) => {
     return(
         <SortContainer
+        // updates sort state to selected sort option
         onChange={sortHandler}
         defaultValue={"sort"}
         style={{ cursor: "pointer" }}>

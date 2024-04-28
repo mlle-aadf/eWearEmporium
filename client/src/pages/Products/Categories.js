@@ -2,6 +2,7 @@ import Checkbox from "react-custom-checkbox";
 import check from "../../images/check.png";
 import { categories } from "./StyledComponents";
 
+// returns the "Categories" section of the filter menu with a checkbox input for each category
 const Categories = ({ filtersHandler }) => {
   return (
     <>
@@ -10,6 +11,7 @@ const Categories = ({ filtersHandler }) => {
         return (
           <Checkbox
             key={category}
+            // updates filters state to selected categories
             onChange={filtersHandler}
             borderColor="var(--nav-bar-color)"
             style={{ backgroundColor: "var(--nav-bar-color)" }}

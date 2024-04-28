@@ -1,5 +1,6 @@
 import { InStockMenu } from "./StyledComponents";
 
+// returns a select menu component with 2 options, "All Items" (in stock or sold out) and "Available" (only items that are in stock)
 const Availability = ({ stockFilter }) => {
   return (
     <InStockMenu onChange={stockFilter} id="avail">
