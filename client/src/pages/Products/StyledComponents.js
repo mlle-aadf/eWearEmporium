@@ -1,6 +1,6 @@
 // PRODUCTS related components
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 // PRODUCTS.js
 export const All = styled.h3`
@@ -16,13 +16,14 @@ export const All = styled.h3`
   font-weight: 400;
   font-size: var(--h2-font-size);
   font-family: var(--font-lato);
-  background-color: var(--accent-color);
+  background-color: var(--nav-bar-color);
   background: linear-gradient(
     180deg,
-    rgba(215, 233, 233, 1) 0%,
-    rgba(215, 233, 233, 0.8) 50%,
-    rgba(215, 233, 233, 0.4) 75%,
-    rgba(215, 233, 233, 0.2) 90%,
+    rgba(224, 224, 224, 1) 0%,
+    rgba(224, 224, 224, 0.8) 50%,
+    rgba(224, 224, 224, 0.6) 60%,
+    rgba(224, 224, 224, 0.4) 75%,
+    rgba(224, 224, 224, 0.2) 90%,
     rgba(255, 255, 255, 0.1) 100%
   );
 
@@ -32,14 +33,14 @@ export const All = styled.h3`
     width: 100vw;
     background: linear-gradient(
       180deg,
-      rgba(215, 233, 233, 1) 0%,
-      rgba(215, 233, 233, 1) 30%,
-      rgba(215, 233, 233, 0.9) 50%,
-      rgba(215, 233, 233, 0.8) 60%,
-      rgba(215, 233, 233, 0.6) 70%,
-      rgba(215, 233, 233, 0.5) 80%,
-      rgba(215, 233, 233, 0.4) 90%,
-      rgba(215, 233, 233, 0.2) 95%,
+      rgba(224, 224, 224, 1) 0%,
+      rgba(224, 224, 224, 1) 30%,
+      rgba(224, 224, 224, 0.9) 50%,
+      rgba(224, 224, 224, 0.8) 60%,
+      rgba(224, 224, 224, 0.6) 70%,
+      rgba(224, 224, 224, 0.5) 80%,
+      rgba(224, 224, 224, 0.4) 90%,
+      rgba(224, 224, 224, 0.2) 95%,
       rgba(255, 255, 255, 0.1) 100%
     );
   }
@@ -183,9 +184,9 @@ export const ProductsContainer = styled.div`
   margin: 20vh auto 0 23vw;
   width: 74%;
   height: fit-content;
+
   :hover {
-    outline: 6px solid var(--nav-bar-color);
-    scale: 105%;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 500px) {
@@ -216,7 +217,7 @@ export const ProductCard = styled(Link)`
   font-size: var(--base-font-size);
   font-weight: 300;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 3px;
   margin: 0.5rem;
   padding: 0 1.5rem;
   position: relative;

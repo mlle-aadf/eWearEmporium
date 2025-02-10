@@ -18,7 +18,8 @@
 
   --accent-color: #d7e9e9;
   --hover-color: #eafaf8;
-  --nav-bar-color: #e5e1d6;
+  /* --bg-color: #E0E0E0; */
+  --nav-bar-color: rgb(224, 224, 224);
   --box-color: #f1ece9;
   --white: #ffffff;
   --black: #000000;
@@ -42,7 +43,8 @@ html {
 }
 
 body {
-  background-color: var(--accent-color);
+  /* background-color: var(--bg-color); */
+  background-color: var(--white);
 }
 
 h1 {
