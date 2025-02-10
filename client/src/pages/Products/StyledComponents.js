@@ -5,12 +5,12 @@ import styled from "styled-components";
 // PRODUCTS.js
 export const All = styled.h3`
   position: fixed;
-  top: clamp(50px, calc(3.364375rem + ((1vw - 7.69px) * 2.8297)), 86.4px);
+  top: clamp(20px, calc(3.364375rem + ((1vw - 7.69px) * 2.8297)), 86.4px);
   margin: 0;
-  padding-left: 3rem;
+  padding: 1.5rem 0 3rem 3rem;
   z-index: +1;
   width: 100vw;
-  height: 6rem;
+
   display: flex;
   align-items: center;
   font-weight: 400;
@@ -48,15 +48,22 @@ export const All = styled.h3`
 
 export const Apply = styled.button`
   background-color: var(--nav-bar-color);
-  border-radius: 20px;
+  border-radius: 3px;
   border: none;
-  padding: 0.25rem 1rem;
-  margin: 0.5rem 1.5rem;
+  color: white;
+  padding: 0.25rem 2rem;
+  margin: 0.5rem;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: var(--accent-color);
-    scale: 105%;
+    color: black;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -90,33 +97,34 @@ export const FiltersBTN = styled.button`
   border-radius: 20px;
   cursor: pointer;
 
-   @media (max-width: 375px) {
-     top: 8vh;
-     right: 6rem;
-   }
+  @media (max-width: 375px) {
+    top: 8vh;
+    right: 6rem;
+  }
 
-   @media (max-width: 500px) {
-     display: block;
-     margin-right: 0.25rem;
-     padding: 0.5rem 0 0.5rem 0.75rem;
-   }
+  @media (max-width: 500px) {
+    display: block;
+    margin-right: 0.25rem;
+    padding: 0.5rem 0 0.5rem 0.75rem;
+  }
   @media (min-width: 500px) and (max-width: 800px) {
-     display: block;
-     margin-right: 0.25rem;
-     right: 7rem;
-   }
-`; 
+    display: block;
+    margin-right: 0.25rem;
+    right: 7rem;
+  }
+`;
 
 //FILTERS.js
 export const FilterContainer = styled.div`
   position: fixed;
-  top: 21vh;
+  top: 18vh;
   left: 3rem;
   width: 17vw;
-  padding: 1rem 1.5rem;
+  padding: 2rem 3rem;
   z-index: 2;
-  background-color: white;
-  border: none;
+  background-color: transparent;
+  /* border: none; */
+  /* border: 1px solid aqua; */
   border-radius: 5px;
   display: block;
 
@@ -141,7 +149,7 @@ export const InStockMenu = styled.select`
   background-color: white;
   border: none;
   border-top: 2px solid var(--navbar-color);
-  padding: 0.5rem;
+  padding: 1.5rem 0.5rem;
   text-align: left;
   cursor: pointer;
 `;

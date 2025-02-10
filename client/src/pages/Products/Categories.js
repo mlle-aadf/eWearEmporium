@@ -14,9 +14,10 @@ const Categories = ({ filtersHandler }) => {
             // updates filters state to selected categories
             onChange={filtersHandler}
             borderColor="var(--nav-bar-color)"
-            style={{ backgroundColor: "var(--nav-bar-color)" }}
             value={category}
             label={category}
+            borderRadius={3} 
+            size={12}
             labelStyle={{ marginLeft: "0.5rem", fontSize: "1rem" }}
             containerStyle={{ margin: "0.75rem 0", cursor: "pointer" }}
             icon={<img src={check} style={{ height: "1rem" }} alt="check" />}
