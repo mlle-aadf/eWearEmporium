@@ -69,19 +69,20 @@ export const Apply = styled.button`
 
 export const MobileFilters = styled.div`
   position: fixed;
-  top: 10vh;
+  top: 10.5vh;
   right: 5%;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0.5rem 0 1rem;
   z-index: 2;
   background-color: white;
+  /* border: 1px solid aqua; */
   border: 2px solid var(--nav-bar-color);
-  border-radius: 15px;
-  padding: 0.25rem 0.75rem;
+  border-radius: 3x;
   width: fit-content;
   display: none;
 
   @media (max-width: 800px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -118,10 +119,10 @@ export const FiltersBTN = styled.button`
 
 //FILTERS.js
 export const FilterContainer = styled.div`
-  position: fixed;
+  position: fixed; 
   top: 18vh;
   left: 3rem;
-  width: 17vw;
+  width: auto;
   padding: 2rem 3rem;
   z-index: 2;
   background-color: transparent;
