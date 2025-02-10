@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useCollapse } from "react-collapsed";
 
+import Footer from "../../components/Footer";
 import Navbar from "../../components/NavBar";
-import Filters from "./Filters";
+import TopButton from "../../components/TopButton";
 import Availability from "./Availability";
 import Categories from "./Categories";
-import Sort from "./Sort";
+import Filters from "./Filters";
 import Items from "./Items";
-import TopButton from "../../components/TopButton";
-import Footer from "../../components/Footer";
-import { All, Apply, MobileFilters, FiltersBTN } from "./StyledComponents";
+import Sort from "./Sort";
+import { All, Apply, FiltersBTN, MobileFilters } from "./StyledComponents";
 
 const Products = () => {
   useEffect(() => {
@@ -118,7 +118,8 @@ const Products = () => {
           onClick: () => setExpanded((prevExpanded) => !prevExpanded),
         })}
       >
-        {isExpanded ? "Filters -" : "Filters +"}
+        {/* Filters */}
+        {isExpanded ? "- Filters" : "+ Filters"}
       </FiltersBTN>
       {/* renders all item product cards to display */}
       <Items products={products} />

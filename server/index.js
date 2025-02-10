@@ -29,10 +29,10 @@ express()
   // PRODUCT ENDPOINTS___________________________________________________
 
   //  getProductsHandler -> returns all items from db
-  .get('/products', getProductsHandler)
+  // .get('/products', getProductsHandler)
 
   //  getProductHandler -> returns specific item from db using _id
-  .get("/products/:_id", getProductHandler)
+  // .get("/products/:_id", getProductHandler)
   
 
 

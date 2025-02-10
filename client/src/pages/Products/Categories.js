@@ -21,6 +21,7 @@ const Categories = ({ filtersHandler }) => {
             labelStyle={{ marginLeft: "0.5rem", fontSize: "1rem" }}
             containerStyle={{ margin: "0.75rem 0", cursor: "pointer" }}
             icon={<img src={check} style={{ height: "1rem" }} alt="check" />}
+            alt="checkmark"
           />
         );
       })}

@@ -69,7 +69,7 @@ export const Apply = styled.button`
 
 export const MobileFilters = styled.div`
   position: fixed;
-  top: 17vh;
+  top: 10vh;
   right: 5%;
   padding-top: 0.5rem;
   z-index: 2;
@@ -89,16 +89,18 @@ export const FiltersBTN = styled.button`
   position: fixed;
   top: 12vh;
   right: 6.5rem;
+  height: 4vh;
+  width: 5rem;
   display: none;
   z-index: 1;
   background-color: white;
-  border: 2px solid var(--nav-bar-color);
+  border: none;
   padding: 0.5rem 0.75rem;
   border-radius: 20px;
   cursor: pointer;
 
-  @media (max-width: 375px) {
-    top: 8vh;
+  @media (max-width: 480px) {
+    top: 6vh;
     right: 6rem;
   }
 
@@ -161,13 +163,14 @@ export const SortContainer = styled.select`
   right: 5%;
   z-index: 1;
   background-color: white;
-  border: 2px solid var(--nav-bar-color);
+  border: 2px solid white;
   padding: 0.5rem 0 0.75rem 0.75rem;
   border-radius: 20px;
 
-  @media (max-width: 375px) {
-    top: 8vh;
+  @media (max-width: 480px) {
+    top: 6vh;
     right: 4%;
+    height: 4vh;
   }
 
   @media (max-width: 500px) {
