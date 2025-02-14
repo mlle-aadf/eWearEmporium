@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import heroImage from "../../images/HeroSection.png";
-import { Link } from "react-router-dom";
 
 // Populates hero section for home page
 const HeroSection = () => {
@@ -11,7 +11,7 @@ const HeroSection = () => {
         Empower Your Everyday <br /> with Wearable Technology.
       </StyledHeroText>
       <StyledButton>
-        <Link to="/products">Shop Now </Link>
+        <Link to="/products">Shop Now</Link>
       </StyledButton>
     </HeroContainer>
   );
@@ -20,9 +20,20 @@ const HeroSection = () => {
 export default HeroSection;
 
 const HeroContainer = styled.div`
+  position: relative;
   margin: clamp(100px, calc(6.25rem + ((1vw - 7.69px) * 4.344)), 150px)
     clamp(76.8px, calc(4.8rem + ((1vw - 7.68px) * 10)), 192px);
   width: clamp(615px, calc(38.4375rem + ((1vw - 7.69px) * 80.0174)), 1536px);
+  /* height: 200px; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 150px 0;
+
+  /* border: 1px solid aqua; */
 
   @media (max-width: 768px) {
     margin: clamp(50px, calc(4.6875rem + ((1vw - 3.3px) * 17.1233)), 150px)
@@ -33,72 +44,49 @@ const HeroContainer = styled.div`
 `;
 
 const StyledHeroImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 25px;
+  /* border-radius: 25px; */
+  object-fit: cover;
 `;
 
 const StyledHeroText = styled.div`
-  position: absolute;
-  top: 22vw;
-  left: 50vw;
   color: var(--white);
   font-size: var(--h3-font-size);
   text-align: center;
-  transform: translate(-50%, -50%);
-
-  @media (max-width: 1200px) {
-    top: 27vw;
-  }
-
-  @media (max-width: 768px) {
-    top: 55vw;
-  }
-
-  @media (max-width: 600px) {
-    top: 60vw;
-  }
+  width: fit-content;
+  z-index: 1; /* Ensure text is above the image */
 `;
 
 const StyledButton = styled.button`
-  position: absolute;
-  top: 25vw;
-  left: 45vw;
   padding: 10px 50px;
-  border: none;
+  border: 2px solid var(--hover-color);
   border-radius: 25px;
-  background-color: var(--accent-color);
+  margin-top: 30px;
+  /* background-color: var(--accent-color); */
+  background-color:transparent;
   color: var(--black);
   cursor: pointer;
   transition: background-color 0.3s ease;
+  z-index: 1; /* Ensure button is above the image */
+
   &:hover {
     background-color: var(--hover-color);
-  }
 
-  @media (max-width: 1400px) {
-    left: 43vw;
-  }
-
-  @media (max-width: 1200px) {
-    top: 32vw;
-  }
-
-  @media (max-width: 768px) {
-    top: 70vw;
-    left: 40vw;
-  }
-
-  @media (max-width: 600px) {
-    top: 78vw;
-    left: 35vw;
+    a {
+      color: var(--black);
+    }
   }
 
   @media (max-width: 428px) {
-    top: 85vw;
     padding: 5px 25px;
   }
 
-  @media (max-width: 375px) {
-    left: 33vw;
+  a {
+    text-decoration: none;
+    color: white;
   }
 `;
