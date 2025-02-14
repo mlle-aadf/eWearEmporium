@@ -30,6 +30,7 @@ const LoginSignUp = () => {
 
   const blankInputLI = loginInfo.email === "" || loginInfo.password === ""; // disabled the log in button if email or password is not filled
 
+
   // Log in the user
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -187,13 +188,8 @@ const LoginSignUp = () => {
 
 const FormsLayout = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  bottom: 0;
-  /* padding: 20px; */
-
-  border: 1px solid aqua;
+  /* display: grid;
+  grid-template-columns: auto(2, 1fr); */
 `;
 
 export default LoginSignUp;

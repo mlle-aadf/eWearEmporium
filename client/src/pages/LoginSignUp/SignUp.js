@@ -10,7 +10,6 @@ const SignUp = ({
   btnTextSignup,
 }) => {
   return (
-    <SUContainer>
       <Form onSubmit={handleSignUp}>
         <Title>Sign Up</Title>
         <Description>
@@ -146,22 +145,22 @@ const SignUp = ({
         </Button>
         <Message>{signUpMessage}</Message>
       </Form>
-    </SUContainer>
   );
 };
 
 export default SignUp;
 
-const SUContainer = styled.div`
-  padding: 100px 0;
-  text-align: center;
-`;
+// const SUContainer = styled.div`
+// `;
 
 const Form = styled.form`
+  text-align: center;
   background-color: #e5e1d6;
   border-radius: 10px;
   padding: 0 50px;
-  margin: 0 50px;
+  margin: 90px 50px 0 50px;
+
+  height: 80%;
 
   @media (max-width: 500px) {
     padding: 20px;
@@ -171,12 +170,12 @@ const Form = styled.form`
 
 const Title = styled.h2`
   text-decoration: underline;
-
+  padding-top: 15px;
 `;
 
 const Description = styled.p`
   font-size: 1rem;
-margin: 10px 0;
+  margin: 15px 0;
 `;
 
 const FormGroup = styled.div`
@@ -194,7 +193,6 @@ const Label = styled.label`
   font-weight: bold;
   width: 200px;
   text-align: right;
-  border: 1px solid aqua;
 
   @media (max-width: 500px) {
     width: 100%;
@@ -206,7 +204,6 @@ const Input = styled.input`
   flex: 1;
   padding: 5px;
   margin-left: 20px;
-  border-radius: 5px;
   border: none;
 `;
 

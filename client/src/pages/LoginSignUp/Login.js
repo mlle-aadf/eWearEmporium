@@ -72,7 +72,7 @@ const H1 = styled.h1`
 const H2 = styled.h2`
   font-style: italic;
   font-weight: bold;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-align: center;
   padding: 0 0 50px 15px;
 
