@@ -24,16 +24,12 @@ const HeroContainer = styled.div`
   margin: clamp(100px, calc(6.25rem + ((1vw - 7.69px) * 4.344)), 150px)
     clamp(76.8px, calc(4.8rem + ((1vw - 7.68px) * 10)), 192px);
   width: clamp(615px, calc(38.4375rem + ((1vw - 7.69px) * 80.0174)), 1536px);
-  /* height: 200px; */
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   padding: 150px 0;
 
-  /* border: 1px solid aqua; */
 
   @media (max-width: 768px) {
     margin: clamp(50px, calc(4.6875rem + ((1vw - 3.3px) * 17.1233)), 150px)
@@ -49,7 +45,7 @@ const StyledHeroImage = styled.img`
   left: 0;
   width: 100%;
   height: 100%;
-  /* border-radius: 25px; */
+  border-radius: 5px;
   object-fit: cover;
 `;
 
@@ -66,7 +62,6 @@ const StyledButton = styled.button`
   border: 2px solid var(--hover-color);
   border-radius: 25px;
   margin-top: 30px;
-  /* background-color: var(--accent-color); */
   background-color:transparent;
   color: var(--black);
   cursor: pointer;

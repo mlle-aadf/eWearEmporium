@@ -56,6 +56,6 @@ const SlideContainer = styled.div`
 const StyledSlideImage = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 25px;
   object-fit: cover;
+  border-radius: 5px;
 `;
