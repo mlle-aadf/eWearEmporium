@@ -188,8 +188,6 @@ const LoginSignUp = () => {
 
 const FormsLayout = styled.div`
   display: flex;
-  /* display: grid;
-  grid-template-columns: auto(2, 1fr); */
 `;
 
 export default LoginSignUp;

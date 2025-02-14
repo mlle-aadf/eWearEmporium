@@ -150,8 +150,6 @@ const SignUp = ({
 
 export default SignUp;
 
-// const SUContainer = styled.div`
-// `;
 
 const Form = styled.form`
   text-align: center;
