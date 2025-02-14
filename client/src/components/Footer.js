@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
 import styled from "styled-components";
 import miniLogo from "../images/logo2.png";
 
@@ -17,105 +16,154 @@ const Footer = () => {
   const noInput = !subEmail;
 
   return (
-    <>
-      <footer>
-        <div className="footer-pt1">
-          <div className="colOne">
-            <h2
-              style={{
-                textDecoration: "underline",
-                padding: "0 0 0 25px",
-                margin: "20px 20px 0 20px",
-                fontWeight: "bold",
-              }}
-            >
-              Stay Connected
-            </h2>
-            <br />
-            <p>
-              Subscribe to get all our latest updates, which include promotional
-              offers and more!
-            </p>
-            {!isSubbed ? (
-              <div>
-                <label>
-                  <input
-                    type="text"
-                    placeholder="Your email address"
-                    className="sub-email"
-                    onChange={userSubEmail}
-                  />
-                </label>
-                <button
-                  type="submit"
-                  className="sub-btn"
-                  disabled={noInput}
-                  onClick={() => setIsSubbed(true)}
-                >
-                  Subscribe
-                </button>
-              </div>
-            ) : (
-              <>
-                <br />
-                <ConfirmationMsg>
-                  Thank you for subscribing! You will receive an email
-                  confirmation to {subEmail}.
-                </ConfirmationMsg>
-              </>
-            )}
-          </div>
-          <div className="colTwo">
-            <h2
-              style={{
-                textDecoration: "underline",
-                padding: "0 0 0 10px",
-                margin: "50px 0 20px 0",
-                fontWeight: "bold",
-              }}
-            >
-              Navigate
-            </h2>
-            <ul>
-              <Link to="/about" className="footer-link">
-                <li>About Us</li>
-              </Link>
-              <Link to="/contact" className="footer-link">
-                <li>Contact Us</li>
-              </Link>
-              <Link to="/about" className="footer-link">
-                <li>Frequently Asked Questions</li>
-              </Link>
-              <Link to="/about" className="footer-link">
-                <li>Terms and Conditions</li>
-              </Link>
-            </ul>
-          </div>
-          <br />
-          <br />
-        </div>
-        <hr style={{ width: "75%", margin: "auto" }} />
-        <br />
-        <div className="brand-info">
-          <img
-            src={miniLogo}
-            alt="Small brand logo"
-            className="brand-logo"
-          ></img>
-          <h2 className="brand-text2">A local brand based in Montreal, QC</h2>
-        </div>
-        <br />
-      </footer>
-    </>
+    <FooterContainer>
+      <FooterPart>
+        <Column textAlign="start">
+          <Title>Stay Connected</Title>
+          <Description>
+            Subscribe to get all our latest updates, which include promotional
+            offers and more!
+          </Description>
+          {!isSubbed ? (
+            <SubscriptionForm>
+              <label>
+                <Input
+                  type="text"
+                  placeholder="Your email address"
+                  onChange={userSubEmail}
+                />
+              </label>
+              <Button
+                type="submit"
+                disabled={noInput}
+                onClick={() => setIsSubbed(true)}
+              >
+                Subscribe
+              </Button>
+            </SubscriptionForm>
+          ) : (
+            <ConfirmationMsg>
+              Thanks for subscribing! You will receive an email confirmation
+              at {subEmail}.
+            </ConfirmationMsg>
+          )}
+        </Column>
+        <Column>
+          <Title>Navigate</Title>
+          <NavList>
+            <NavItem to="/about">About Us</NavItem>
+            <NavItem to="/contact">Contact Us</NavItem>
+            <NavItem to="/about">Frequently Asked Questions</NavItem>
+            <NavItem to="/about">Terms and Conditions</NavItem>
+          </NavList>
+        </Column>
+      </FooterPart>
+      <BrandInfo>
+        <BrandLogo src={miniLogo} alt="Small brand logo" />
+        <BrandText>A local brand based in Montreal, QC</BrandText>
+      </BrandInfo>
+    </FooterContainer>
   );
 };
 
+const FooterContainer = styled.footer`
+  padding: 20px;
+  background-color: var(--nav-bar-color);
+  text-align: center;
+
+  height: fit-content;
+  position: relative;
+  bottom: 0;
+`;
+
+const FooterPart = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Column = styled.div`
+  flex: 1;
+  text-align: ${(props) => props.textAlign || "end"};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const Title = styled.h3`
+  font-size: 1rem;
+  font-weight: bold;
+  `;
+
+const Description = styled.p`
+  font-size: 0.85rem;
+  margin: 10px 0 15px 0;
+`;
+
+const SubscriptionForm = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Input = styled.input`
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+`;
+
+const Button = styled.button`
+  padding: 8px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+`;
+
 const ConfirmationMsg = styled.p`
   font-weight: bold;
-  margin: 0 60px 0 60px;
+  font-size: 0.85rem;
+  margin: 0 60px;
   display: inline-block;
   vertical-align: middle;
-  text-align: center;
+  `;
+
+const NavList = styled.ul`
+  font-size: 0.85rem;
+  list-style: none;
+  padding: 0;
+`;
+
+const NavItem = styled(Link)`
+  display: block;
+  margin: 10px 0;
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const BrandInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+`;
+
+const BrandLogo = styled.img`
+  width: 50px;
+  height: auto;
+  `;
+
+const BrandText = styled.h2`
+  margin-left: 50px;
+  font-size: 0.75rem;
+  font-style: italic;
 `;
 
 export default Footer;

@@ -119,15 +119,18 @@ export const FiltersBTN = styled.button`
 
 //FILTERS.js
 export const FilterContainer = styled.div`
-  position: fixed; 
+  position: sticky; 
   top: 18vh;
   left: 3rem;
-  width: auto;
-  padding: 2rem 3rem;
+  width: fit-content;
+  padding: 2rem 0 2rem 2rem;
   z-index: 2;
-  background-color: transparent;
-  /* border: none; */
-  /* border: 1px solid aqua; */
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    white 50%,
+    white 100%
+  );
   border-radius: 5px;
   display: block;
 
@@ -193,9 +196,10 @@ export const ProductsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 3px 2px;
-  margin: 20vh auto 0 23vw;
+  position: relative;
+  top: 0;
+  margin: -30vh auto 0 23vw;
   width: 74%;
-  height: fit-content;
 
   :hover {
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
