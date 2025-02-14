@@ -1,11 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
+import { LoggedInUserContext } from "./LoggedInUserContext";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import Footer from "../../components/Footer";
-import { LoggedInUserContext } from "./LoggedInUserContext";
-import styled from "styled-components";
 
 // Generates the log in / Sign up page.
 const LoginSignUp = () => {
@@ -29,7 +29,6 @@ const LoginSignUp = () => {
   }; // Handle any change in the login state
 
   const blankInputLI = loginInfo.email === "" || loginInfo.password === ""; // disabled the log in button if email or password is not filled
-
 
   // Log in the user
   const handleLogin = async (event) => {
@@ -187,8 +186,14 @@ const LoginSignUp = () => {
 };
 
 const FormsLayout = styled.div`
-  display: grid;
-  grid-template-columns: auto(2, 1fr);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  bottom: 0;
+  /* padding: 20px; */
+
+  border: 1px solid aqua;
 `;
 
 export default LoginSignUp;
