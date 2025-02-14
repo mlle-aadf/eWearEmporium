@@ -109,8 +109,10 @@ nav {
 .navLink {
   text-decoration: none;
   color: #000000;
-  margin: 0 20px 0 0;
+  margin: 0 20px;
   font-weight: 500;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
 }
 
 .navLink:hover {

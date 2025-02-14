@@ -1,14 +1,16 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
+import { FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import logo from "../images/logo1.png";
 import logoMobile from "../images/logo2.png";
-import { FaCartArrowDown } from "react-icons/fa";
-import { IoPersonSharp } from "react-icons/io5";
+// import { FaCartArrowDown } from "react-icons/fa";
 import { IoMdLogOut } from "react-icons/io";
-import Cart from "./Cart/Cart";
+import { LuUser } from "react-icons/lu";
+// import { IoPersonSharp } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { LoggedInUserContext } from "../pages/LoginSignUp/LoggedInUserContext";
-import { NavLink } from "react-router-dom";
+import Cart from "./Cart/Cart";
 
 // Navigation Bar for the page
 const NavBar = () => {
@@ -43,15 +45,15 @@ const NavBar = () => {
           </Link>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <IconsContainer>
           {/* Navbar icons that toggle cart on press */}
-          <FaCartArrowDown className="navbar-buttons" onClick={toggleCart} />
+          <FiShoppingCart className="navbar-buttons" onClick={toggleCart} style={{ background: "transparent", height: "2rem" }}/>
           {/* Navbar icons for login if user is not logged in yet */}
           {!isAuthenticated && (
             <>
               <NavLink to="/login">
-                <IoPersonSharp
-                  style={{ background: "transparent" }}
+                <LuUser
+                  style={{ background: "transparent", height: "2rem" }}
                   className="navbar-buttons"
                   title="Click to login or sign up!"
                 />
@@ -74,9 +76,9 @@ const NavBar = () => {
               </button>
             </>
           )}
-        </div>
+        </IconsContainer>
       </nav>
-      <Cart isVisible={isCartVisible} />
+      <Cart isVisible={isCartVisible}/>
     </>
   );
 };
@@ -85,10 +87,18 @@ export default NavBar;
 
 const Logo = styled.img`
   width: auto;
-  height: clamp(34px, calc(2.125rem + ((1vw - 3.9px) * 1.0458)), 50px);
+  height: clamp(24px, calc(1.5rem + ((1vw - 3.9px) * 1.0458)), 40px);
+  padding-left: 1rem;
 
   @media (max-width: 768px) {
     content: url(${(props) => props.mobileSrc});
-    height: clamp(20px, calc(1.25rem + ((1vw - 3.3px) * 6.8493)), 50px);
+    height: clamp(15px, calc(1rem + ((1vw - 3.3px) * 6.8493)), 40px);
   }
 `;
+
+const IconsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+`
