@@ -58,6 +58,7 @@ const Footer = () => {
           </NavList>
         </Column>
       </FooterPart>
+      <hr style={{ border: "0.5px solid white", margin: "10px 0 5px 0"}} />
       <BrandInfo>
         <BrandLogo src={miniLogo} alt="Small brand logo" />
         <BrandText>A local brand based in Montreal, QC</BrandText>
@@ -67,9 +68,10 @@ const Footer = () => {
 };
 
 const FooterContainer = styled.footer`
-  padding: 20px;
+  padding: 20px 40px;
   background-color: var(--nav-bar-color);
   text-align: center;
+
 
   height: fit-content;
   position: relative;

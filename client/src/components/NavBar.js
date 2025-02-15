@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import { FiShoppingCart } from "react-icons/fi";
+import { FiLogOut, FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import logo from "../images/logo1.png";
 import logoMobile from "../images/logo2.png";
 // import { FaCartArrowDown } from "react-icons/fa";
-import { IoMdLogOut } from "react-icons/io";
+// import { IoMdLogOut } from "react-icons/io";
 import { LuUser } from "react-icons/lu";
 // import { IoPersonSharp } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
@@ -69,9 +69,10 @@ const NavBar = () => {
                 style={{ background: "transparent" }}
                 className="navbar-buttons"
               >
-                <IoMdLogOut
+                <FiLogOut
                   className="navbar-buttons"
                   title="Click to logout!"
+                  style={{border: "none", background: "transparent", height: "2rem" }}
                 />
               </button>
             </>
