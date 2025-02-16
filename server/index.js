@@ -2,11 +2,13 @@
 
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
 
 const PORT = process.env.PORT || 4000;
 
 //require the handlers
 const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getItemHandler, deleteItemHandler} = require("./handlers");
+
 
 express()
   .use(function (req, res, next) {
@@ -22,6 +24,7 @@ express()
   })
   .use(morgan('tiny'))
   .use(express.static('./server/assets'))
+  .use(express.static(path.resolve(__dirname, '../client/build')))
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
   .use('/', express.static(__dirname + '/'))
