@@ -98,24 +98,6 @@ nav {
   align-items: center;
 }
 
-.navText {
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: row;
-}
-
-.navLink {
-  text-decoration: none;
-  color: #000000;
-  margin: 0 20px;
-  font-weight: 500;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
-}
-
-.navLink:hover {
-  border-bottom: 2px solid #ffffff;
-}
 
 .footer-link {
   text-decoration: none;
@@ -224,7 +206,7 @@ footer ul {
   margin: 50px 0 0 0;
 }
 
-.question {
+/* .question {
   font-weight: bold;
   font-style: italic;
   text-align: center;
@@ -232,12 +214,12 @@ footer ul {
 
 .answer {
   text-align: center;
-}
+} */
 
-.about-section {
+/* .about-section {
   margin: 100px 0 0 0;
-}
-
+} */
+/* 
 .about-text,
 .faq-section,
 .tos-section {
@@ -248,7 +230,7 @@ footer ul {
   outline-color: black;
   margin: 15px;
   padding: 15px;
-}
+} */
 
 .sub-form {
   text-align: center;

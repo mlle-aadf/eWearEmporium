@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import miniLogo from "../images/logo2.png";
 
@@ -51,10 +50,10 @@ const Footer = () => {
         <Column>
           <Title>Navigate</Title>
           <NavList>
-            <NavItem to="/about">About Us</NavItem>
-            <NavItem to="/contact">Contact Us</NavItem>
-            <NavItem to="/about">Frequently Asked Questions</NavItem>
-            <NavItem to="/about">Terms and Conditions</NavItem>
+            <NavItem><a href="/about">About Us</a></NavItem>
+            <NavItem><a href="/contact">Contact Us</a></NavItem>
+            <NavItem><a href="/about#faq">Frequently Asked Questions</a></NavItem>
+            <NavItem><a href="/about#terms">Terms and Conditions</a></NavItem>
           </NavList>
         </Column>
       </FooterPart>
@@ -71,8 +70,6 @@ const FooterContainer = styled.footer`
   padding: 20px 40px;
   background-color: var(--nav-bar-color);
   text-align: center;
-
-
   height: fit-content;
   position: relative;
   bottom: 0;
@@ -139,11 +136,14 @@ const NavList = styled.ul`
   padding: 0;
 `;
 
-const NavItem = styled(Link)`
+const NavItem = styled.a`
   display: block;
   margin: 10px 0;
-  color: black;
-  text-decoration: none;
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   &:hover {
     text-decoration: underline;

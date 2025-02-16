@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { FiLogOut, FiShoppingCart } from "react-icons/fi";
-import { Link } from "react-router-dom";
 import logo from "../images/logo1.png";
 import logoMobile from "../images/logo2.png";
 // import { FaCartArrowDown } from "react-icons/fa";
@@ -27,22 +26,22 @@ const NavBar = () => {
   return (
     <>
       <nav>
-        <Link to="/">
+        <NavLink to="/">
           <Logo src={logo} alt="Logo" mobileSrc={logoMobile} />
-        </Link>
-        <div className="navText">
-          <Link to="/products" className="navLink">
-            shop all
-          </Link>
-          <Link to="/brands" className="navLink">
-            brands
-          </Link>
-          <Link to="/contact" className="navLink">
-            contact
-          </Link>
-          <Link to="/about" className="navLink">
-            about
-          </Link>
+        </NavLink>
+        <div>
+          <TextNavLink to="/products">
+            SHOP
+          </TextNavLink>
+          <TextNavLink to="/brands">
+            BRANDS
+          </TextNavLink>
+          <TextNavLink to="/contact">
+            CONTACT
+          </TextNavLink>
+          <TextNavLink to="/about">
+            ABOUT
+          </TextNavLink>
         </div>
 
         <IconsContainer>
@@ -101,5 +100,22 @@ const IconsContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
+`
 
+const TextNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: #000000;
+  margin: 0 20px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
+
+  &:hover {
+    border-bottom: 2px solid #ffffff;
+  }
+
+  @media (max-width: 500px) {
+    margin: 0 5px;
+    font-size: 0.7rem;
+  }
 `
