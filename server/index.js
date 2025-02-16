@@ -9,20 +9,30 @@ const PORT = process.env.PORT || 4000;
 //require the handlers
 const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getItemHandler, deleteItemHandler} = require("./handlers");
 
+const app = express();
 
-express()
-  .use(function (req, res, next) {
-    res.header(
-      'Access-Control-Allow-Methods',
-      'OPTIONS, HEAD, GET, PUT, POST, DELETE'
-    );
-    res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    next();
-  })
-  .use(morgan('tiny'))
+app.use(function (req, res, next) {
+  res.header(
+    'Access-Control-Allow-Methods',
+    'OPTIONS, HEAD, GET, PUT, POST, DELETE'
+  );
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
+
+// Set Content Security Policy header
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';"
+  );
+  next();
+});
+
+app.use(morgan('tiny'))
   .use(express.static('./server/assets'))
   .use(express.static(path.resolve(__dirname, '../client/build')))
   .use(express.json())
