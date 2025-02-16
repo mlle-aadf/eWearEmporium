@@ -11,8 +11,14 @@ const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler
 
 const app = express();
 
+var corsOptions = {
+  origin: 'https://e-wear-emporium-psi.vercel.app/',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
 // Use CORS middleware
-app.use(cors());
+app.use(cors(corsOptions));
+
 
 app.use(function (req, res, next) {
   res.header(
