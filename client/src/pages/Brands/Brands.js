@@ -15,7 +15,7 @@ const Brands = () => {
   useEffect(() => {
     const getBrands = async () => {
       try {
-        const res = await fetch("/brands");
+        const res = await fetch("https://e-wear-emporium-psi.vercel.app/brands");
         const { data } = await res.json();
         console.log(data);
         setBrands(data);
