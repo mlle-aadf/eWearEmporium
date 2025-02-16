@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
 import styled from "styled-components";
+import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
 
 //All of our brands will be displayed on this page.
 //Each brand is also linked to their respective websites.
