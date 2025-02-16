@@ -2,15 +2,13 @@
 
 const express = require('express');
 const morgan = require('morgan');
-const cors = require('cors');
+
 const PORT = process.env.PORT || 4000;
 
 //require the handlers
 const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getItemHandler, deleteItemHandler} = require("./handlers");
 
-const app = express()
-  
-app.use(cors())
+express()
   .use(function (req, res, next) {
     res.header(
       'Access-Control-Allow-Methods',
@@ -36,12 +34,16 @@ app.use(cors())
   //  getProductHandler -> returns specific item from db using _id
   .get("/products/:_id", getProductHandler)
   
+
+
+
   // USER ENDPOINTS___________________________________________________
 
   // newUserHandler -> posts a new user to db using id
   .post("/signUp", newUserHandler)
   // logInHandler -> retrieves user from db logs user in
   .post("/login", getLoginHandler)
+
 
   // ORDER ENDPOINTS___________________________________________________
 
@@ -52,8 +54,11 @@ app.use(cors())
   // deleteItemHandler -> update the stock if the user delete the item from his cart
   .patch("/checkout", deleteItemHandler)
 
+
+
   // getBrands -> retrieves all brands from db
   .get("/brands", getBrandsHandler)
+
 
   //_______________________________________________________________
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));
