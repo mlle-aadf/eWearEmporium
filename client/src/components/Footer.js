@@ -78,6 +78,11 @@ const FooterContainer = styled.footer`
 const FooterPart = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+
 `;
 
 const Column = styled.div`
@@ -86,6 +91,15 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  
+  @media (max-width: 800px) {
+    &:first-of-type {
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid white;
+    }
+  }
 `;
 
 const Title = styled.h3`
