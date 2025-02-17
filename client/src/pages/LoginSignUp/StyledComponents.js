@@ -14,6 +14,10 @@ const Form = styled.form`
     width: 100vw;
     padding: 20px 30px 0 30px;
   }
+
+  @media (min-width: 501px) and (max-width: 800px) {
+    width: 80vw;
+  }
 `;
 
 const Title = styled.h2`

@@ -163,9 +163,7 @@ const LoginSignUp = () => {
       <NavBar />
       <FormsLayout>
         <H2>
-          Empower Your Everyday
-          <TextBreak />
-          with Wearable Technology
+          Empower Your Everyday<TextBreak /> with Wearable Technology
         </H2>
         <Forms>
           <Login
@@ -209,7 +207,7 @@ const Forms = styled.div`
   width: 100%;
   justify-content: space-between;
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
 `;
