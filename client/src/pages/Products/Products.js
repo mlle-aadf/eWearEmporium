@@ -27,7 +27,7 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch(`/api/products`);
+        const res = await fetch(`https://e-wear.vercel.app/api/products`);
         const { data } = await res.json();
         setProducts(data);
       } catch (err) {
