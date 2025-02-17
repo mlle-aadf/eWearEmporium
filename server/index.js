@@ -30,7 +30,7 @@ express()
   .use(express.urlencoded({ extended: false }))
   .use('/', express.static(__dirname + '/'))
   
-  .get("*", (req, res) => {
+  .get("/client", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build", "index.html"));
   })
 
