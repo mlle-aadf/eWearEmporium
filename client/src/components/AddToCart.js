@@ -19,7 +19,7 @@ const AddToCart = ({ item, inStock, setInStock }) => {
     setButtonText("Adding item...");
 
     try {
-      const response = await fetch(`/api/products/${item._id}`, {
+      const response = await fetch(`https://e-wear.vercel.app/api/products/${item._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

@@ -35,7 +35,7 @@ const Confirm = () => {
             }));
 
             // Send the order data to the backend
-            const response = await fetch("/api/checkout", {
+            const response = await fetch("https://e-wear.vercel.app/api/checkout", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

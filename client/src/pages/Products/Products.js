@@ -44,7 +44,7 @@ const Products = () => {
     setProducts(null);
     try {
       const res = await fetch(
-        `/api/products?sort=${sortParam ? sortParam : sortBy}&filters=${
+        `https://e-wear.vercel.app/api/products?sort=${sortParam ? sortParam : sortBy}&filters=${
           filtersParam ? filtersParam.toString() : filters.toString()
         }&all=${availOnly}`
       );

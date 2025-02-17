@@ -36,7 +36,7 @@ const LoginSignUp = () => {
     event.preventDefault();
     setButtonText("Getting your info");
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch("https://e-wear.vercel.app/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -112,7 +112,7 @@ const LoginSignUp = () => {
         password,
         confirmPassword,
       } = formData;
-      const response = await fetch("/api/signUp", {
+      const response = await fetch("https://e-wear.vercel.app/api/signUp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
