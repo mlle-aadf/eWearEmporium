@@ -231,7 +231,9 @@ const Tagline = styled.h1`
 const Section = styled.section`
   margin: 3rem 8rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid var(--nav-bar-color);
+  &:not(:last-of-type) {
+    border-bottom: 2px solid var(--nav-bar-color);
+  }
 
   p {
     line-height: 1.75;

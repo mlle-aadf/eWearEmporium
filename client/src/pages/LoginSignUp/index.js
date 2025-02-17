@@ -30,7 +30,6 @@ const LoginSignUp = () => {
 
   const blankInputLI = loginInfo.email === "" || loginInfo.password === ""; // disabled the log in button if email or password is not filled
 
-
   // Log in the user
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -94,7 +93,7 @@ const LoginSignUp = () => {
     !formData.password ||
     !formData.confirmPassword;
 
-  // Updates the user data on signup 
+  // Updates the user data on signup
   const handleSignUp = async (event) => {
     event.preventDefault();
     setBtnTextSignup("Creating your account!");
@@ -163,23 +162,26 @@ const LoginSignUp = () => {
     <>
       <NavBar />
       <FormsLayout>
-        <Login
-          loginInfo={loginInfo}
-          handleChange={handleChange}
-          blankInputLI={blankInputLI}
-          navigate={navigate}
-          handleLogin={handleLogin}
-          errorMessage={errorMessage}
-          buttonText={buttonText}
-        />
-        <SignUp
-          formData={formData}
-          handleChangeForm={handleChangeForm}
-          blankInputSU={blankInputSU}
-          handleSignUp={handleSignUp}
-          signUpMessage={signUpMessage}
-          btnTextSignup={btnTextSignup}
-        />
+        <H2>Empower Your Everyday with Wearable Technology</H2>
+        <Forms>
+          <Login
+            loginInfo={loginInfo}
+            handleChange={handleChange}
+            blankInputLI={blankInputLI}
+            navigate={navigate}
+            handleLogin={handleLogin}
+            errorMessage={errorMessage}
+            buttonText={buttonText}
+          />
+          <SignUp
+            formData={formData}
+            handleChangeForm={handleChangeForm}
+            blankInputSU={blankInputSU}
+            handleSignUp={handleSignUp}
+            signUpMessage={signUpMessage}
+            btnTextSignup={btnTextSignup}
+          />
+        </Forms>
       </FormsLayout>
       <Footer />
     </>
@@ -188,6 +190,30 @@ const LoginSignUp = () => {
 
 const FormsLayout = styled.div`
   display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 0 8rem;
+`;
+
+const Forms = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* align-items: center; */
+`;
+
+const H2 = styled.h2`
+  font-style: italic;
+  font-weight: bold;
+  padding: 12vh 0 2rem 0;
+  align-self: center;
+
+  @media (max-width: 500px) {
+    width: 50%;
+    margin-left: 20vw;
+  }
 `;
 
 export default LoginSignUp;
