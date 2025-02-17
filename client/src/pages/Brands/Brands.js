@@ -15,7 +15,7 @@ const Brands = () => {
   useEffect(() => {
     const getBrands = async () => {
       try {
-        const res = await fetch("/api/brands");
+        const res = await fetch("/brands");
         const { data } = await res.json();
         console.log(data);
         setBrands(data);

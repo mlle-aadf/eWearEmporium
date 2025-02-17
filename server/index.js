@@ -28,22 +28,19 @@ express()
   .use(express.static(path.resolve(__dirname, '../client/build')))
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
+  .get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  })
   .use('/', express.static(__dirname + '/'))
   
-  .get("/products", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-  })
-  .get("/brands", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-  })
 
   // PRODUCT ENDPOINTS___________________________________________________
   
   //  getProductsHandler -> returns all items from db
-  .get('/api/products', getProductsHandler)
+  .get('/products', getProductsHandler)
   
   //  getProductHandler -> returns specific item from db using _id
-  .get("/api/products/:_id", getProductHandler)
+  .get("/products/:_id", getProductHandler)
   
   
   
@@ -51,24 +48,24 @@ express()
   // USER ENDPOINTS___________________________________________________
   
   // newUserHandler -> posts a new user to db using id
-  .post("/api/signUp", newUserHandler)
+  .post("/signUp", newUserHandler)
   // logInHandler -> retrieves user from db logs user in
-  .post("/api/login", getLoginHandler)
+  .post("/login", getLoginHandler)
   
   
   // ORDER ENDPOINTS___________________________________________________
   
   // createOrderHandler -> creates order from cart and adds to db
-  .post("/api/checkout", createOrderHandler)
+  .post("/checkout", createOrderHandler)
   // getItemHandler -> update the stock according to what the user added
-  .patch("/api/products/:_id", getItemHandler)
+  .patch("/products/:_id", getItemHandler)
   // deleteItemHandler -> update the stock if the user delete the item from his cart
-  .patch("/api/checkout", deleteItemHandler)
+  .patch("/checkout", deleteItemHandler)
   
   
   
   // getBrands -> retrieves all brands from db
-  .get("/api/brands", getBrandsHandler)
+  .get("/brands", getBrandsHandler)
   
   
 
