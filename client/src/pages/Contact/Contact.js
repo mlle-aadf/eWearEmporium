@@ -104,9 +104,10 @@ const Container = styled.div`
   height: 100vh;
   padding: 0 20px;
   margin-top: 4vh;
-
+  
   @media (max-width: 500px) {
-    margin-top: 0;
+    margin-top: 6vh;
+    height: 80vh;
   }
 `;
 
