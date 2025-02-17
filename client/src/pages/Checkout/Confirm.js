@@ -35,7 +35,7 @@ const Confirm = () => {
             }));
 
             // Send the order data to the backend
-            const response = await fetch("/checkout", {
+            const response = await fetch("/api/checkout", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

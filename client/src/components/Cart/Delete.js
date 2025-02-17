@@ -18,7 +18,7 @@ const Delete = ({ itemID }) => {
             }
     
             // Make a PATCH request to the backend
-            const response = await fetch("/checkout", {
+            const response = await fetch("/api/checkout", {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"

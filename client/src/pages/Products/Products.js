@@ -27,7 +27,7 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch(`/products`);
+        const res = await fetch(`/api/products`);
         const { data } = await res.json();
         setProducts(data);
       } catch (err) {
@@ -44,7 +44,7 @@ const Products = () => {
     setProducts(null);
     try {
       const res = await fetch(
-        `/products?sort=${sortParam ? sortParam : sortBy}&filters=${
+        `/api/products?sort=${sortParam ? sortParam : sortBy}&filters=${
           filtersParam ? filtersParam.toString() : filters.toString()
         }&all=${availOnly}`
       );
