@@ -28,12 +28,9 @@ express()
   .use(express.static(path.resolve(__dirname, '../client/build')))
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
-  // .use('/', express.static(__dirname + '/'))
+  .use('/', express.static(__dirname + '/'))
   
-  .get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-  })
-  .get("/brands", (req, res) => {
+  .get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build", "index.html"));
   })
 
