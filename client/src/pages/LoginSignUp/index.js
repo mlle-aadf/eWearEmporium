@@ -1,11 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
+import { LoggedInUserContext } from "./LoggedInUserContext";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import Footer from "../../components/Footer";
-import { LoggedInUserContext } from "./LoggedInUserContext";
-import styled from "styled-components";
 
 // Generates the log in / Sign up page.
 const LoginSignUp = () => {
@@ -36,7 +36,7 @@ const LoginSignUp = () => {
     event.preventDefault();
     setButtonText("Getting your info");
     try {
-      const response = await fetch("/login", {
+      const response = await fetch("/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -112,7 +112,7 @@ const LoginSignUp = () => {
         password,
         confirmPassword,
       } = formData;
-      const response = await fetch("/signUp", {
+      const response = await fetch("/api/signUp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

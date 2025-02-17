@@ -1,19 +1,19 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 
+import AddToCart from "../../components/AddToCart";
+import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
+import Instock from "../Products/InStock";
+import SoldOut from "../Products/SoldOut";
 import {
   BackBTN,
   Card,
   Img,
   Name,
-  Stock,
   ProductPrice,
+  Stock,
 } from "./StyledComponents";
-import AddToCart from "../../components/AddToCart";
-import Instock from "../Products/InStock";
-import SoldOut from "../Products/SoldOut";
-import Footer from "../../components/Footer";
 
 const Product = () => {
   // retrieves id of specifc product from url
@@ -31,7 +31,7 @@ const Product = () => {
     // fetches info of selected product
     const getProduct = async () => {
       try {
-        const res = await fetch(`/products/${productId}`);
+        const res = await fetch(`/api/products/${productId}`);
         const { data } = await res.json();
         // sets info for selected product if data fetch is successful
         setProductInfo(data);
