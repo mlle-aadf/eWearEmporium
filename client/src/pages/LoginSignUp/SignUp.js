@@ -59,7 +59,7 @@ const SignUp = ({
         />
       </FormGroup>
       <FormGroup>
-        <Label htmlFor="phone">Phone Number (Optional):</Label>
+        <Label htmlFor="phone">Phone Number:</Label>
         <Input
           id="phone"
           type="tel"

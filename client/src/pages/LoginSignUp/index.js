@@ -162,7 +162,11 @@ const LoginSignUp = () => {
     <>
       <NavBar />
       <FormsLayout>
-        <H2>Empower Your Everyday with Wearable Technology</H2>
+        <H2>
+          Empower Your Everyday
+          <br />
+          with Wearable Technology
+        </H2>
         <Forms>
           <Login
             loginInfo={loginInfo}
@@ -192,16 +196,22 @@ const FormsLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  /* justify-content: center; */
   align-items: center;
   margin: 0 8rem;
+
+  @media (max-width: 500px) {
+    margin: 0;
+  }
 `;
 
 const Forms = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  /* align-items: center; */
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const H2 = styled.h2`
@@ -211,8 +221,9 @@ const H2 = styled.h2`
   align-self: center;
 
   @media (max-width: 500px) {
-    width: 50%;
-    margin-left: 20vw;
+    padding: 8vh 0 2vh 0;
+    width: 100%;
+    text-align: center;
   }
 `;
 

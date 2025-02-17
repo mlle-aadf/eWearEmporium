@@ -9,19 +9,29 @@ const Form = styled.form`
   padding: 5px 20px 10px 20px;
 
   @media (max-width: 500px) {
-    padding: 20px;
-    margin: 0 55px;
+    border-top: 1px solid var(--nav-bar-color);
+    border-bottom: none;
+    width: 100vw;
+    padding: 20px 30px 0 30px;
   }
 `;
 
 const Title = styled.h2`
   font-size: 2rem;
   font-weight: bold;
+
+  @media (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Description = styled.p`
   font-size: 1rem;
   margin: 15px 0;
+
+  @media (max-width: 500px) {
+    margin: 10px 0;
+  }
 `;
 
 const FormGroup = styled.div`
@@ -30,18 +40,12 @@ const FormGroup = styled.div`
   margin-bottom: 15px;
 
   @media (max-width: 500px) {
-    flex-direction: column;
-    align-items: flex-start;
+    margin: 2px;
   }
 `;
 
 const Label = styled.label`
   font-weight: bold;
-
-  @media (max-width: 500px) {
-    width: 100%;
-    margin-bottom: 5px;
-  }
 `;
 
 const Input = styled.input`
@@ -64,6 +68,10 @@ const Button = styled.button`
   &:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+  }
+
+  @media (max-width: 500px) {
+    margin: 10px auto 0 auto;
   }
 `;
 
