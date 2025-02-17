@@ -12,17 +12,17 @@ const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler
 
 
 express()
-  .use(function (req, res, next) {
-    res.header(
-      'Access-Control-Allow-Methods',
-      'OPTIONS, HEAD, GET, PUT, POST, DELETE'
-    );
-    res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    next();
-  })
+  // .use(function (req, res, next) {
+  //   res.header(
+  //     'Access-Control-Allow-Methods',
+  //     'OPTIONS, HEAD, GET, PUT, POST, DELETE'
+  //   );
+  //   res.header(
+  //     'Access-Control-Allow-Headers',
+  //     'Origin, X-Requested-With, Content-Type, Accept'
+  //   );
+  //   next();
+  // })
   .use(morgan('tiny'))
   .use(express.static('./server/assets'))
   .use(express.static(path.resolve(__dirname, '../client/build')))
