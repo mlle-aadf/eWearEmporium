@@ -30,6 +30,16 @@ express()
   .use(express.urlencoded({ extended: false }))
   // .use('/api', express.static(__dirname + '/'))
   
+  .get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  })
+  .get("/products", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  })
+  .get("/brands", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  })
+
   // PRODUCT ENDPOINTS___________________________________________________
   
   //  getProductsHandler -> returns all items from db
@@ -64,9 +74,7 @@ express()
   .get("/api/brands", getBrandsHandler)
   
   
-  .get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-  })
+
   //_______________________________________________________________
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));
   
