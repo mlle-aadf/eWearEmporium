@@ -30,6 +30,13 @@ express()
   .use(express.urlencoded({ extended: false }))
   .use('/', express.static(__dirname + '/'))
   
+  .get("/products", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  })
+  .get("/brands", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  })
+
   // PRODUCT ENDPOINTS___________________________________________________
   
   //  getProductsHandler -> returns all items from db
