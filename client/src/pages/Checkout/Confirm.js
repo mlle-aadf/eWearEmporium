@@ -1,10 +1,10 @@
-import { ConfirmBTN } from "./StyledComponents";
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { CartContentContext } from "../../components/Cart/CartContentContext";
 import { LoggedInUserContext } from "../LoginSignUp/LoggedInUserContext";
 import { GuestInfoContext } from "./GuestInfoContext";
-import { CartContentContext } from "../../components/Cart/CartContentContext";
-import { useNavigate } from "react-router-dom";
 import { OrderIdContext } from "./OrderIdContext";
+import { ConfirmBTN } from "./StyledComponents";
 
 //This page authenticates the user's information before confirming their order
 const Confirm = () => {
@@ -35,7 +35,7 @@ const Confirm = () => {
             }));
 
             // Send the order data to the backend
-            const response = await fetch("/checkout", {
+            const response = await fetch("https://e-wear.vercel.app/api/checkout", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

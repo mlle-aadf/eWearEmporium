@@ -1,5 +1,5 @@
-import { CartContentContext } from "./CartContentContext";
 import { useContext } from "react";
+import { CartContentContext } from "./CartContentContext";
 import { DeleteBTN } from "./StyledComponents";
 
 // Removes items from the cart
@@ -18,7 +18,7 @@ const Delete = ({ itemID }) => {
             }
     
             // Make a PATCH request to the backend
-            const response = await fetch("/checkout", {
+            const response = await fetch("https://e-wear.vercel.app/api/checkout", {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"

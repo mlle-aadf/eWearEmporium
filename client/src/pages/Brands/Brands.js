@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
 import styled from "styled-components";
+import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
 
 //All of our brands will be displayed on this page.
 //Each brand is also linked to their respective websites.
@@ -15,7 +15,7 @@ const Brands = () => {
   useEffect(() => {
     const getBrands = async () => {
       try {
-        const res = await fetch("/brands");
+        const res = await fetch("https://e-wear.vercel.app/api/brands");
         const { data } = await res.json();
         console.log(data);
         setBrands(data);

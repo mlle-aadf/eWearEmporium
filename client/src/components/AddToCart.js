@@ -1,7 +1,6 @@
+import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
 import { CartContentContext } from "./Cart/CartContentContext";
-import { useContext } from "react";
 
 
 // Adds items to the Cart
@@ -20,7 +19,7 @@ const AddToCart = ({ item, inStock, setInStock }) => {
     setButtonText("Adding item...");
 
     try {
-      const response = await fetch(`/products/${item._id}`, {
+      const response = await fetch(`https://e-wear.vercel.app/api/products/${item._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
