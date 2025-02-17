@@ -40,7 +40,7 @@ const FormGroup = styled.div`
   margin-bottom: 15px;
 
   @media (max-width: 500px) {
-    margin: 2px;
+    margin: 5px;
   }
 `;
 

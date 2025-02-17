@@ -164,7 +164,7 @@ const LoginSignUp = () => {
       <FormsLayout>
         <H2>
           Empower Your Everyday
-          <br />
+          <TextBreak />
           with Wearable Technology
         </H2>
         <Forms>
@@ -224,6 +224,17 @@ const H2 = styled.h2`
     padding: 8vh 0 2vh 0;
     width: 100%;
     text-align: center;
+  }
+
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    padding: 11vh 0 2vh 0;
+  }
+`;
+
+const TextBreak = styled.br`
+  display: none;
+  @media (max-width: 500px) {
+    display: block;
   }
 `;
 
