@@ -29,6 +29,7 @@ const HeroContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 150px 0;
+  height: auto;
 
 
   @media (max-width: 768px) {
