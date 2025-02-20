@@ -48,9 +48,9 @@ const StyledHeroImage = styled.img`
   height: 100%;
   border-radius: 5px;
   object-fit: cover;
-  margin-bottom: 0;
+  margin-bottom: -50px;
 
-  border: 3px solid aqua;
+  border: 3px solid purple;
 `;
 
 const StyledHeroText = styled.div`
