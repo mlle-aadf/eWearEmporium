@@ -21,8 +21,8 @@ export default HeroSection;
 
 const HeroContainer = styled.div`
   position: relative;
-  margin: clamp(50px, calc(3.125rem + ((1vw - 7.69px) * 2.344)), 100px)
-    clamp(38.4px, calc(2.4rem + ((1vw - 7.68px) * 5)), 96px);
+  margin: clamp(100px, calc(6.25rem + ((1vw - 7.69px) * 4.344)), 150px)
+    clamp(76.8px, calc(4.8rem + ((1vw - 7.68px) * 10)), 100px);
   width: clamp(615px, calc(38.4375rem + ((1vw - 7.69px) * 80.0174)), 1536px);
   height: auto;
   display: flex;
@@ -32,8 +32,8 @@ const HeroContainer = styled.div`
   padding: 150px 0;
 
   @media (max-width: 768px) {
-    margin: clamp(25px, calc(2.34375rem + ((1vw - 3.3px) * 8.56165)), 75px)
-      clamp(16.5px, calc(1.03125rem + ((1vw - 3.3px) * 5)), 38.4px);
+    margin: clamp(50px, calc(4.6875rem + ((1vw - 3.3px) * 17.1233)), 150px)
+      clamp(33px, calc(2.0625rem + ((1vw - 3.3px) * 10)), 50px);
     width: clamp(264px, calc(16.5rem + ((1vw - 3.3px) * 71.0046)), 575px);
     height: clamp(264px, calc(16.5rem + ((1vw - 3.3px) * 71.0046)), 575px);
   }
