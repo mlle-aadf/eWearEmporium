@@ -31,6 +31,7 @@ const HeroContainer = styled.div`
   padding: 150px 0;
 
 
+
   @media (max-width: 768px) {
     margin: clamp(50px, calc(4.6875rem + ((1vw - 3.3px) * 17.1233)), 150px)
       clamp(33px, calc(2.0625rem + ((1vw - 3.3px) * 10)), 76.8px);
