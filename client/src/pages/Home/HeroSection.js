@@ -48,6 +48,7 @@ const StyledHeroImage = styled.img`
   height: 100%;
   border-radius: 5px;
   object-fit: cover;
+  margin-bottom: 0;
 
   border: 3px solid aqua;
 `;
