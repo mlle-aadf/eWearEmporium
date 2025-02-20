@@ -41,7 +41,7 @@ export default RotatingSlides;
 
 const SlideContainer = styled.div`
   position: relative;
-  margin: clamp(50px, calc(6.25rem + ((1vw - 7.69px) * 4.344)), 150px)
+  margin: clamp(100px, calc(6.25rem + ((1vw - 7.69px) * 4.344)), 150px)
     clamp(76.8px, calc(4.8rem + ((1vw - 7.68px) * 10)), 192px);
   width: clamp(615px, calc(38.4375rem + ((1vw - 7.69px) * 80.0174)), 1536px);
 
